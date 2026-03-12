@@ -17,6 +17,8 @@ export default function Footer() {
               <Link href="/residential/">Residential</Link>
               <Link href="/business/">Business</Link>
               <Link href="/coverage/">Coverage Areas</Link>
+              <Link href="/status">Network Status</Link>
+              <Link href="/speedtest">Speed Test</Link>
             </div>
             <div className="footer-col">
               <strong>Account</strong>

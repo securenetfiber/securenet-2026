@@ -1537,3 +1537,248 @@ ul, ol {
   max-width: 28rem;
   margin: 0 auto;
 }
+
+
+/* ═══════════════════════════════════════════════
+   BROADBAND NUTRITION LABEL (FCC)
+   ═══════════════════════════════════════════════ */
+
+.plan-card-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.bb-toggle {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.75rem 0 0.25rem;
+  text-align: center;
+  transition: color 0.15s;
+}
+
+.bb-toggle:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.broadband-label {
+  border: 2px solid var(--text-primary);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.bb-header {
+  background: var(--text-primary);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bb-title {
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.bb-plan-id {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  font-family: monospace;
+}
+
+.bb-plan-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--text-primary);
+  font-weight: 700;
+}
+
+.bb-plan-name {
+  font-size: 0.95rem;
+}
+
+.bb-plan-price {
+  font-size: 1.1rem;
+}
+
+.bb-section {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.bb-section:last-of-type {
+  border-bottom: none;
+}
+
+.bb-section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  padding: 0.6rem 1rem 0.3rem;
+}
+
+.bb-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 1rem;
+}
+
+.bb-row span {
+  color: var(--text-secondary);
+}
+
+.bb-row strong {
+  color: var(--text-primary);
+  text-align: right;
+}
+
+.bb-note {
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.bb-footer {
+  padding: 0.6rem 1rem;
+  border-top: 2px solid var(--text-primary);
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+}
+
+.bb-footer a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.bb-sep {
+  color: var(--text-muted);
+}
+
+
+/* ═══════════════════════════════════════════════
+   NETWORK STATUS
+   ═══════════════════════════════════════════════ */
+
+.status-overview {
+  padding: var(--space-xl) 0;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.status-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-dot--operational {
+  background: var(--green);
+  box-shadow: 0 0 8px rgba(22, 163, 74, 0.4);
+}
+
+.status-dot--degraded {
+  background: #f59e0b;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+.status-dot--outage {
+  background: var(--red);
+  box-shadow: 0 0 8px rgba(237, 37, 78, 0.4);
+}
+
+.status-text {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.status-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.status-badge-text {
+  font-size: 1rem !important;
+}
+
+.incidents-empty {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  color: var(--green);
+}
+
+.incidents-empty svg {
+  margin: 0 auto var(--space-sm);
+}
+
+.incidents-empty p {
+  color: var(--text-secondary);
+  font-size: var(--text-lg);
+}
+
+@media (max-width: 48rem) {
+  .status-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════
+   SPEED TEST
+   ═══════════════════════════════════════════════ */
+
+.speedtest-section {
+  padding: var(--space-xl) 0 var(--space-3xl);
+}
+
+.speedtest-cta {
+  margin-bottom: var(--space-xl);
+}
+
+.speedtest-embed {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.speedtest-embed iframe {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+}
+
+.speedtest-embed-fallback {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: var(--space-sm);
+}

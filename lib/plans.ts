@@ -1,3 +1,10 @@
+export interface Fee {
+  name: string;
+  amount: number;
+  frequency: 'one-time' | 'monthly';
+  note?: string;
+}
+
 export interface Plan {
   id: string;
   name: string;
@@ -9,7 +16,52 @@ export interface Plan {
   badge?: string;
   ctaText?: string;
   ctaHref?: string;
+  /* FCC broadband label fields */
+  fccId: string;
+  typicalDownload: number;
+  typicalUpload: number;
+  typicalLatency: number;
+  dataAllowance: string;
+  fees: Fee[];
+  contractRequired: boolean;
+  planType: 'residential' | 'business';
 }
+
+export const COMPANY_INFO = {
+  name: 'SecureNet Fiber',
+  legalName: 'SecureNet Fiber LLC',
+  phones: {
+    wv: '(304) 744-4034',
+    va: '(434) 354-0101',
+  },
+  email: 'info@securenetfiber.com',
+  supportHours: {
+    office: 'Monday \u2013 Friday, 9 AM \u2013 5 PM',
+    support: 'Monday \u2013 Friday, 8 AM \u2013 8 PM | Saturday \u2013 Sunday, 12 PM \u2013 8 PM',
+  },
+  policyUrls: {
+    privacy: '/legal/privacy',
+    terms: '/legal/terms',
+    acceptableUse: '/legal/acceptable-use',
+  },
+  socialLinks: {
+    facebook: 'https://facebook.com/securenetfiber',
+    instagram: 'https://instagram.com/securenetfiber',
+    youtube: 'https://youtube.com/@securenetfiber',
+  },
+  locations: [
+    { name: 'Kanawha Valley', state: 'WV', city: 'South Charleston' },
+    { name: 'Danville', state: 'VA', city: 'Danville' },
+  ],
+  website: 'https://securenetfiber.com',
+  signupUrl: 'https://securenetfiber.com/service-request/',
+  billPayUrl: 'https://billing.securenetfiber.com',
+  speedTestUrl: 'https://securenet.speedtest.net',
+} as const;
+
+const standardFees: Fee[] = [
+  { name: 'Installation', amount: 0, frequency: 'one-time', note: 'Free during launch' },
+];
 
 export const residentialPlans: Plan[] = [
   {
@@ -29,6 +81,14 @@ export const residentialPlans: Plan[] = [
     featured: false,
     ctaText: 'Get Started',
     ctaHref: 'https://securenetfiber.com/service-request/',
+    fccId: 'SNF-RES-500-2026',
+    typicalDownload: 470,
+    typicalUpload: 470,
+    typicalLatency: 3,
+    dataAllowance: 'Unlimited',
+    fees: standardFees,
+    contractRequired: false,
+    planType: 'residential',
   },
   {
     id: 'res-1g',
@@ -48,6 +108,14 @@ export const residentialPlans: Plan[] = [
     badge: 'Most Popular',
     ctaText: 'Get Started',
     ctaHref: 'https://securenetfiber.com/service-request/',
+    fccId: 'SNF-RES-1G-2026',
+    typicalDownload: 940,
+    typicalUpload: 940,
+    typicalLatency: 3,
+    dataAllowance: 'Unlimited',
+    fees: standardFees,
+    contractRequired: false,
+    planType: 'residential',
   },
   {
     id: 'res-5g',
@@ -66,6 +134,14 @@ export const residentialPlans: Plan[] = [
     featured: false,
     ctaText: 'Get Started',
     ctaHref: 'https://securenetfiber.com/service-request/',
+    fccId: 'SNF-RES-5G-2026',
+    typicalDownload: 4700,
+    typicalUpload: 4700,
+    typicalLatency: 3,
+    dataAllowance: 'Unlimited',
+    fees: standardFees,
+    contractRequired: false,
+    planType: 'residential',
   },
 ];
 
@@ -85,6 +161,14 @@ export const businessPlans: Plan[] = [
     featured: false,
     ctaText: 'Get Started',
     ctaHref: 'https://securenetfiber.com/service-request/',
+    fccId: 'SNF-BIZ-500-2026',
+    typicalDownload: 470,
+    typicalUpload: 470,
+    typicalLatency: 3,
+    dataAllowance: 'Unlimited',
+    fees: standardFees,
+    contractRequired: false,
+    planType: 'business',
   },
   {
     id: 'biz-grow',
@@ -102,6 +186,14 @@ export const businessPlans: Plan[] = [
     badge: 'Most Popular',
     ctaText: 'Get Started',
     ctaHref: 'https://securenetfiber.com/service-request/',
+    fccId: 'SNF-BIZ-1G-2026',
+    typicalDownload: 940,
+    typicalUpload: 940,
+    typicalLatency: 3,
+    dataAllowance: 'Unlimited',
+    fees: standardFees,
+    contractRequired: false,
+    planType: 'business',
   },
   {
     id: 'biz-pro',
@@ -118,6 +210,14 @@ export const businessPlans: Plan[] = [
     featured: false,
     ctaText: 'Get Started',
     ctaHref: 'https://securenetfiber.com/service-request/',
+    fccId: 'SNF-BIZ-2G-2026',
+    typicalDownload: 1880,
+    typicalUpload: 1880,
+    typicalLatency: 3,
+    dataAllowance: 'Unlimited',
+    fees: standardFees,
+    contractRequired: false,
+    planType: 'business',
   },
 ];
 
@@ -137,6 +237,14 @@ export const homePreviewPlans: Plan[] = [
     featured: false,
     ctaText: 'Get Started',
     ctaHref: 'https://securenetfiber.com/service-request/',
+    fccId: 'SNF-RES-500-2026',
+    typicalDownload: 470,
+    typicalUpload: 470,
+    typicalLatency: 3,
+    dataAllowance: 'Unlimited',
+    fees: standardFees,
+    contractRequired: false,
+    planType: 'residential',
   },
   {
     id: 'home-1g',
@@ -154,6 +262,14 @@ export const homePreviewPlans: Plan[] = [
     badge: 'Most Popular',
     ctaText: 'Get Started',
     ctaHref: 'https://securenetfiber.com/service-request/',
+    fccId: 'SNF-RES-1G-2026',
+    typicalDownload: 940,
+    typicalUpload: 940,
+    typicalLatency: 3,
+    dataAllowance: 'Unlimited',
+    fees: standardFees,
+    contractRequired: false,
+    planType: 'residential',
   },
   {
     id: 'home-5g',
@@ -170,5 +286,13 @@ export const homePreviewPlans: Plan[] = [
     featured: false,
     ctaText: 'Get Started',
     ctaHref: 'https://securenetfiber.com/service-request/',
+    fccId: 'SNF-RES-5G-2026',
+    typicalDownload: 4700,
+    typicalUpload: 4700,
+    typicalLatency: 3,
+    dataAllowance: 'Unlimited',
+    fees: standardFees,
+    contractRequired: false,
+    planType: 'residential',
   },
 ];

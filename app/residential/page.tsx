@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-import PlanCard from '@/components/PlanCard';
+import PlanCardWithLabel from '@/components/PlanCardWithLabel';
 import AvailabilityCheck from '@/components/AvailabilityCheck';
+import { PlanSchema, BreadcrumbSchema } from '@/components/SchemaOrg';
 import { residentialPlans } from '@/lib/plans';
 
 export const metadata: Metadata = {
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
 export default function ResidentialPage() {
   return (
     <>
+      <PlanSchema plans={residentialPlans} />
+      <BreadcrumbSchema items={[{ name: 'Home', href: '/' }, { name: 'Residential' }]} />
+
       {/* Page Hero */}
       <section className="page-hero">
         <div className="section-container">
@@ -33,7 +37,7 @@ export default function ResidentialPage() {
 
           <div className="plan-grid">
             {residentialPlans.map((plan) => (
-              <PlanCard key={plan.id} plan={plan} />
+              <PlanCardWithLabel key={plan.id} plan={plan} />
             ))}
           </div>
         </div>

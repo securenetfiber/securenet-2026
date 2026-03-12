@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { OrganizationSchema, LocalBusinessSchema } from '@/components/SchemaOrg';
 
 export const metadata: Metadata = {
   title: {
@@ -30,6 +31,8 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <link rel="stylesheet" href="/css/style.css" />
+        <OrganizationSchema />
+        <LocalBusinessSchema />
       </head>
       <body>
         <Header />
