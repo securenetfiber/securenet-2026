@@ -56,45 +56,43 @@ export default function StatusPage() {
         </div>
       </section>
 
-      {/* OVERALL STATUS */}
+      {/* OVERALL STATUS BANNER */}
       <section className="status-overview">
         <div className="section-container">
-          <div className="status-indicator">
+          <div className={`status-banner status-banner--${STATUS.overall}`}>
             <span className={`status-dot ${dotClass[STATUS.overall]}`} />
-            <span className="status-text">{statusLabel[STATUS.overall]}</span>
+            <span className="status-banner-text">{statusLabel[STATUS.overall]}</span>
           </div>
         </div>
       </section>
 
       {/* MARKET CARDS */}
-      <section className="why-fiber">
+      <section className="status-markets">
         <div className="section-container">
           <h2 className="section-heading">Service areas.</h2>
           <p className="section-sub" style={{ marginBottom: 'var(--space-xl)' }}>
-            Per-market performance metrics updated in real time.
+            Per-market performance metrics.
           </p>
 
           <div className="benefit-grid">
             {STATUS.markets.map((m) => (
               <div className="benefit-card" key={m.name}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: 'var(--space-sm)' }}>
+                <div className="market-header">
                   <span className={`status-dot ${dotClass[m.status]}`} />
-                  <h3 style={{ margin: 0 }}>{m.name}</h3>
+                  <h3>{m.name}</h3>
                 </div>
-                <div className="status-metrics">
-                  <div className="stat">
-                    <span className="stat-number">{m.uptime}%</span>
-                    <span className="stat-label">Uptime (30 day)</span>
+                <div className="market-metrics">
+                  <div className="market-metric">
+                    <span className="market-metric-value">{m.uptime}%</span>
+                    <span className="market-metric-label">Uptime (30d)</span>
                   </div>
-                  <div className="stat">
-                    <span className="stat-number">{m.latency} ms</span>
-                    <span className="stat-label">Avg Latency</span>
+                  <div className="market-metric">
+                    <span className="market-metric-value">{m.latency} ms</span>
+                    <span className="market-metric-label">Avg Latency</span>
                   </div>
-                  <div className="stat">
-                    <span className="stat-number status-badge-text">
-                      <span className={`market-status market-status--live`}>Operational</span>
-                    </span>
-                    <span className="stat-label">Status</span>
+                  <div className="market-metric">
+                    <span className={`market-status market-status--live`}>Operational</span>
+                    <span className="market-metric-label">Status</span>
                   </div>
                 </div>
               </div>
@@ -104,7 +102,7 @@ export default function StatusPage() {
       </section>
 
       {/* INCIDENTS */}
-      <section className="included">
+      <section className="status-incidents">
         <div className="section-container">
           <h2 className="section-heading">Active incidents.</h2>
           {STATUS.incidents.length === 0 ? (

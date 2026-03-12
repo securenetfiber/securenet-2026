@@ -1678,19 +1678,34 @@ ul, ol {
    ═══════════════════════════════════════════════ */
 
 .status-overview {
-  padding: var(--space-xl) 0;
+  padding: var(--space-lg) 0;
 }
 
-.status-indicator {
+.status-banner {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 1rem;
   padding: var(--space-md) var(--space-lg);
-  background: var(--bg-card);
-  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  border: 2px solid var(--green);
+  background: rgba(22, 163, 74, 0.06);
+}
+
+.status-banner--degraded {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.06);
+}
+
+.status-banner--outage {
+  border-color: var(--red);
+  background: rgba(237, 37, 78, 0.06);
+}
+
+.status-banner-text {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--text-primary);
 }
 
 .status-dot {
@@ -1715,21 +1730,56 @@ ul, ol {
   box-shadow: 0 0 8px rgba(237, 37, 78, 0.4);
 }
 
-.status-text {
-  font-size: var(--text-lg);
-  font-weight: 700;
-  color: var(--text-primary);
+.status-markets {
+  padding: var(--space-xl) 0 var(--space-3xl);
 }
 
-.status-metrics {
+.market-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: var(--space-md);
+}
+
+.market-header h3 {
+  margin: 0;
+}
+
+.market-metrics {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-sm);
-  margin-top: var(--space-sm);
 }
 
-.status-badge-text {
-  font-size: 1rem !important;
+.market-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: var(--space-sm);
+  background: var(--bg-deep);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.market-metric-value {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+}
+
+.market-metric-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.status-incidents {
+  padding: var(--space-xl) 0 var(--space-3xl);
+  background: var(--bg-surface);
 }
 
 .incidents-empty {
@@ -1748,7 +1798,7 @@ ul, ol {
 }
 
 @media (max-width: 48rem) {
-  .status-metrics {
+  .market-metrics {
     grid-template-columns: 1fr;
   }
 }
