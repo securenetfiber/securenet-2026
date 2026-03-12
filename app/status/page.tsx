@@ -81,7 +81,7 @@ export default function StatusPage() {
                   <span className={`status-dot ${dotClass[m.status]}`} />
                   <h3>{m.name}</h3>
                 </div>
-                <div className="market-metrics">
+                <div className="market-metrics market-metrics--two">
                   <div className="market-metric">
                     <span className="market-metric-value">{m.uptime}%</span>
                     <span className="market-metric-label">Uptime (30d)</span>
@@ -89,10 +89,6 @@ export default function StatusPage() {
                   <div className="market-metric">
                     <span className="market-metric-value">{m.latency} ms</span>
                     <span className="market-metric-label">Avg Latency</span>
-                  </div>
-                  <div className="market-metric">
-                    <span className={`market-status market-status--live`}>Operational</span>
-                    <span className="market-metric-label">Status</span>
                   </div>
                 </div>
               </div>

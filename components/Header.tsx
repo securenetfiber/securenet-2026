@@ -32,7 +32,6 @@ export default function Header() {
           <li><Link href="/residential/">Residential</Link></li>
           <li><Link href="/business/">Business</Link></li>
           <li><Link href="/coverage/">Coverage</Link></li>
-          <li><Link href="/about">About</Link></li>
           <li><Link href="/contact">Contact</Link></li>
         </ul>
         <div className={`nav-actions${menuOpen ? ' nav-actions--open' : ''}`}>

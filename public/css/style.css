@@ -1751,6 +1751,10 @@ ul, ol {
   gap: var(--space-sm);
 }
 
+.market-metrics--two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .market-metric {
   display: flex;
   flex-direction: column;
