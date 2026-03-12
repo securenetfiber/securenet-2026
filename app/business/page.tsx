@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import PlanCard from '@/components/PlanCard';
+import QuoteForm from '@/components/QuoteForm';
 import { businessPlans } from '@/lib/plans';
 
 export const metadata: Metadata = {
@@ -194,31 +195,7 @@ export default function BusinessPage() {
                 business day.
               </p>
             </div>
-            <form className="contact-form" action="#" method="post">
-              <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" autoComplete="name" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="company">Company</label>
-                <input type="text" id="company" name="company" placeholder="Company name" autoComplete="organization" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="you@company.com" autoComplete="email" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" placeholder="(304) 555-0100" autoComplete="tel" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="message">How can we help?</label>
-                <textarea id="message" name="message" placeholder="Tell us about your business, what services you are interested in, and any questions you have." rows={5}></textarea>
-              </div>
-              <button type="submit" className="btn btn-primary btn-lg">
-                Request a Quote
-              </button>
-            </form>
+            <QuoteForm />
           </div>
         </div>
       </section>

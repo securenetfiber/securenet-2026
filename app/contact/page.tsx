@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import ContactForm from '@/components/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -33,17 +34,25 @@ export default function ContactPage() {
               </p>
               <div className="contact-methods">
                 <div className="contact-method">
-                  <strong>Phone</strong>
-                  <a href="tel:+15555550100">(555) 555-0100</a>
+                  <strong>West Virginia</strong>
+                  <a href="tel:+13047444034">(304) 744-4034</a>
+                </div>
+                <div className="contact-method">
+                  <strong>Virginia</strong>
+                  <a href="tel:+14343540101">(434) 354-0101</a>
                 </div>
                 <div className="contact-method">
                   <strong>Email</strong>
-                  <a href="mailto:hello@securenetfiber.com">hello@securenetfiber.com</a>
+                  <a href="mailto:info@securenetfiber.com">info@securenetfiber.com</a>
                 </div>
                 <div className="contact-method">
-                  <strong>Hours</strong>
-                  <span>Monday through Friday, 8am to 8pm</span>
-                  <span>Saturday, 9am to 5pm</span>
+                  <strong>Office</strong>
+                  <span>Monday &ndash; Friday, 9 AM &ndash; 5 PM</span>
+                </div>
+                <div className="contact-method">
+                  <strong>Support</strong>
+                  <span>Monday &ndash; Friday, 8 AM &ndash; 8 PM</span>
+                  <span>Saturday &ndash; Sunday, 12 PM &ndash; 8 PM</span>
                 </div>
                 <div className="contact-method">
                   <strong>Location</strong>
@@ -54,23 +63,7 @@ export default function ContactPage() {
 
             {/* RIGHT: CONTACT FORM */}
             <div className="contact-form-wrapper">
-              <form className="contact-form" action="#" method="post">
-                <div className="form-group">
-                  <label htmlFor="name">Name</label>
-                  <input type="text" id="name" name="name" placeholder="Your name" required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="email">Email</label>
-                  <input type="email" id="email" name="email" placeholder="you@example.com" required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="message">Message</label>
-                  <textarea id="message" name="message" placeholder="How can we help?" rows={5} required></textarea>
-                </div>
-                <button type="submit" className="btn btn-primary btn-full">
-                  Send Message
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>

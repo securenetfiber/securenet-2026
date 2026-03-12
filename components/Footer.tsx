@@ -30,9 +30,9 @@ export default function Footer() {
             </div>
             <div className="footer-col">
               <strong>Legal</strong>
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
-              <a href="#">Acceptable Use</a>
+              <Link href="/legal/privacy">Privacy Policy</Link>
+              <Link href="/legal/terms">Terms of Service</Link>
+              <Link href="/legal/acceptable-use">Acceptable Use</Link>
             </div>
           </div>
         </div>
