@@ -1,11 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,12 +20,23 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => {
+  // Close menu on route change
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
+  const toggleMenu = useCallback(() => {
     setMenuOpen((prev) => !prev);
-  };
+  }, []);
 
   return (
-    <header className={`site-header${scrolled ? ' header--scrolled' : ''}`}>
+    <header className={`site-header${scrolled ? ' header--scrolled' : ''}${menuOpen ? ' menu-open' : ''}`}>
       <nav className="nav-container">
         <Link href="/" className="logo" aria-label="SecureNet Fiber home">
           <img src="/img/SN-Logo-Master.png" alt="SecureNet" height={36} />

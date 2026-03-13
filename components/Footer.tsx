@@ -18,7 +18,7 @@ export default function Footer() {
               <Link href="/business/">Business</Link>
               <Link href="/coverage/">Coverage Areas</Link>
               <Link href="/status">Network Status</Link>
-              <Link href="/speedtest">Speed Test</Link>
+              <Link href="/speedtest">Speed Comparison</Link>
             </div>
             <div className="footer-col">
               <strong>Account</strong>
@@ -29,6 +29,7 @@ export default function Footer() {
               <strong>Company</strong>
               <Link href="/about">About Us</Link>
               <Link href="/contact">Contact</Link>
+              <Link href="/faq">FAQ</Link>
             </div>
             <div className="footer-col">
               <strong>Legal</strong>
