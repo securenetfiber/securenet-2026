@@ -39,14 +39,14 @@ function Gauge({ value, max, label, displayValue, unit }: GaugeProps) {
   const pct = max > 0 ? value / max : 0;
   return (
     <div className="sc-gauge-wrap">
-      <svg width="130" height="76" viewBox="0 0 130 76">
-        <path d="M8,72 A57,57 0 0,1 122,72" fill="none" stroke="var(--bg-elevated)" strokeWidth="9" strokeLinecap="round" />
-        <path d="M8,72 A57,57 0 0,1 122,72" fill="none" stroke="var(--navy)" strokeWidth="9" strokeLinecap="round"
+      <svg width="180" height="105" viewBox="0 0 130 76">
+        <path d="M8,72 A57,57 0 0,1 122,72" fill="none" stroke="var(--bg-elevated)" strokeWidth="8" strokeLinecap="round" />
+        <path d="M8,72 A57,57 0 0,1 122,72" fill="none" stroke="var(--navy)" strokeWidth="8" strokeLinecap="round"
           strokeDasharray={arcDash(pct)}
           style={{ transition: 'stroke-dasharray 0.9s cubic-bezier(.4,0,.2,1)' }}
         />
-        <text x="65" y="60" textAnchor="middle" fontSize="20" fontWeight="700" fill="var(--navy)" fontFamily="var(--font)">{displayValue}</text>
-        <text x="65" y="74" textAnchor="middle" fontSize="10" fill="var(--text-muted)" fontFamily="var(--font)">{unit}</text>
+        <text x="65" y="58" textAnchor="middle" fontSize="22" fontWeight="800" fill="var(--navy)" fontFamily="var(--font)">{displayValue}</text>
+        <text x="65" y="73" textAnchor="middle" fontSize="10" fill="var(--text-muted)" fontFamily="var(--font)">{unit}</text>
       </svg>
       <div className="sc-gauge-label">{label}</div>
     </div>

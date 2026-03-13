@@ -625,7 +625,7 @@ ul, ol {
    ═══════════════════════════════════════════════ */
 
 .availability {
-  padding: var(--space-3xl) 0;
+  padding: var(--space-2xl) 0;
   background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
   color: #fff;
   position: relative;
@@ -1858,7 +1858,7 @@ ul, ol {
 }
 
 .sc-widget {
-  max-width: 42rem;
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 
@@ -1867,14 +1867,14 @@ ul, ol {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: var(--space-lg);
+  gap: 0.65rem;
+  margin-bottom: var(--space-xl);
 }
 
 .sc-tier-btn {
-  padding: 0.5rem 1.25rem;
+  padding: 0.7rem 1.5rem;
   border-radius: 100px;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 600;
   font-family: var(--font);
   border: 1.5px solid var(--border-light);
@@ -1899,9 +1899,9 @@ ul, ol {
 .sc-gauges {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: var(--space-xl);
   flex-wrap: wrap;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .sc-gauge-wrap {
@@ -1909,11 +1909,11 @@ ul, ol {
 }
 
 .sc-gauge-label {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -1921,18 +1921,18 @@ ul, ol {
 .sc-badge-row {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.65rem;
   flex-wrap: wrap;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-xl);
 }
 
 .sc-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.3rem 0.75rem;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
   border-radius: 100px;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 500;
 }
 
@@ -1947,96 +1947,97 @@ ul, ol {
 }
 
 .sc-badge-dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: currentColor;
   opacity: 0.7;
 }
 
 .sc-section-label {
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--space-sm);
 }
 
 /* Provider cards */
 .sc-compare-grid {
   display: grid;
-  gap: 0.75rem;
+  gap: var(--space-sm);
 }
 
 .sc-provider {
   background: var(--bg-card);
   border: 1.5px solid var(--border-light);
-  border-radius: var(--radius-md);
-  padding: 1rem 1.25rem;
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
   transition: border-color 0.2s;
 }
 
 .sc-provider--featured {
   border-color: var(--navy);
   background: linear-gradient(to bottom, rgba(46, 54, 143, 0.03), var(--bg-card) 40%);
+  box-shadow: 0 4px 24px rgba(46, 54, 143, 0.08);
 }
 
 .sc-provider-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--space-sm);
 }
 
 .sc-provider-name {
-  font-size: 0.95rem;
+  font-size: var(--text-lg);
   font-weight: 700;
   color: var(--text-primary);
 }
 
 .sc-provider-type {
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
-  margin-top: 0.1rem;
+  margin-top: 0.15rem;
 }
 
 .sc-our-badge {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 700;
   background: rgba(46, 54, 143, 0.08);
   color: var(--navy);
-  padding: 0.2rem 0.65rem;
+  padding: 0.3rem 0.85rem;
   border-radius: 100px;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
 }
 
 .sc-metrics {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
+  gap: 0.75rem;
+  margin-bottom: var(--space-sm);
 }
 
 .sc-metric {
   background: var(--bg-deep);
   border-radius: var(--radius-sm);
-  padding: 0.5rem 0.625rem;
+  padding: 0.75rem 1rem;
 }
 
 .sc-metric-label {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.25rem;
 }
 
 .sc-metric-val {
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: var(--text-lg);
+  font-weight: 800;
   color: var(--text-primary);
 }
 
@@ -2047,39 +2048,35 @@ ul, ol {
 .sc-bar-row {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.4rem;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
 }
 
 .sc-bar-label {
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
-  width: 3.5rem;
+  width: 5rem;
   flex-shrink: 0;
   font-weight: 500;
 }
 
 .sc-bar-track {
   flex: 1;
-  height: 5px;
+  height: 7px;
   background: var(--bg-surface);
-  border-radius: 3px;
+  border-radius: 4px;
   overflow: hidden;
 }
 
 .sc-bar-fill {
   height: 100%;
-  border-radius: 3px;
+  border-radius: 4px;
   transition: width 0.9s cubic-bezier(.4, 0, .2, 1);
 }
 
-@media (max-width: 30rem) {
+@media (max-width: 48rem) {
   .sc-gauges {
-    gap: 0.75rem;
-  }
-  .sc-gauges svg {
-    width: 100px;
-    height: 58px;
+    gap: var(--space-md);
   }
   .sc-metrics {
     grid-template-columns: 1fr;
@@ -2096,7 +2093,7 @@ ul, ol {
 }
 
 .faq-categories {
-  max-width: 42rem;
+  max-width: var(--max-width);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -2104,9 +2101,9 @@ ul, ol {
 }
 
 .faq-category-title {
-  font-size: var(--text-xl);
+  font-size: var(--text-2xl);
   font-weight: 800;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   margin-bottom: var(--space-sm);
   color: var(--text-primary);
 }
@@ -2126,13 +2123,13 @@ ul, ol {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-sm);
-  padding: 1.1rem 0;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
   background: none;
   border: none;
   cursor: pointer;
   font-family: var(--font);
-  font-size: var(--text-base);
+  font-size: var(--text-lg);
   font-weight: 600;
   color: var(--text-primary);
   text-align: left;
@@ -2147,6 +2144,8 @@ ul, ol {
   flex-shrink: 0;
   color: var(--text-muted);
   transition: transform 0.25s ease;
+  width: 24px;
+  height: 24px;
 }
 
 .faq-item--open .faq-chevron {
@@ -2162,13 +2161,13 @@ ul, ol {
 
 .faq-item--open .faq-answer {
   max-height: 20rem;
-  padding-bottom: 1.25rem;
+  padding-bottom: var(--space-md);
 }
 
 .faq-answer p {
   color: var(--text-secondary);
   line-height: 1.7;
-  font-size: 1rem;
+  font-size: var(--text-base);
 }
 
 
