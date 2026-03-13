@@ -14,7 +14,7 @@ const generalFaq: FaqItem[] = [
   {
     question: 'What areas does SecureNet Fiber serve?',
     answer:
-      `We currently serve the Kanawha Valley in West Virginia and Danville, Virginia. We're actively expanding \u2014 check the coverage page to see if your address is in our service area.`,
+      `We currently serve the Kanawha Valley in West Virginia and Danville, Virginia. We're actively expanding -- check the coverage page to see if your address is in our service area.`,
   },
   {
     question: 'Is there a contract?',
@@ -24,12 +24,12 @@ const generalFaq: FaqItem[] = [
   {
     question: 'Are there data caps?',
     answer:
-      'No. Every plan includes truly unlimited data — no caps, no throttling, no overage charges.',
+      'No. Every plan includes truly unlimited data -- no caps, no throttling, no overage charges.',
   },
   {
     question: 'What does "symmetrical" speed mean?',
     answer:
-      'Symmetrical means your upload speed matches your download speed. If you have a 1 Gig plan, you get 1 Gbps down and 1 Gbps up. Cable providers typically offer upload speeds 10–20x slower than download.',
+      'Symmetrical means your upload speed matches your download speed. If you have a 1 Gig plan, you get 1 Gbps down and 1 Gbps up. Cable providers typically offer upload speeds 10-20x slower than download.',
   },
 ];
 
@@ -37,17 +37,17 @@ const installFaq: FaqItem[] = [
   {
     question: 'How long does installation take?',
     answer:
-      'Most installations are completed in 2–4 hours. A technician will run fiber to your home, install the ONT (optical network terminal), and set up your router.',
+      'Installation is done in two parts. First, a fiber drop is run to the outside of your home, typically a day or so before the install appointment. Then a technician installs the NID and ONT and sets up your router, which takes about 60-90 minutes.',
   },
   {
     question: 'Is there an installation fee?',
     answer:
-      'Installation is free during our launch period. Standard installation may carry a fee in the future — check our current pricing for details.',
+      'Installation is free. If you cancel service within the first 90 days, a $199 drop recovery fee applies.',
   },
   {
     question: 'Do I need to provide my own router?',
     answer:
-      `No \u2014 a Wi-Fi router is included with every plan at no extra charge. You're also welcome to use your own equipment if you prefer.`,
+      `No -- a Wi-Fi router is included with every plan at no extra charge. You're also welcome to use your own equipment if you prefer.`,
   },
 ];
 
@@ -55,7 +55,7 @@ const billingFaq: FaqItem[] = [
   {
     question: 'How do I pay my bill?',
     answer:
-      'You can pay online at billing.securenetfiber.com, or call our office. We accept credit/debit cards and ACH bank transfers.',
+      'You can pay online at billing.securenetfiber.com, or call our office. We accept checks, debit cards, and bank bill pay.',
   },
   {
     question: 'When does billing start?',
@@ -73,10 +73,10 @@ const supportFaq: FaqItem[] = [
   {
     question: 'What are your support hours?',
     answer:
-      'Support is available Monday–Friday 8 AM – 8 PM and Saturday–Sunday 12 PM – 8 PM. Our office is open Monday–Friday 9 AM – 5 PM.',
+      'Support is available Monday-Friday 8 AM - 8 PM and Saturday-Sunday 12 PM - 8 PM. Our office is open Monday-Friday 9 AM - 5 PM.',
   },
   {
-    question: 'My internet is slow — what should I do?',
+    question: 'My internet is slow -- what should I do?',
     answer:
       `First, try a wired speed test at securenet.speedtest.net to rule out Wi-Fi issues. Restart your router and check for firmware updates. If speeds are still below expected, contact our support team and we'll troubleshoot or schedule a service visit.`,
   },

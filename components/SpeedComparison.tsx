@@ -157,7 +157,7 @@ export default function SpeedComparison() {
 
   const tier = tiers[activeTier];
   const securenet: ProviderData = {
-    name: 'SecureNet Fiber', type: 'Fiber — symmetrical', featured: true,
+    name: 'SecureNet Fiber', type: 'Fiber -- symmetrical', featured: true,
     dl: tier.dl, ul: tier.ul, ping: 1,
   };
   const allProviders = [securenet, ...rivals];

@@ -45,7 +45,7 @@ export default function SpeedComparisonPage() {
               <h3>Symmetrical speeds</h3>
               <p>
                 Cable upload speeds are often 10&ndash;20x slower than download.
-                With fiber, upload matches download — critical for video calls,
+                With fiber, upload matches download -- critical for video calls,
                 cloud backups, and working from home.
               </p>
             </div>
@@ -69,7 +69,7 @@ export default function SpeedComparisonPage() {
               <h3>No data caps</h3>
               <p>
                 Many cable plans throttle or cap your data. Every SecureNet plan
-                is truly unlimited — stream, game, and download without worrying
+                is truly unlimited -- stream, game, and download without worrying
                 about hitting a limit.
               </p>
             </div>
@@ -81,7 +81,7 @@ export default function SpeedComparisonPage() {
               <h3>No peak-hour slowdowns</h3>
               <p>
                 Cable networks share bandwidth between neighbors, so speeds drop
-                at peak times. Fiber is a dedicated line to your home — consistent
+                at peak times. Fiber is a dedicated line to your home -- consistent
                 speeds 24/7.
               </p>
             </div>

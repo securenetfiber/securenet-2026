@@ -5,9 +5,9 @@
  * To hide it, set `enabled: false`.
  *
  * Variants:
- *   'info'     — navy background (general announcements)
- *   'warning'  — amber background (degraded service)
- *   'critical' — red background (outage)
+ *   'info'     -- navy background (general announcements)
+ *   'warning'  -- amber background (degraded service)
+ *   'critical' -- red background (outage)
  */
 export interface SiteAlert {
   enabled: boolean;
@@ -20,7 +20,7 @@ export interface SiteAlert {
 export const siteAlert: SiteAlert = {
   enabled: false,
   variant: 'info',
-  message: 'We are performing scheduled maintenance tonight from 12–4 AM.',
+  message: 'We are performing scheduled maintenance tonight from 12-4 AM.',
   linkText: 'View status',
   linkHref: '/status',
 };

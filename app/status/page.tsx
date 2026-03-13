@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     'Real-time network status for SecureNet Fiber. Check uptime, latency, and active incidents across all service areas.',
 };
 
-/* Placeholder data — easy to swap for a live API later */
+/* Placeholder data -- easy to swap for a live API later */
 const STATUS = {
   overall: 'operational' as const,
   updatedAt: new Date().toISOString(),
