@@ -2231,3 +2231,191 @@ ul, ol {
   opacity: 1;
 }
 
+
+/* ═══════════════════════════════════════════════
+   NETWORK PERFORMANCE (coverage page)
+   ═══════════════════════════════════════════════ */
+
+.net-perf {
+  padding: var(--space-2xl) 0;
+  background: var(--bg-surface);
+}
+
+.net-perf-heading {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.net-perf-sub {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+/* Stats row */
+.net-perf-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: var(--space-xl);
+}
+
+.net-perf-stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.net-perf-stat-value {
+  font-size: var(--text-3xl);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--navy);
+  line-height: 1.1;
+}
+
+.net-perf-stat-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Per-market performance cards */
+.net-perf-markets {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: var(--space-xl);
+}
+
+.net-perf-market {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.net-perf-market-region {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-sm);
+}
+
+.net-perf-market-row {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.net-perf-market-metric-value {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.net-perf-market-metric-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.net-perf-bar-track {
+  height: 6px;
+  background: var(--bg-surface);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.net-perf-bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--navy), var(--accent));
+  width: 0%;
+  transition: width 1.2s ease-out;
+}
+
+/* Feature badges */
+.net-perf-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.net-perf-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.net-perf-badge-icon {
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--accent);
+}
+
+/* ── Responsive: network performance ── */
+
+@media (max-width: 64rem) {
+  .net-perf-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 48rem) {
+  .net-perf-markets {
+    grid-template-columns: 1fr;
+  }
+
+  .net-perf-badges {
+    gap: 0.5rem;
+  }
+
+  .net-perf-badge {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.85rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .net-perf-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .net-perf-stat {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .net-perf-stat-value {
+    font-size: var(--text-2xl);
+  }
+
+  .net-perf-market-row {
+    gap: 1.5rem;
+  }
+}
+

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import AvailabilityCheck from '@/components/AvailabilityCheck';
+import NetworkPerformance from '@/components/NetworkPerformance';
 
 export const metadata: Metadata = {
   title: 'Coverage Areas',
@@ -91,6 +92,9 @@ export default function CoveragePage() {
           </div>
         </div>
       </section>
+
+      {/* NETWORK PERFORMANCE */}
+      <NetworkPerformance />
 
       {/* AVAILABILITY CHECK */}
       <AvailabilityCheck />
