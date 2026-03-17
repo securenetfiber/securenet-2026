@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import AvailabilityCheck from '@/components/AvailabilityCheck';
 import NetworkPerformance from '@/components/NetworkPerformance';
 
@@ -46,10 +47,10 @@ export default function CoveragePage() {
               <div className="market-cities">
                 <h3>Service Areas</h3>
                 <ul>
-                  <li>South Charleston <span className="market-status market-status--live">Available Now</span></li>
-                  <li>Nitro <span className="market-status market-status--live">Available Now</span></li>
-                  <li>Dunbar <span className="market-status market-status--live">Available Now</span></li>
-                  <li>St. Albans <span className="market-status market-status--expanding">Expanding</span></li>
+                  <li><Link href="/coverage/south-charleston">South Charleston</Link> <span className="market-status market-status--live">Available Now</span></li>
+                  <li><Link href="/coverage/nitro">Nitro</Link> <span className="market-status market-status--live">Available Now</span></li>
+                  <li><Link href="/coverage/dunbar">Dunbar</Link> <span className="market-status market-status--live">Available Now</span></li>
+                  <li><Link href="/coverage/st-albans">St. Albans</Link> <span className="market-status market-status--expanding">Expanding</span></li>
                 </ul>
               </div>
               <a href="https://securenetfiber.com/service-request/" className="btn btn-primary" style={{ marginTop: '1.5rem' }}>
@@ -82,7 +83,7 @@ export default function CoveragePage() {
               <div className="market-cities">
                 <h3>Service Areas</h3>
                 <ul>
-                  <li>Danville <span className="market-status market-status--live">Available Now</span></li>
+                  <li><Link href="/coverage/danville">Danville</Link> <span className="market-status market-status--live">Available Now</span></li>
                 </ul>
               </div>
               <a href="https://securenetfiber.com/service-request/" className="btn btn-primary" style={{ marginTop: '1.5rem' }}>
