@@ -17,7 +17,8 @@ This is NOT a web app with auth/dashboard. It is a public-facing site with plans
 5. **Just fix things** -- don't ask for permission on obvious fixes. Josh prefers action over discussion.
 6. **Git email is `yojoshio@hotmail.com`** -- Vercel Hobby requires commits from the linked GitHub account email.
 7. **Always build before pushing** -- run `npx next build` and confirm zero errors.
-8. **No em dashes or en dashes** -- use `--` or `-` only. Josh has been very clear about this.
+8. **No dashes as punctuation** -- no em dashes, en dashes, or `--` as separators. Rephrase sentences to use periods, commas, or restructure instead. Josh has been very clear about this.
+9. **No emoji in UI** -- no emoji in badges, pills, labels, or any visible component. Text only.
 
 ---
 
@@ -41,16 +42,23 @@ securenet-2026/
 │   ├── page.tsx                # Homepage -- hero, plan preview, availability check, about blurb
 │   ├── residential/page.tsx    # Residential plans -- PlanCardWithLabel, why fiber, what's included
 │   ├── business/page.tsx       # Business plans + phone + services + quote form
-│   ├── coverage/page.tsx       # Market areas (Kanawha Valley, Danville) + availability check
+│   ├── coverage/page.tsx       # Market areas (Kanawha Valley, Danville) + links to city pages + availability check
+│   ├── coverage/south-charleston/  # City landing page -- HQ city, all 3 plans, why fiber
+│   ├── coverage/nitro/             # City landing page -- all 3 plans, done with cable messaging
+│   ├── coverage/dunbar/            # City landing page -- all 3 plans, community-focused
+│   ├── coverage/danville/          # City landing page -- VA market, 2 plans (500M + 1G), VA phone
+│   ├── coverage/st-albans/         # Pre-registration page -- timeline, pre-reg form, expanding market
 │   ├── about/page.tsx          # Story, values, stats, CTA
 │   ├── contact/page.tsx        # Contact info (real WV/VA phones) + ContactForm component
 │   ├── status/page.tsx         # Network status -- banner, per-market metrics, incidents
 │   ├── speedtest/page.tsx      # Speed comparison -- interactive widget comparing fiber vs cable/DSL
 │   ├── faq/page.tsx            # FAQ -- accordion by category (general, install, billing, support)
 │   ├── legal/
-│   │   ├── privacy/page.tsx    # Placeholder
-│   │   ├── terms/page.tsx      # Placeholder
-│   │   └── acceptable-use/page.tsx  # Placeholder
+│   │   ├── privacy/page.tsx         # Full privacy policy (14 sections, effective Jan 2025)
+│   │   ├── terms/page.tsx           # Full terms of service (16 sections, effective Jul 2025)
+│   │   ├── terms-of-use/page.tsx    # Website terms of use (13 sections, DMCA agent info)
+│   │   ├── acceptable-use/page.tsx  # Full AUP (7 sections with subsections)
+│   │   └── open-internet/page.tsx   # Open Internet Policy (no blocking/throttling/paid prioritization)
 │   └── api/
 │       └── broadband-labels/route.ts  # Machine-readable FCC label JSON (GET, 24hr cache)
 ├── components/
@@ -65,7 +73,9 @@ securenet-2026/
 │   ├── AvailabilityCheck.tsx   # Client -- address form with success state
 │   ├── ContactForm.tsx         # Client -- contact form with success state
 │   ├── QuoteForm.tsx           # Client -- business quote form with success state
-│   └── SchemaOrg.tsx           # Server -- OrganizationSchema, LocalBusinessSchema, PlanSchema, BreadcrumbSchema
+│   ├── SchemaOrg.tsx           # Server -- OrganizationSchema, LocalBusinessSchema, PlanSchema, BreadcrumbSchema
+│   ├── NetworkPerformance.tsx  # Client -- network stats, per-market uptime/latency, animated bars, feature badges
+│   └── PreRegForm.tsx          # Client -- pre-registration form (name, email, address, phone) with success state
 ├── lib/
 │   ├── plans.ts                # Central data -- Plan + Fee interfaces, COMPANY_INFO, all plan arrays
 │   └── alerts.ts               # Alert bar config -- enabled flag, variant (info/warning/critical), message, link
@@ -114,8 +124,13 @@ CSS class prefixes for newer components:
 - `sc-` -- speed comparison widget
 - `faq-` -- FAQ accordion
 - `alert-bar` -- alert/announcement bar
+- `city-` -- city landing pages (hero, stats, plans, included, why, CTA)
+- `prereg-` -- pre-registration page (St. Albans)
+- `net-perf-` -- network performance section
+- `legal-` -- legal page content layout
+- `market-` -- coverage page market area cards
 
-Sections: reset, layout, buttons, header/nav, hero, plans, benefits, availability, about, contact, footer, mobile menu, responsive breakpoints (64rem, 48rem, 30rem), page hero, coverage, about page, contact page, included grid, dot patterns, form success, broadband labels, network status, speed comparison, FAQ, alert bar.
+Sections: reset, layout, buttons, header/nav, hero, plans, benefits, availability, about, contact, footer, mobile menu, responsive breakpoints (64rem, 48rem, 30rem), page hero, coverage, about page, contact page, included grid, dot patterns, form success, broadband labels, network status, speed comparison, FAQ, alert bar, legal pages, city landing pages, pre-registration, network performance.
 
 ### `components/SchemaOrg.tsx` -- JSON-LD structured data
 
@@ -142,7 +157,7 @@ Four exports: `OrganizationSchema`, `LocalBusinessSchema`, `PlanSchema`, `Breadc
 
 "About" was intentionally removed from the header -- it lives in the footer and on the homepage only.
 
-**Footer columns**: Service (Residential, Business, Coverage Areas, Network Status, Speed Comparison) | Account (Bill Pay, Sign Up) | Company (About Us, Contact, FAQ) | Legal (Privacy Policy, Terms of Service, Acceptable Use)
+**Footer columns**: Service (Residential, Business, Coverage Areas, Network Status, Speed Comparison) | Account (Bill Pay, Sign Up) | Company (About Us, Contact, FAQ) | Legal (Privacy, Terms, Acceptable Use, Open Internet)
 
 ---
 
@@ -153,6 +168,7 @@ All forms are client-side only with success states (no backend yet). They use `u
 - `ContactForm.tsx` -- name, email, message
 - `QuoteForm.tsx` -- name, company, email, phone, message
 - `AvailabilityCheck.tsx` -- single address field, shows entered address on success
+- `PreRegForm.tsx` -- name, email, address (required), phone (optional). Used on St. Albans pre-reg page.
 
 ---
 
@@ -160,7 +176,7 @@ All forms are client-side only with success states (no backend yet). They use `u
 
 - Installation is **two parts**: outside fiber drop (done ~1 day before), then NID/ONT install + router setup (60-90 minutes)
 - Installation is **free**
-- **$199 drop recovery fee** if customer cancels within first 90 days
+- **$200 drop recovery fee** if customer cancels within first 90 days (Terms of Service says $200)
 - Payment methods: checks, debit cards, bank bill pay
 
 ---
@@ -168,28 +184,40 @@ All forms are client-side only with success states (no backend yet). They use `u
 ## What's been built (complete)
 
 - [x] Full Next.js migration from static HTML prototype
-- [x] All page routes (16 total including legal placeholders + API)
+- [x] All page routes (23 total including legal, city pages, pre-reg, API)
 - [x] Real contact info on contact page
-- [x] Client-side form success states
+- [x] Client-side form success states (all 4 forms)
 - [x] FCC broadband nutrition labels (collapsible per plan card)
 - [x] Machine-readable `/api/broadband-labels` endpoint
 - [x] JSON-LD structured data (Organization, LocalBusiness, Product, Breadcrumb)
 - [x] Network status page (placeholder data)
-- [x] Speed comparison page (interactive widget -- tier selector, animated gauges, provider cards)
+- [x] Speed comparison page (interactive widget, tier selector, animated gauges, provider cards)
 - [x] FAQ page (accordion, 4 categories, 13 questions)
 - [x] Alert/announcement bar (toggleable via lib/alerts.ts, 3 severity levels, dismissible)
 - [x] Mobile menu (full-screen overlay, body scroll lock, close on navigate)
 - [x] Responsive styles (tested on 13" laptops, tablets, phones)
 - [x] Footer links to all pages including FAQ and speed comparison
-- [x] Legal placeholder pages
+- [x] Legal pages with full content (privacy, terms, terms of use, acceptable use, open internet)
+- [x] City landing pages (South Charleston, Nitro, Dunbar, Danville) with dark navy heroes, plan cards, included checklist, why fiber, CTA
+- [x] St. Albans pre-registration page with build timeline and pre-reg form
+- [x] Network performance section on coverage page (stats, per-market metrics, animated uptime bars)
+- [x] Coverage page links to individual city pages with status badges
 
 ## What's planned (not started)
 
-- [ ] API routes for form submissions (ContactForm, QuoteForm, AvailabilityCheck)
-- [ ] Real status page data (connect to monitoring API)
+- [ ] API routes for form submissions (ContactForm, QuoteForm, AvailabilityCheck, PreRegForm)
+- [ ] Real status page data (connect to LibreNMS monitoring API)
 - [ ] MDX or headless CMS blog
-- [ ] Legal page real content (privacy policy, terms, acceptable use)
 - [ ] Serviceability lookup (check if address is in footprint)
+
+## LibreNMS integration (blocked on access)
+
+Need from engineers:
+- LibreNMS URL (internal network)
+- API token with read access
+- Device-to-market mapping (which devices = Kanawha Valley, which = Danville)
+
+Plan: cron job on internal network queries LibreNMS API, builds JSON, pushes to public endpoint. Next.js API route fetches and caches. Josh wants to handle this himself once he has access info.
 
 ---
 
@@ -220,19 +248,23 @@ npx next build          # Must pass with 0 errors before pushing
 git push                # Triggers Vercel auto-deploy
 ```
 
-Current build: 16 routes, zero errors, ~102KB shared JS.
+Current build: 23 routes, zero errors, ~102KB shared JS.
 
 ---
 
 ## Commit history
 
 ```
+289bcf0 Fix visual issues: dark city heroes, plan card layout, kill dashes, clean footer
+f0c5b66 Add city landing pages, St. Albans pre-reg, legal pages with real content
+5ad2d35 Add network performance section to coverage page
+c04b106 Update CLAUDE.md with Day 2 progress
 39d9e82 Fix FAQ content, kill em dashes, tighten avail heading line-height
-9ad782a Fix sizing consistency -- scale up comparison widget, FAQ, tighten availability
+9ad782a Fix sizing consistency, scale up comparison widget, FAQ, tighten availability
 c04c653 Mobile fixes, speed comparison, FAQ, alert bar
 e78b1b0 Add CLAUDE.md project handoff doc
 ef45ee9 Remove About from header nav, drop redundant status metric from market cards
-ee418f5 Fix status page layout -- dedicated metric styles, prominent status banner
+ee418f5 Fix status page layout, dedicated metric styles, prominent status banner
 2258856 Add FCC broadband labels, network status, schema markup, speed test
 c5a395c Demo-ready: real contact info, form success states, legal pages
 53075ff Initial Next.js migration from static HTML prototype
