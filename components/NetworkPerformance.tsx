@@ -25,12 +25,12 @@ const MARKETS = [
 ];
 
 const BADGES = [
-  { icon: '\u26A1', text: 'Symmetrical upload and download' },
-  { icon: '\uD83D\uDEAB', text: 'No throttling, ever' },
-  { icon: '\uD83D\uDCCD', text: 'Locally owned and operated' },
-  { icon: '\uD83D\uDD12', text: 'No data caps' },
-  { icon: '\uD83D\uDEE0\uFE0F', text: 'Local support team' },
-  { icon: '\uD83C\uDF10', text: 'Pure fiber to the home' },
+  'Symmetrical upload and download',
+  'No throttling, ever',
+  'Locally owned and operated',
+  'No data caps',
+  'Local support team',
+  'Pure fiber to the home',
 ];
 
 export default function NetworkPerformance() {
@@ -69,7 +69,7 @@ export default function NetworkPerformance() {
       <div className="section-container">
         <h2 className="net-perf-heading">Network performance.</h2>
         <p className="net-perf-sub">
-          Real numbers from our fiber network -- not promises, not &quot;up to&quot; speeds.
+          Real numbers from our fiber network. Not promises, not &quot;up to&quot; speeds.
         </p>
 
         {/* Top-level stats */}
@@ -106,10 +106,9 @@ export default function NetworkPerformance() {
 
         {/* Feature badges */}
         <div className="net-perf-badges">
-          {BADGES.map((b) => (
-            <div className="net-perf-badge" key={b.text}>
-              <span className="net-perf-badge-icon">{b.icon}</span>
-              {b.text}
+          {BADGES.map((text) => (
+            <div className="net-perf-badge" key={text}>
+              {text}
             </div>
           ))}
         </div>

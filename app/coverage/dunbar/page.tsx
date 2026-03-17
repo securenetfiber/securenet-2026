@@ -76,7 +76,7 @@ export default function DunbarPage() {
                 <span className="city-plan-amount">$72</span>/mo
               </p>
               <p className="city-plan-desc">
-                Keep the whole household connected -- gaming, streaming, and
+                Keep the whole household connected. Gaming, streaming, and
                 homework all at once.
               </p>
               <a href="https://securenetfiber.com/service-request/" className="btn btn-primary">
@@ -148,7 +148,7 @@ export default function DunbarPage() {
               <h3>Uploads that keep up</h3>
               <p>
                 Working from home? Backing up photos to the cloud? Fiber gives you
-                symmetrical speeds -- your upload matches your download, every time.
+                symmetrical speeds. Your upload matches your download, every time.
               </p>
             </div>
             <div className="city-why-card">
@@ -168,7 +168,7 @@ export default function DunbarPage() {
           <h2 className="section-heading">Ready to make the switch?</h2>
           <p className="section-sub">
             Your neighbors in Dunbar are already on fiber. Sign up online and
-            we&apos;ll handle the rest -- free installation included.
+            we&apos;ll handle the rest. Free installation included.
           </p>
           <div className="city-cta-buttons">
             <a href="https://securenetfiber.com/service-request/" className="btn btn-primary">

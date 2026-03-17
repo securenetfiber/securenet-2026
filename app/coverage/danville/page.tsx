@@ -17,7 +17,7 @@ export default function DanvillePage() {
           <p className="city-hero-label">Danville, Virginia</p>
           <h1 className="section-heading">Fiber has arrived in Danville.</h1>
           <p className="section-sub">
-            SecureNet Fiber is now serving Danville, Virginia -- our first market
+            SecureNet Fiber is now serving Danville, Virginia. Our first market
             outside West Virginia. We&apos;re building out the network and bringing
             fast, affordable fiber-to-the-home internet to more neighborhoods
             every month. Faster speeds are coming soon.
@@ -134,7 +134,7 @@ export default function DanvillePage() {
               <p>
                 Cable internet shares bandwidth with your whole neighborhood. When
                 everyone logs on after work, speeds tank. Fiber gives you a
-                dedicated line -- your speed stays constant.
+                dedicated line. Your speed stays constant.
               </p>
             </div>
             <div className="city-why-card">
@@ -148,16 +148,16 @@ export default function DanvillePage() {
             <div className="city-why-card">
               <h3>A local provider that picks up the phone</h3>
               <p>
-                When you call SecureNet, you talk to a real person nearby -- not a
+                When you call SecureNet, you talk to a real person nearby. Not a
                 call center on the other side of the country. Our Virginia support
-                line is (434) 354-0101.
+                line is <a href="tel:+14343540101">(434) 354-0101</a>.
               </p>
             </div>
             <div className="city-why-card">
               <h3>Growing network, growing speeds</h3>
               <p>
                 We&apos;re actively expanding in Danville. As the network grows,
-                faster speed tiers will become available -- and the fiber already
+                faster speed tiers will become available. The fiber already
                 in your home will support them.
               </p>
             </div>

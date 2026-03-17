@@ -70,7 +70,7 @@ export default function StAlbansPage() {
             <div className="prereg-expect-item">
               <div className="prereg-expect-value">5 Gbps</div>
               <h3>Speeds up to 5 Gbps</h3>
-              <p>Symmetrical upload and download -- fast in both directions.</p>
+              <p>Symmetrical upload and download. Fast in both directions.</p>
             </div>
             <div className="prereg-expect-item">
               <div className="prereg-expect-value">None</div>
@@ -80,7 +80,7 @@ export default function StAlbansPage() {
             <div className="prereg-expect-item">
               <div className="prereg-expect-value">Free</div>
               <h3>Free installation</h3>
-              <p>Professional install at no cost -- fiber drop and indoor setup included.</p>
+              <p>Professional install at no cost. Fiber drop and indoor setup included.</p>
             </div>
             <div className="prereg-expect-item">
               <div className="prereg-expect-value">Included</div>

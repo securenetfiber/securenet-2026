@@ -18,7 +18,7 @@ export default function NitroPage() {
           <h1 className="section-heading">Real fiber. Finally.</h1>
           <p className="section-sub">
             Nitro deserved better than cable and DSL. Now it has it. SecureNet
-            Fiber is live in Nitro with fiber-to-the-home service -- symmetrical
+            Fiber is live in Nitro with fiber-to-the-home service. Symmetrical
             speeds, no data caps, and none of the slowdowns you&apos;re used to
             during peak hours.
           </p>
@@ -141,7 +141,7 @@ export default function NitroPage() {
               <p>
                 Cable splits bandwidth across your neighborhood. When everyone
                 gets home at 6 PM, speeds drop. Fiber gives you a dedicated
-                connection -- your speed is your speed.
+                connection. Your speed is your speed.
               </p>
             </div>
             <div className="city-why-card">

@@ -19,7 +19,7 @@ export default function SouthCharlestonPage() {
           <p className="section-sub">
             South Charleston is our home. It&apos;s where we built our first fiber
             line, hired our first crew, and connected our first customer. Today,
-            fiber-to-the-home service is live across the city -- and we&apos;re
+            fiber-to-the-home service is live across the city, and we&apos;re
             still growing.
           </p>
         </div>
@@ -148,7 +148,7 @@ export default function SouthCharlestonPage() {
               <h3>Symmetrical upload speeds</h3>
               <p>
                 With cable, your upload speed is a fraction of your download. Fiber
-                gives you the same speed in both directions -- better for video calls,
+                gives you the same speed in both directions. Better for video calls,
                 cloud backups, and working from home.
               </p>
             </div>
