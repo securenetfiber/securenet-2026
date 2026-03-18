@@ -15,24 +15,23 @@ export async function POST(req: NextRequest) {
 
     const body = await req.json();
 
-    // Build Cognito entry payload matching their field names exactly
+    // Build Cognito entry payload using exact InternalName fields from schema
     const entry: Record<string, unknown> = {
       CustomerType: body.customerType || 'Residential',
+      Name: body.name || '',
       PhoneNumber: body.phone || '',
       EmailAddress: body.email,
       InquiryType: body.inquiryType || '',
       YourMessage: body.message || '',
     };
 
-    // Conditional fields based on customer type
+    // Business-specific fields
     if (body.customerType === 'Business') {
       entry.BusinessName = body.businessName || '';
       entry.PrimaryContact = body.primaryContact || '';
-    } else {
-      entry.Name = body.name || '';
     }
 
-    // Conditional fields based on inquiry type
+    // Technical Support fields
     if (body.inquiryType === 'Technical Support') {
       entry.TechnicalIssue = body.technicalIssue || '';
       if (body.internetStillNotWorking) {
@@ -40,12 +39,14 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    if (body.inquiryType === "I'm interested in Internet Service") {
+    // Interested in service fields
+    if (body.inquiryType === "I'm interested in Internet Service from my Home!") {
       entry.NewServiceRequestAddress = body.serviceAddress || '';
       entry.NewServiceRequestCity = body.serviceCity || '';
     }
 
-    if (body.serviceAddress) {
+    // Outside fiber concern
+    if (body.inquiryType === 'Outside Fiber Service Concern') {
       entry.ServiceAddress = body.serviceAddress || '';
     }
 

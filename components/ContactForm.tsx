@@ -3,12 +3,19 @@
 import { useState, FormEvent } from 'react';
 
 const INQUIRY_TYPES = [
-  'General Question',
-  "I'm interested in Internet Service",
+  'General Inquiry',
+  "I'm interested in Internet Service from my Home!",
   'Technical Support',
-  'Billing',
+  'Billing Question',
   'Business Inquiry - Internet, Hosted Phones, Managed Services',
-  'Outside Fiber Concern',
+  'Outside Fiber Service Concern',
+];
+
+const TECHNICAL_ISSUES = [
+  'My Internet Service is Not Working',
+  'My Internet and/or Wi-Fi is Slow',
+  'My Phone Service is not working',
+  'I forgot my Wi-Fi Password',
 ];
 
 export default function ContactForm() {
@@ -48,9 +55,13 @@ export default function ContactForm() {
       if (toggle) payload.internetStillNotWorking = true;
     }
 
-    if (inquiryType === "I'm interested in Internet Service") {
+    if (inquiryType === "I'm interested in Internet Service from my Home!") {
+      payload.serviceAddress = data.get('newServiceRequestAddress') as string;
+      payload.serviceCity = data.get('newServiceRequestCity') as string;
+    }
+
+    if (inquiryType === 'Outside Fiber Service Concern') {
       payload.serviceAddress = data.get('serviceAddress') as string;
-      payload.serviceCity = data.get('serviceCity') as string;
     }
 
     try {
@@ -164,8 +175,13 @@ export default function ContactForm() {
       {inquiryType === 'Technical Support' && (
         <>
           <div className="form-group">
-            <label htmlFor="technicalIssue">Describe your technical issue</label>
-            <textarea id="technicalIssue" name="technicalIssue" placeholder="What's happening?" rows={3} required></textarea>
+            <label htmlFor="technicalIssue">What are you experiencing?</label>
+            <select id="technicalIssue" name="technicalIssue" required>
+              <option value="">Select an issue</option>
+              {TECHNICAL_ISSUES.map((issue) => (
+                <option key={issue} value={issue}>{issue}</option>
+              ))}
+            </select>
           </div>
           <div className="form-group">
             <label className="form-checkbox-label">
@@ -177,25 +193,25 @@ export default function ContactForm() {
       )}
 
       {/* Conditional: Interested in Service */}
-      {inquiryType === "I'm interested in Internet Service" && (
+      {inquiryType === "I'm interested in Internet Service from my Home!" && (
         <>
           <p className="form-help-text">
             We currently serve areas across the Kanawha Valley (WV) and Danville (VA).{' '}
             <a href="/coverage">Check our coverage map</a> to see if your address is in our service area.
           </p>
           <div className="form-group">
-            <label htmlFor="serviceAddress">Service Address</label>
-            <input type="text" id="serviceAddress" name="serviceAddress" placeholder="123 Main St" required />
+            <label htmlFor="newServiceRequestAddress">Service Address</label>
+            <input type="text" id="newServiceRequestAddress" name="newServiceRequestAddress" placeholder="123 Main St" required />
           </div>
           <div className="form-group">
-            <label htmlFor="serviceCity">City</label>
-            <input type="text" id="serviceCity" name="serviceCity" placeholder="South Charleston" required />
+            <label htmlFor="newServiceRequestCity">City</label>
+            <input type="text" id="newServiceRequestCity" name="newServiceRequestCity" placeholder="South Charleston" required />
           </div>
         </>
       )}
 
       {/* Conditional: Billing */}
-      {inquiryType === 'Billing' && (
+      {inquiryType === 'Billing Question' && (
         <p className="form-help-text">
           You can view your billing history, update payment methods, and enable autopay through your{' '}
           <a href="https://billing.securenetfiber.com" target="_blank" rel="noopener noreferrer">online billing portal</a>.
@@ -207,16 +223,22 @@ export default function ContactForm() {
       {inquiryType === 'Business Inquiry - Internet, Hosted Phones, Managed Services' && (
         <p className="form-help-text">
           SecureNet offers dedicated fiber internet, hosted phone systems, and managed IT services for businesses across our service area.
-          Tell us about your needs below and a member of our team will follow up to schedule a complimentary consultation.
+          Tell us about your needs below and a member of our team will follow up to schedule a consultation.
         </p>
       )}
 
-      {/* Outside Fiber Concern note */}
-      {inquiryType === 'Outside Fiber Concern' && (
-        <p className="form-help-text">
-          If you need to share photos of an outside fiber concern, please email them to{' '}
-          <a href="mailto:info@securenetfiber.com">info@securenetfiber.com</a> along with your address.
-        </p>
+      {/* Outside Fiber Concern */}
+      {inquiryType === 'Outside Fiber Service Concern' && (
+        <>
+          <p className="form-help-text">
+            If you need to share photos of an outside fiber concern, please email them to{' '}
+            <a href="mailto:info@securenetfiber.com">info@securenetfiber.com</a> along with your address.
+          </p>
+          <div className="form-group">
+            <label htmlFor="serviceAddress">Service Address</label>
+            <input type="text" id="serviceAddress" name="serviceAddress" placeholder="123 Main St" />
+          </div>
+        </>
       )}
 
       {/* Message - always shown */}
