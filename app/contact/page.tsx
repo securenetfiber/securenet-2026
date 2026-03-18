@@ -65,7 +65,7 @@ export default function ContactPage() {
             {/* RIGHT: CONTACT FORM */}
             <div className="contact-form-wrapper">
               {/* ROLLBACK: replace CognitoEmbed with <ContactForm /> to restore custom form */}
-              <CognitoEmbed formId="ContactUs" />
+              <CognitoEmbed formNumber="52" />
             </div>
           </div>
         </div>
