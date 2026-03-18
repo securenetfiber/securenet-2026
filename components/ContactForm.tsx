@@ -179,6 +179,10 @@ export default function ContactForm() {
       {/* Conditional: Interested in Service */}
       {inquiryType === "I'm interested in Internet Service" && (
         <>
+          <p className="form-help-text">
+            We currently serve areas across the Kanawha Valley (WV) and Danville (VA).{' '}
+            <a href="/coverage">Check our coverage map</a> to see if your address is in our service area.
+          </p>
           <div className="form-group">
             <label htmlFor="serviceAddress">Service Address</label>
             <input type="text" id="serviceAddress" name="serviceAddress" placeholder="123 Main St" required />
@@ -188,6 +192,23 @@ export default function ContactForm() {
             <input type="text" id="serviceCity" name="serviceCity" placeholder="South Charleston" required />
           </div>
         </>
+      )}
+
+      {/* Conditional: Billing */}
+      {inquiryType === 'Billing' && (
+        <p className="form-help-text">
+          You can view your billing history, update payment methods, and enable autopay through your{' '}
+          <a href="https://billing.securenetfiber.com" target="_blank" rel="noopener noreferrer">online billing portal</a>.
+          If you still need help, let us know below.
+        </p>
+      )}
+
+      {/* Conditional: Business Inquiry */}
+      {inquiryType === 'Business Inquiry - Internet, Hosted Phones, Managed Services' && (
+        <p className="form-help-text">
+          SecureNet offers dedicated fiber internet, hosted phone systems, and managed IT services for businesses across our service area.
+          Tell us about your needs below and a member of our team will follow up to schedule a complimentary consultation.
+        </p>
       )}
 
       {/* Outside Fiber Concern note */}
