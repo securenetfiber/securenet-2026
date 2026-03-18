@@ -1,0 +1,78 @@
+import { NextRequest, NextResponse } from 'next/server';
+
+const COGNITO_API_URL = 'https://www.cognitoforms.com/api/forms/52/entries';
+
+export async function POST(req: NextRequest) {
+  try {
+    const apiKey = process.env.COGNITO_API_KEY;
+    if (!apiKey) {
+      console.error('COGNITO_API_KEY not set');
+      return NextResponse.json(
+        { error: 'Server configuration error' },
+        { status: 500 }
+      );
+    }
+
+    const body = await req.json();
+
+    // Build Cognito entry payload matching their field names exactly
+    const entry: Record<string, unknown> = {
+      CustomerType: body.customerType || 'Residential',
+      PhoneNumber: body.phone || '',
+      EmailAddress: body.email,
+      InquiryType: body.inquiryType || '',
+      YourMessage: body.message || '',
+    };
+
+    // Conditional fields based on customer type
+    if (body.customerType === 'Business') {
+      entry.BusinessName = body.businessName || '';
+      entry.PrimaryContact = body.primaryContact || '';
+    } else {
+      entry.Name = body.name || '';
+    }
+
+    // Conditional fields based on inquiry type
+    if (body.inquiryType === 'Technical Support') {
+      entry.TechnicalIssue = body.technicalIssue || '';
+      if (body.internetStillNotWorking) {
+        entry.MyInternetIsStillNOTWorking = true;
+      }
+    }
+
+    if (body.inquiryType === "I'm interested in Internet Service") {
+      entry.NewServiceRequestAddress = body.serviceAddress || '';
+      entry.NewServiceRequestCity = body.serviceCity || '';
+    }
+
+    if (body.serviceAddress) {
+      entry.ServiceAddress = body.serviceAddress || '';
+    }
+
+    const response = await fetch(COGNITO_API_URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(entry),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Cognito API error:', response.status, errorText);
+      return NextResponse.json(
+        { error: 'Failed to submit form' },
+        { status: 502 }
+      );
+    }
+
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error('Contact form error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}

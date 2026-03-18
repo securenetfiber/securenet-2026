@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-// import ContactForm from '@/components/ContactForm';  // ROLLBACK: uncomment to restore custom form
-import CognitoEmbed from '@/components/CognitoEmbed';
+import ContactForm from '@/components/ContactForm';
+// import CognitoEmbed from '@/components/CognitoEmbed';  // KEEP: seamless embed option if API approach doesn't work out
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -64,8 +64,8 @@ export default function ContactPage() {
 
             {/* RIGHT: CONTACT FORM */}
             <div className="contact-form-wrapper">
-              {/* ROLLBACK: replace CognitoEmbed with <ContactForm /> to restore custom form */}
-              <CognitoEmbed formNumber="52" />
+              <ContactForm />
+              {/* <CognitoEmbed formNumber="52" /> */}
             </div>
           </div>
         </div>
