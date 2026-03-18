@@ -13,9 +13,6 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // TEMP DEBUG: log last 10 chars of key so we can verify which key Vercel is using
-    console.log('Key tail:', apiKey.slice(-10));
-
     const body = await req.json();
 
     // Build Cognito entry payload using exact InternalName fields from schema
@@ -66,7 +63,7 @@ export async function POST(req: NextRequest) {
       const errorText = await response.text();
       console.error('Cognito API error:', response.status, errorText);
       return NextResponse.json(
-        { error: 'Failed to submit form', debug: `${response.status}: ${errorText}` },
+        { error: 'Failed to submit form' },
         { status: 502 }
       );
     }

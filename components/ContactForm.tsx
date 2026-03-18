@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useState, useEffect, useCallback, FormEvent, ChangeEvent } from 'react';
 
 const INQUIRY_TYPES = [
   'General Inquiry',
@@ -18,13 +18,45 @@ const TECHNICAL_ISSUES = [
   'I forgot my Wi-Fi Password',
 ];
 
+/** Format phone input as (XXX) XXX-XXXX */
+function formatPhone(value: string): string {
+  const digits = value.replace(/\D/g, '').slice(0, 10);
+  if (digits.length === 0) return '';
+  if (digits.length <= 3) return `(${digits}`;
+  if (digits.length <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+}
+
+const RESET_DELAY = 8000; // ms before form resets after successful submission
+
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
+  const [phone, setPhone] = useState('');
 
   const [customerType, setCustomerType] = useState('Residential');
   const [inquiryType, setInquiryType] = useState('');
+
+  const resetForm = useCallback(() => {
+    setSubmitted(false);
+    setSubmitting(false);
+    setError('');
+    setPhone('');
+    setCustomerType('Residential');
+    setInquiryType('');
+  }, []);
+
+  // Auto-reset form after successful submission
+  useEffect(() => {
+    if (!submitted) return;
+    const timer = setTimeout(resetForm, RESET_DELAY);
+    return () => clearTimeout(timer);
+  }, [submitted, resetForm]);
+
+  function handlePhoneChange(e: ChangeEvent<HTMLInputElement>) {
+    setPhone(formatPhone(e.target.value));
+  }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -38,7 +70,7 @@ export default function ContactForm() {
       customerType,
       inquiryType,
       email: data.get('email') as string,
-      phone: data.get('phone') as string,
+      phone: phone,
       message: data.get('message') as string,
     };
 
@@ -146,7 +178,15 @@ export default function ContactForm() {
       {/* Always shown */}
       <div className="form-group">
         <label htmlFor="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required />
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="(304) 555-1234"
+          value={phone}
+          onChange={handlePhoneChange}
+          required
+        />
       </div>
 
       <div className="form-group">
