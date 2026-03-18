@@ -766,6 +766,7 @@ ul, ol {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-3xl);
+  align-items: start;
 }
 
 .contact-info p {
@@ -1432,6 +1433,8 @@ ul, ol {
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
   min-height: 42rem;
+  width: 100%;
+  min-width: 0;
 }
 
 .social-section {
