@@ -3254,3 +3254,163 @@ ul, ol {
   }
 }
 
+
+/* ═══════════════════════════════════════════════
+   COGNITO FORMS EMBED OVERRIDES
+   Chameleon styles for seamless Cognito embeds.
+   Targets .cog-* classes injected by Cognito's
+   seamless.js so embedded forms match our theme.
+   ═══════════════════════════════════════════════ */
+
+.cognito-embed {
+  width: 100%;
+}
+
+/* Main form container */
+.cognito .cog-form,
+.cognito .cog-form__container {
+  font-family: var(--font) !important;
+  font-size: var(--text-base) !important;
+  color: var(--text-primary) !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Labels */
+.cognito .cog-label,
+.cognito label {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: var(--text-secondary) !important;
+  font-family: var(--font) !important;
+  margin-bottom: 0.4rem !important;
+}
+
+/* All text inputs, textareas, selects */
+.cognito input[type="text"],
+.cognito input[type="email"],
+.cognito input[type="tel"],
+.cognito input[type="number"],
+.cognito input[type="password"],
+.cognito input[type="url"],
+.cognito textarea,
+.cognito select {
+  font-family: var(--font) !important;
+  font-size: var(--text-base) !important;
+  padding: 0.85rem 1rem !important;
+  background: #fff !important;
+  border: 1.5px solid var(--border-light) !important;
+  border-radius: var(--radius-md) !important;
+  color: var(--text-primary) !important;
+  outline: none !important;
+  transition: border-color 0.2s !important;
+  min-height: 3rem !important;
+  box-shadow: none !important;
+  -webkit-appearance: none !important;
+}
+
+.cognito textarea {
+  resize: vertical !important;
+  min-height: 7.5rem !important;
+}
+
+/* Focus state */
+.cognito input[type="text"]:focus,
+.cognito input[type="email"]:focus,
+.cognito input[type="tel"]:focus,
+.cognito input[type="number"]:focus,
+.cognito textarea:focus,
+.cognito select:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px var(--accent-glow) !important;
+}
+
+/* Submit / action buttons */
+.cognito .cog-button,
+.cognito .cog-button--submit,
+.cognito button[type="submit"] {
+  font-family: var(--font) !important;
+  font-size: var(--text-base) !important;
+  font-weight: 600 !important;
+  padding: 0.85rem 2rem !important;
+  background: var(--navy) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: var(--radius-md) !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+  width: 100% !important;
+  min-height: 3.2rem !important;
+}
+
+.cognito .cog-button:hover,
+.cognito .cog-button--submit:hover,
+.cognito button[type="submit"]:hover {
+  background: var(--navy-dark) !important;
+}
+
+/* Field spacing */
+.cognito .cog-field,
+.cognito .cog-row {
+  margin-bottom: var(--space-md) !important;
+}
+
+/* Required asterisks */
+.cognito .cog-required {
+  color: var(--red) !important;
+}
+
+/* Error messages */
+.cognito .cog-error,
+.cognito .cog-validation-error {
+  color: var(--red) !important;
+  font-size: 0.85rem !important;
+  font-family: var(--font) !important;
+}
+
+/* Hide Cognito branding */
+.cognito .cog-branding,
+.cognito .cog-powered-by {
+  display: none !important;
+}
+
+/* Section headings inside forms */
+.cognito .cog-heading,
+.cognito .cog-section-heading {
+  font-family: var(--font) !important;
+  color: var(--text-primary) !important;
+  font-weight: 700 !important;
+}
+
+/* Description text */
+.cognito .cog-description,
+.cognito .cog-help-text {
+  font-family: var(--font) !important;
+  color: var(--text-muted) !important;
+  font-size: 0.9rem !important;
+}
+
+/* Checkboxes and radios */
+.cognito input[type="checkbox"],
+.cognito input[type="radio"] {
+  accent-color: var(--navy) !important;
+  min-height: auto !important;
+  padding: 0 !important;
+}
+
+/* Placeholder text */
+.cognito input::placeholder,
+.cognito textarea::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.7 !important;
+}
+
+/* Confirmation / success message */
+.cognito .cog-confirmation {
+  font-family: var(--font) !important;
+  color: var(--text-primary) !important;
+  padding: var(--space-lg) !important;
+  text-align: center !important;
+}
+

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import ContactForm from '@/components/ContactForm';
+// import ContactForm from '@/components/ContactForm';  // ROLLBACK: uncomment to restore custom form
+import CognitoEmbed from '@/components/CognitoEmbed';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -63,7 +64,8 @@ export default function ContactPage() {
 
             {/* RIGHT: CONTACT FORM */}
             <div className="contact-form-wrapper">
-              <ContactForm />
+              {/* ROLLBACK: replace CognitoEmbed with <ContactForm /> to restore custom form */}
+              <CognitoEmbed formId="ContactUs" />
             </div>
           </div>
         </div>
