@@ -13,6 +13,9 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // TEMP DEBUG: log last 10 chars of key so we can verify which key Vercel is using
+    console.log('Key tail:', apiKey.slice(-10));
+
     const body = await req.json();
 
     // Build Cognito entry payload using exact InternalName fields from schema
