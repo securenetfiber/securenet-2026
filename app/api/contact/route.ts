@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
       const errorText = await response.text();
       console.error('Cognito API error:', response.status, errorText);
       return NextResponse.json(
-        { error: 'Failed to submit form' },
+        { error: 'Failed to submit form', debug: `${response.status}: ${errorText}` },
         { status: 502 }
       );
     }
