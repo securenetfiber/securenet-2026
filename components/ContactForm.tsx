@@ -2,12 +2,19 @@
 
 import { useState, useEffect, useCallback, FormEvent, ChangeEvent } from 'react';
 
-const INQUIRY_TYPES = [
+const RESIDENTIAL_INQUIRY_TYPES = [
   'General Inquiry',
   "I'm interested in Internet Service from my Home!",
   'Technical Support',
   'Billing Question',
+  'Outside Fiber Service Concern',
+];
+
+const BUSINESS_INQUIRY_TYPES = [
+  'General Inquiry',
   'Business Inquiry - Internet, Hosted Phones, Managed Services',
+  'Technical Support',
+  'Billing Question',
   'Outside Fiber Service Concern',
 ];
 
@@ -141,7 +148,7 @@ export default function ContactForm() {
               name="customerType"
               value="Residential"
               checked={customerType === 'Residential'}
-              onChange={() => setCustomerType('Residential')}
+              onChange={() => { setCustomerType('Residential'); setInquiryType(''); setTechnicalIssue(''); }}
             />
             <span>Residential</span>
           </label>
@@ -151,7 +158,7 @@ export default function ContactForm() {
               name="customerType"
               value="Business"
               checked={customerType === 'Business'}
-              onChange={() => setCustomerType('Business')}
+              onChange={() => { setCustomerType('Business'); setInquiryType(''); setTechnicalIssue(''); }}
             />
             <span>Business</span>
           </label>
@@ -207,7 +214,7 @@ export default function ContactForm() {
           required
         >
           <option value="">Select an inquiry type</option>
-          {INQUIRY_TYPES.map((type) => (
+          {(customerType === 'Business' ? BUSINESS_INQUIRY_TYPES : RESIDENTIAL_INQUIRY_TYPES).map((type) => (
             <option key={type} value={type}>{type}</option>
           ))}
         </select>
