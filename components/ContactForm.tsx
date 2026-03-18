@@ -27,7 +27,7 @@ function formatPhone(value: string): string {
   return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
 }
 
-const RESET_DELAY = 8000; // ms before form resets after successful submission
+const RESET_DELAY = 5000; // ms before form resets after successful submission
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -37,6 +37,7 @@ export default function ContactForm() {
 
   const [customerType, setCustomerType] = useState('Residential');
   const [inquiryType, setInquiryType] = useState('');
+  const [technicalIssue, setTechnicalIssue] = useState('');
 
   const resetForm = useCallback(() => {
     setSubmitted(false);
@@ -45,6 +46,7 @@ export default function ContactForm() {
     setPhone('');
     setCustomerType('Residential');
     setInquiryType('');
+    setTechnicalIssue('');
   }, []);
 
   // Auto-reset form after successful submission
@@ -216,13 +218,26 @@ export default function ContactForm() {
         <>
           <div className="form-group">
             <label htmlFor="technicalIssue">What are you experiencing?</label>
-            <select id="technicalIssue" name="technicalIssue" required>
+            <select
+              id="technicalIssue"
+              name="technicalIssue"
+              value={technicalIssue}
+              onChange={(e) => setTechnicalIssue(e.target.value)}
+              required
+            >
               <option value="">Select an issue</option>
               {TECHNICAL_ISSUES.map((issue) => (
                 <option key={issue} value={issue}>{issue}</option>
               ))}
             </select>
           </div>
+          {technicalIssue === 'I forgot my Wi-Fi Password' && (
+            <p className="form-help-text">
+              <strong>Quick tip:</strong> Your default Wi-Fi password is usually your phone number
+              with no spaces, dashes, or parentheses (e.g. 3045551234). Give that a try first.
+              If that doesn&apos;t work, let us know below and we&apos;ll get you sorted out.
+            </p>
+          )}
           <div className="form-group">
             <label className="form-checkbox-label">
               <input type="checkbox" name="internetStillNotWorking" value="true" />
