@@ -1,10 +1,23 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { SiteAlert } from '@/lib/alerts';
 
 export default function AlertBar({ alert }: { alert: SiteAlert }) {
   const [dismissed, setDismissed] = useState(false);
+
+  // Keep a class on <body> so CSS can adjust hero/page-hero top padding
+  // dynamically when the alert bar is shown or dismissed.
+  useEffect(() => {
+    if (alert.enabled && !dismissed) {
+      document.body.classList.add('has-alert-bar');
+    } else {
+      document.body.classList.remove('has-alert-bar');
+    }
+    return () => {
+      document.body.classList.remove('has-alert-bar');
+    };
+  }, [alert.enabled, dismissed]);
 
   if (!alert.enabled || dismissed) return null;
 

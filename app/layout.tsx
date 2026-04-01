@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import AlertBar from '@/components/AlertBar';
-import { siteAlert } from '@/lib/alerts';
 import { OrganizationSchema, LocalBusinessSchema } from '@/components/SchemaOrg';
 
 export const metadata: Metadata = {
@@ -37,7 +35,6 @@ export default function RootLayout({
         <LocalBusinessSchema />
       </head>
       <body>
-        <AlertBar alert={siteAlert} />
         <Header />
         <main>{children}</main>
         <Footer />
