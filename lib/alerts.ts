@@ -18,7 +18,7 @@ export interface SiteAlert {
 }
 
 export const siteAlert: SiteAlert = {
-  enabled: false,
+  enabled: true,
   variant: 'info',
   message: 'We are performing scheduled maintenance tonight from 12-4 AM.',
   linkText: 'View status',
