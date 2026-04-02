@@ -133,8 +133,8 @@ export default function ResidentialPage() {
                 desc: 'We provide a high-performance Wi-Fi router with every plan. No need to buy your own unless you want to.',
               },
               {
-                title: 'Streaming TV Options',
-                desc: 'Cut the cord. We partner with MyBundle.TV to help you find the right streaming setup. Works with Netflix, YouTube TV, Hulu, Disney+, Paramount+, and more on Fire Stick, Roku, or Apple TV.',
+                title: 'Streaming TV Available',
+                desc: 'Want to add TV? DirecTV streaming is available through SecureNet with no contracts and no activation fees. Contact us for pricing and details.',
               },
             ].map((item) => (
               <div className="included-item" key={item.title}>

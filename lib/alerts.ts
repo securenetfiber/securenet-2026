@@ -18,7 +18,7 @@ export interface SiteAlert {
 }
 
 export const siteAlert: SiteAlert = {
-  enabled: true,
+  enabled: false,
   variant: 'warning',
   message: 'We are currently experiencing service interruptions across our entire network.',
   linkText: 'View status',
