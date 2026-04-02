@@ -60,13 +60,13 @@ export default function ServiceRequestPage() {
           </div>
 
           <div className="signup-actions">
-            <Link href="/residential" className="btn btn-primary btn-lg">
+            <Link href="/residential" className="btn btn-primary">
               View Plans
             </Link>
-            <Link href="/coverage" className="btn btn-outline btn-lg">
+            <Link href="/coverage" className="btn btn-outline">
               Check Coverage
             </Link>
-            <Link href="/contact" className="btn btn-ghost btn-lg">
+            <Link href="/contact" className="btn btn-ghost">
               Contact Us
             </Link>
           </div>
