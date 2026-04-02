@@ -52,7 +52,7 @@ export default function Header() {
         </ul>
         <div className={`nav-actions${menuOpen ? ' nav-actions--open' : ''}`}>
           <a href="https://billing.securenetfiber.com" className="btn btn-ghost btn-sm">Bill Pay</a>
-          <a href="https://securenetfiber.com/service-request/" className="btn btn-primary">Sign Up</a>
+          <Link href="/service-request" className="btn btn-primary">Sign Up</Link>
         </div>
         <button
           className="mobile-menu-toggle"

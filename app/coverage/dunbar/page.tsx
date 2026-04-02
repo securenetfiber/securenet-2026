@@ -65,7 +65,7 @@ export default function DunbarPage() {
               <p className="city-plan-desc">
                 More than enough for everyday browsing, streaming, and remote work.
               </p>
-              <a href="https://securenetfiber.com/service-request/" className="btn btn-primary">
+              <a href="/service-request" className="btn btn-primary">
                 Sign Up
               </a>
             </div>
@@ -79,7 +79,7 @@ export default function DunbarPage() {
                 Keep the whole household connected. Gaming, streaming, and
                 homework all at once.
               </p>
-              <a href="https://securenetfiber.com/service-request/" className="btn btn-primary">
+              <a href="/service-request" className="btn btn-primary">
                 Sign Up
               </a>
             </div>
@@ -91,7 +91,7 @@ export default function DunbarPage() {
               <p className="city-plan-desc">
                 Maximum speed for anyone who pushes their connection to the limit.
               </p>
-              <a href="https://securenetfiber.com/service-request/" className="btn btn-primary">
+              <a href="/service-request" className="btn btn-primary">
                 Sign Up
               </a>
             </div>
@@ -171,7 +171,7 @@ export default function DunbarPage() {
             we&apos;ll handle the rest. Free installation included.
           </p>
           <div className="city-cta-buttons">
-            <a href="https://securenetfiber.com/service-request/" className="btn btn-primary">
+            <a href="/service-request" className="btn btn-primary">
               Sign Up Now
             </a>
             <Link href="/coverage" className="btn btn-ghost">

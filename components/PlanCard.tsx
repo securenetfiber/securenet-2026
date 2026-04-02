@@ -19,7 +19,7 @@ export default function PlanCard({ plan }: { plan: Plan }) {
         ))}
       </ul>
       <a
-        href={plan.ctaHref || 'https://securenetfiber.com/service-request/'}
+        href={plan.ctaHref || '/service-request'}
         className={`btn ${plan.featured ? 'btn-primary' : 'btn-outline'} btn-full`}
       >
         {plan.ctaText || 'Get Started'}

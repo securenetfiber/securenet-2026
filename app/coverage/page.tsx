@@ -53,7 +53,7 @@ export default function CoveragePage() {
                   <li><Link href="/coverage/st-albans">St. Albans</Link> <span className="market-status market-status--expanding">Expanding</span></li>
                 </ul>
               </div>
-              <a href="https://securenetfiber.com/service-request/" className="btn btn-primary" style={{ marginTop: '1.5rem' }}>
+              <a href="/service-request" className="btn btn-primary" style={{ marginTop: '1.5rem' }}>
                 Check Your Address
               </a>
             </div>
@@ -86,7 +86,7 @@ export default function CoveragePage() {
                   <li><Link href="/coverage/danville">Danville</Link> <span className="market-status market-status--live">Available Now</span></li>
                 </ul>
               </div>
-              <a href="https://securenetfiber.com/service-request/" className="btn btn-primary" style={{ marginTop: '1.5rem' }}>
+              <a href="/service-request" className="btn btn-primary" style={{ marginTop: '1.5rem' }}>
                 Check Your Address
               </a>
             </div>

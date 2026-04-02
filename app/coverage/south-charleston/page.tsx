@@ -65,7 +65,7 @@ export default function SouthCharlestonPage() {
               <p className="city-plan-desc">
                 Plenty fast for streaming, video calls, and working from home.
               </p>
-              <a href="https://securenetfiber.com/service-request/" className="btn btn-primary">
+              <a href="/service-request" className="btn btn-primary">
                 Sign Up
               </a>
             </div>
@@ -78,7 +78,7 @@ export default function SouthCharlestonPage() {
               <p className="city-plan-desc">
                 Our most popular plan. Handle a full house of devices with ease.
               </p>
-              <a href="https://securenetfiber.com/service-request/" className="btn btn-primary">
+              <a href="/service-request" className="btn btn-primary">
                 Sign Up
               </a>
             </div>
@@ -90,7 +90,7 @@ export default function SouthCharlestonPage() {
               <p className="city-plan-desc">
                 For power users, home labs, and anyone who wants the fastest connection available.
               </p>
-              <a href="https://securenetfiber.com/service-request/" className="btn btn-primary">
+              <a href="/service-request" className="btn btn-primary">
                 Sign Up
               </a>
             </div>
@@ -179,7 +179,7 @@ export default function SouthCharlestonPage() {
             Sign up takes just a few minutes.
           </p>
           <div className="city-cta-buttons">
-            <a href="https://securenetfiber.com/service-request/" className="btn btn-primary">
+            <a href="/service-request" className="btn btn-primary">
               Sign Up Now
             </a>
             <Link href="/coverage" className="btn btn-ghost">

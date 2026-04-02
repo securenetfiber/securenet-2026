@@ -66,7 +66,7 @@ export default function DanvillePage() {
               <p className="city-plan-desc">
                 Fast, reliable internet for streaming, browsing, and working from home.
               </p>
-              <a href="https://securenetfiber.com/service-request/" className="btn btn-primary">
+              <a href="/service-request" className="btn btn-primary">
                 Sign Up
               </a>
             </div>
@@ -80,7 +80,7 @@ export default function DanvillePage() {
                 Our fastest plan in Danville. Handles a full house of devices
                 without breaking a sweat.
               </p>
-              <a href="https://securenetfiber.com/service-request/" className="btn btn-primary">
+              <a href="/service-request" className="btn btn-primary">
                 Sign Up
               </a>
             </div>
@@ -174,7 +174,7 @@ export default function DanvillePage() {
             we&apos;ll schedule your free installation.
           </p>
           <div className="city-cta-buttons">
-            <a href="https://securenetfiber.com/service-request/" className="btn btn-primary">
+            <a href="/service-request" className="btn btn-primary">
               Sign Up Now
             </a>
             <Link href="/coverage" className="btn btn-ghost">

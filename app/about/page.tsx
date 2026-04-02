@@ -124,9 +124,9 @@ export default function AboutPage() {
               with our team.
             </p>
             <div className="cta-actions">
-              <a href="https://securenetfiber.com/service-request/" className="btn btn-primary btn-lg">
+              <Link href="/service-request" className="btn btn-primary btn-lg">
                 Sign Up
-              </a>
+              </Link>
               <Link href="/contact" className="btn btn-ghost btn-lg">
                 Contact Us
               </Link>

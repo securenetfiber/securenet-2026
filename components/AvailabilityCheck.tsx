@@ -26,7 +26,7 @@ export default function AvailabilityCheck() {
                 reach out within one business day. Want to get started now?
               </p>
               <a
-                href="https://securenetfiber.com/service-request/"
+                href="/service-request"
                 className="btn btn-primary"
                 style={{ marginTop: '1rem' }}
               >

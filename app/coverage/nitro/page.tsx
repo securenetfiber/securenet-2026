@@ -65,7 +65,7 @@ export default function NitroPage() {
               <p className="city-plan-desc">
                 Stream, browse, and work from home without missing a beat.
               </p>
-              <a href="https://securenetfiber.com/service-request/" className="btn btn-primary">
+              <a href="/service-request" className="btn btn-primary">
                 Sign Up
               </a>
             </div>
@@ -78,7 +78,7 @@ export default function NitroPage() {
               <p className="city-plan-desc">
                 Run a house full of devices at the same time. No buffering, no compromises.
               </p>
-              <a href="https://securenetfiber.com/service-request/" className="btn btn-primary">
+              <a href="/service-request" className="btn btn-primary">
                 Sign Up
               </a>
             </div>
@@ -90,7 +90,7 @@ export default function NitroPage() {
               <p className="city-plan-desc">
                 The fastest residential internet available in Nitro. Period.
               </p>
-              <a href="https://securenetfiber.com/service-request/" className="btn btn-primary">
+              <a href="/service-request" className="btn btn-primary">
                 Sign Up
               </a>
             </div>
@@ -172,7 +172,7 @@ export default function NitroPage() {
             and we&apos;ll get your installation scheduled.
           </p>
           <div className="city-cta-buttons">
-            <a href="https://securenetfiber.com/service-request/" className="btn btn-primary">
+            <a href="/service-request" className="btn btn-primary">
               Sign Up Now
             </a>
             <Link href="/coverage" className="btn btn-ghost">

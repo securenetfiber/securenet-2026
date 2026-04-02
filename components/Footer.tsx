@@ -23,7 +23,7 @@ export default function Footer() {
             <div className="footer-col">
               <strong>Account</strong>
               <a href="https://billing.securenetfiber.com">Bill Pay</a>
-              <a href="https://securenetfiber.com/service-request/">Sign Up</a>
+              <Link href="/service-request">Sign Up</Link>
             </div>
             <div className="footer-col">
               <strong>Company</strong>
