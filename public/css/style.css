@@ -3523,3 +3523,108 @@ body.has-alert-bar .page-hero {
   text-align: center !important;
 }
 
+/* ========== Service Request / Sign Up ========== */
+
+.signup-section {
+  padding: var(--space-2xl) 0;
+}
+
+.signup-container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.signup-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.signup-card .section-heading {
+  font-size: var(--text-xl);
+  text-align: left;
+  margin-bottom: var(--space-sm);
+}
+
+.signup-card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.signup-steps {
+  list-style: decimal;
+  padding-left: 1.25rem;
+  margin: var(--space-md) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.signup-steps li {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-left: 0.25rem;
+}
+
+.signup-phones {
+  display: flex;
+  gap: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+.signup-phone {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.signup-phone strong {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.signup-phone a {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.signup-phone a:hover {
+  color: var(--accent);
+}
+
+.signup-hours {
+  margin-top: var(--space-sm);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.signup-actions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-sm);
+}
+
+@media (max-width: 30rem) {
+  .signup-phones {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .signup-actions {
+    flex-direction: column;
+  }
+
+  .signup-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
