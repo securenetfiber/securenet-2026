@@ -58,6 +58,7 @@ const QUERIES: Record<string, string> = {
 
 async function querySonar(query: string) {
   const apiKey = process.env.SONAR_API_KEY;
+  console.log('SONAR_API_KEY present:', !!apiKey, 'length:', apiKey?.length ?? 0);
   if (!apiKey) {
     throw new Error('SONAR_API_KEY is not configured');
   }
