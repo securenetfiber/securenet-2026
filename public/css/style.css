@@ -698,6 +698,68 @@ ul, ol {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
+.availability .btn-ghost {
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.availability .btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.avail-icon {
+  margin-bottom: 1rem;
+}
+
+.avail-icon--yes {
+  color: var(--green);
+}
+
+.avail-icon--no {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.avail-icon--error {
+  color: rgba(255, 200, 100, 0.9);
+}
+
+.avail-actions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-sm);
+}
+
+.avail-phones {
+  display: flex;
+  gap: var(--space-lg);
+  justify-content: center;
+  margin-top: var(--space-sm);
+}
+
+.avail-phone-link {
+  color: #fff;
+  font-weight: 600;
+  font-size: var(--text-lg);
+  text-decoration: none;
+}
+
+.avail-phone-link:hover {
+  text-decoration: underline;
+}
+
+.avail-input-group input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.avail-input-group .btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 
 /* ═══════════════════════════════════════════════
    ABOUT
