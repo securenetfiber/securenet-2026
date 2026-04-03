@@ -106,15 +106,11 @@ export default function AvailabilityCheck() {
                 <div className="avail-icon avail-icon--no">
                   <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
                 </div>
-                <h2 className="avail-heading">
-                  {result.status === 'not_found'
-                    ? 'We couldn\u2019t find that address.'
-                    : 'We\u2019re not there yet.'}
-                </h2>
+                <h2 className="avail-heading">We&apos;re not in your area yet.</h2>
                 <p className="avail-sub">
-                  {result.status === 'not_found'
-                    ? 'Double check your address and try again, or contact us and we\u2019ll look it up for you.'
-                    : 'We don\u2019t have coverage at that address yet, but we\u2019re expanding. Let us know you\u2019re interested and we\u2019ll reach out when we get there.'}
+                  We don&apos;t have coverage at that address right now, but we&apos;re
+                  expanding. Let us know you&apos;re interested and we&apos;ll reach
+                  out when we get there.
                 </p>
                 <div className="avail-actions">
                   <Link
