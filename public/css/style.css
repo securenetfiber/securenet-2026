@@ -3437,71 +3437,84 @@ body.has-alert-bar .page-hero {
   width: 100%;
 }
 
-/* Main form container */
-.cognito .cog-form,
-.cognito .cog-form__container {
+/* Catch-all font override: beats Cognito's --protect-css */
+.cognito-embed .cog-cognito,
+.cognito-embed .cog-cognito * {
   font-family: var(--font) !important;
+}
+
+/* Main form container */
+.cognito-embed .cog-cognito,
+.cognito-embed .cog-cognito.cog-form {
   font-size: var(--text-base) !important;
   color: var(--text-primary) !important;
   max-width: 100% !important;
   padding: 0 !important;
   margin: 0 !important;
+  background: transparent !important;
+}
+
+/* Kill Cognito wrapper backgrounds */
+.cognito-embed .cog-cognito .cog-form__container,
+.cognito-embed .cog-cognito .cog-body,
+.cognito-embed .cog-cognito .cog-content {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
 
 /* Labels */
-.cognito .cog-label,
-.cognito label {
+.cognito-embed .cog-cognito label,
+.cognito-embed .cog-cognito .cog-label {
   font-size: 0.9rem !important;
   font-weight: 600 !important;
   color: var(--text-secondary) !important;
-  font-family: var(--font) !important;
   margin-bottom: 0.4rem !important;
 }
 
 /* All text inputs, textareas, selects */
-.cognito input[type="text"],
-.cognito input[type="email"],
-.cognito input[type="tel"],
-.cognito input[type="number"],
-.cognito input[type="password"],
-.cognito input[type="url"],
-.cognito textarea,
-.cognito select {
-  font-family: var(--font) !important;
-  font-size: var(--text-base) !important;
-  padding: 0.85rem 1rem !important;
+.cognito-embed .cog-cognito input[type="text"],
+.cognito-embed .cog-cognito input[type="email"],
+.cognito-embed .cog-cognito input[type="tel"],
+.cognito-embed .cog-cognito input[type="number"],
+.cognito-embed .cog-cognito input[type="password"],
+.cognito-embed .cog-cognito input[type="url"],
+.cognito-embed .cog-cognito textarea,
+.cognito-embed .cog-cognito select {
+  font-size: 0.95rem !important;
+  padding: 0.7rem 0.85rem !important;
   background: #fff !important;
   border: 1.5px solid var(--border-light) !important;
   border-radius: var(--radius-md) !important;
   color: var(--text-primary) !important;
   outline: none !important;
   transition: border-color 0.2s !important;
-  min-height: 3rem !important;
+  min-height: 2.75rem !important;
   box-shadow: none !important;
   -webkit-appearance: none !important;
 }
 
-.cognito textarea {
+.cognito-embed .cog-cognito textarea {
   resize: vertical !important;
   min-height: 7.5rem !important;
 }
 
 /* Focus state */
-.cognito input[type="text"]:focus,
-.cognito input[type="email"]:focus,
-.cognito input[type="tel"]:focus,
-.cognito input[type="number"]:focus,
-.cognito textarea:focus,
-.cognito select:focus {
+.cognito-embed .cog-cognito input[type="text"]:focus,
+.cognito-embed .cog-cognito input[type="email"]:focus,
+.cognito-embed .cog-cognito input[type="tel"]:focus,
+.cognito-embed .cog-cognito input[type="number"]:focus,
+.cognito-embed .cog-cognito textarea:focus,
+.cognito-embed .cog-cognito select:focus {
   border-color: var(--accent) !important;
   box-shadow: 0 0 0 3px var(--accent-glow) !important;
 }
 
 /* Submit / action buttons */
-.cognito .cog-button,
-.cognito .cog-button--submit,
-.cognito button[type="submit"] {
-  font-family: var(--font) !important;
+.cognito-embed .cog-cognito .cog-button,
+.cognito-embed .cog-cognito .cog-button--submit,
+.cognito-embed .cog-cognito button[type="submit"] {
   font-size: var(--text-base) !important;
   font-weight: 600 !important;
   padding: 0.85rem 2rem !important;
@@ -3515,71 +3528,76 @@ body.has-alert-bar .page-hero {
   min-height: 3.2rem !important;
 }
 
-.cognito .cog-button:hover,
-.cognito .cog-button--submit:hover,
-.cognito button[type="submit"]:hover {
+.cognito-embed .cog-cognito .cog-button:hover,
+.cognito-embed .cog-cognito button[type="submit"]:hover {
   background: var(--navy-dark) !important;
 }
 
-/* Field spacing */
-.cognito .cog-field,
-.cognito .cog-row {
-  margin-bottom: var(--space-md) !important;
+/* Field spacing: tighten up Cognito's defaults */
+.cognito-embed .cog-cognito .cog-row {
+  margin-bottom: 0.75rem !important;
+}
+
+/* Collapse empty conditional rows (hidden fields still in DOM) */
+.cognito-embed .cog-cognito .cog-row:empty,
+.cognito-embed .cog-cognito .cog-row:not(:has(*:not(:empty))) {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.cognito-embed .cog-cognito .cog-field {
+  margin-bottom: 0.5rem !important;
 }
 
 /* Required asterisks */
-.cognito .cog-required {
+.cognito-embed .cog-cognito .cog-required {
   color: var(--red) !important;
 }
 
 /* Error messages */
-.cognito .cog-error,
-.cognito .cog-validation-error {
+.cognito-embed .cog-cognito .cog-error,
+.cognito-embed .cog-cognito .cog-validation-error {
   color: var(--red) !important;
   font-size: 0.85rem !important;
-  font-family: var(--font) !important;
 }
 
 /* Hide Cognito branding */
-.cognito .cog-branding,
-.cognito .cog-powered-by {
+.cognito-embed .cog-cognito .cog-branding,
+.cognito-embed .cog-cognito .cog-powered-by {
   display: none !important;
 }
 
 /* Section headings inside forms */
-.cognito .cog-heading,
-.cognito .cog-section-heading {
-  font-family: var(--font) !important;
+.cognito-embed .cog-cognito .cog-heading,
+.cognito-embed .cog-cognito .cog-section-heading {
   color: var(--text-primary) !important;
   font-weight: 700 !important;
 }
 
-/* Description text */
-.cognito .cog-description,
-.cognito .cog-help-text {
-  font-family: var(--font) !important;
+/* Description / help text */
+.cognito-embed .cog-cognito .cog-description,
+.cognito-embed .cog-cognito .cog-help-text {
   color: var(--text-muted) !important;
   font-size: 0.9rem !important;
 }
 
 /* Checkboxes and radios */
-.cognito input[type="checkbox"],
-.cognito input[type="radio"] {
+.cognito-embed .cog-cognito input[type="checkbox"],
+.cognito-embed .cog-cognito input[type="radio"] {
   accent-color: var(--navy) !important;
   min-height: auto !important;
   padding: 0 !important;
 }
 
 /* Placeholder text */
-.cognito input::placeholder,
-.cognito textarea::placeholder {
+.cognito-embed .cog-cognito input::placeholder,
+.cognito-embed .cog-cognito textarea::placeholder {
   color: var(--text-muted) !important;
   opacity: 0.7 !important;
 }
 
 /* Confirmation / success message */
-.cognito .cog-confirmation {
-  font-family: var(--font) !important;
+.cognito-embed .cog-cognito .cog-confirmation {
   color: var(--text-primary) !important;
   padding: var(--space-lg) !important;
   text-align: center !important;
@@ -3594,6 +3612,52 @@ body.has-alert-bar .page-hero {
 .signup-container {
   max-width: 860px;
   margin: 0 auto;
+}
+
+.signup-container--form {
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.signup-form-area {
+  min-width: 0;
+}
+
+.signup-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  position: sticky;
+  top: 6rem;
+}
+
+.signup-sidebar .signup-card h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+}
+
+.signup-sidebar .signup-steps {
+  font-size: 0.95rem;
+  gap: 0.5rem;
+}
+
+.signup-sidebar .signup-phone a {
+  font-size: var(--text-lg);
+}
+
+@media (max-width: 48rem) {
+  .signup-container--form {
+    grid-template-columns: 1fr;
+  }
+
+  .signup-sidebar {
+    position: static;
+  }
 }
 
 .signup-card {
