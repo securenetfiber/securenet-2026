@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(find C:UsersJoshKingDocuments -type f -name *.md -o -name .obsidian)"
-    ]
-  }
-}
