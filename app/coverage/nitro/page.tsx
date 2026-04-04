@@ -83,18 +83,21 @@ export default function NitroPage() {
               </a>
             </div>
             <div className="city-plan-card">
-              <h3 className="city-plan-speed">5 Gig</h3>
+              <h3 className="city-plan-speed">2 Gig</h3>
               <p className="city-plan-price">
-                <span className="city-plan-amount">$152</span>/mo
+                <span className="city-plan-amount">$107</span>/mo
               </p>
               <p className="city-plan-desc">
-                The fastest residential internet available in Nitro. Period.
+                For large households, home offices, and heavy multitasking.
               </p>
               <a href="/service-request" className="btn btn-primary">
                 Sign Up
               </a>
             </div>
           </div>
+          <p className="city-plan-more">
+            Need more speed? <Link href="/residential">View all plans</Link> including our 5 Gig and 8.5 Gig options.
+          </p>
         </div>
       </section>
 

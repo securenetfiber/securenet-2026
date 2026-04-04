@@ -5,6 +5,7 @@ export default function PlanCard({ plan }: { plan: Plan }) {
     <div className={`plan-card${plan.featured ? ' plan-card--featured' : ''}`}>
       {plan.badge && <div className="plan-badge">{plan.badge}</div>}
       <div className="plan-name">{plan.name}</div>
+      {plan.brandName && <div className="plan-brand">{plan.brandName}</div>}
       <div className="plan-speed">
         {plan.speed} <span>{plan.speedUnit}</span>
       </div>
@@ -13,6 +14,9 @@ export default function PlanCard({ plan }: { plan: Plan }) {
         <span className="price-amount">{plan.price}</span>
         <span className="price-period">/mo</span>
       </div>
+      {plan.circuitOnly && (
+        <div className="plan-circuit-only">Circuit only, bring your own router</div>
+      )}
       <ul className="plan-features">
         {plan.features.map((feature, i) => (
           <li key={i}>{feature}</li>

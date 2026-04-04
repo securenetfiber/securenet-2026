@@ -482,7 +482,20 @@ ul, ol {
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  margin-bottom: 0.15rem;
+}
+
+.plan-brand {
+  font-size: 0.8rem;
+  color: var(--text-muted);
   margin-bottom: var(--space-sm);
+}
+
+.plan-circuit-only {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-sm);
+  font-style: italic;
 }
 
 .plan-speed {
@@ -2786,6 +2799,18 @@ body.has-alert-bar .page-hero {
   max-width: 44rem;
 }
 
+.city-plan-more {
+  text-align: center;
+  margin-top: var(--space-md);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.city-plan-more a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .city-plan-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -3647,7 +3672,11 @@ body.has-alert-bar .page-hero {
 }
 
 .signup-sidebar .signup-phone a {
-  font-size: var(--text-lg);
+  font-size: 1.05rem;
+}
+
+.signup-sidebar .signup-phones {
+  gap: var(--space-md);
 }
 
 @media (max-width: 48rem) {

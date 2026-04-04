@@ -130,7 +130,7 @@ export default function ResidentialPage() {
               },
               {
                 title: 'Wi-Fi Router Included',
-                desc: 'We provide a high-performance Wi-Fi router with every plan. No need to buy your own unless you want to.',
+                desc: 'Our 500 Mbps, 1 Gig, and 2 Gig plans include a high-performance Wi-Fi router at no extra cost. Our 5 Gig and 8.5 Gig plans are circuit only for customers who prefer their own networking equipment.',
               },
               {
                 title: 'Streaming TV Available',
