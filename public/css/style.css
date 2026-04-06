@@ -426,17 +426,13 @@ ul, ol {
 }
 
 .plan-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--space-md);
   margin-bottom: var(--space-lg);
-  justify-content: center;
-}
-
-.plan-grid > * {
-  flex: 0 1 calc(33.333% - var(--space-md));
-  max-width: calc(33.333% - var(--space-md));
-  min-width: 240px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .plan-card {
@@ -1168,16 +1164,10 @@ ul, ol {
 
 @media (max-width: 64rem) {
   .plan-grid {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
     max-width: 28rem;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .plan-grid > * {
-    flex: 0 1 100%;
-    width: 100%;
   }
 
   .benefit-grid {
