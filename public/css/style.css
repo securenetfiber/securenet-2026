@@ -432,6 +432,10 @@ ul, ol {
   margin-bottom: var(--space-lg);
 }
 
+.plan-grid > * {
+  min-width: 0;
+}
+
 .plan-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
