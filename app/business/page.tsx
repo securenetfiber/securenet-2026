@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import PlanCardWithLabel from '@/components/PlanCardWithLabel';
-import QuoteForm from '@/components/QuoteForm';
 import { PlanSchema, BreadcrumbSchema } from '@/components/SchemaOrg';
 import { businessPlans } from '@/lib/plans';
 
@@ -45,7 +45,7 @@ export default function BusinessPage() {
           <p className="plans-note">
             Need more speed? We offer connections up to 10 Gbps and dedicated
             internet access (DIA) circuits.{' '}
-            <a href="#quote">Contact us for custom pricing.</a>
+            <Link href="/service-request">Contact us for custom pricing.</Link>
           </p>
         </div>
       </section>
@@ -95,8 +95,8 @@ export default function BusinessPage() {
 
           <p className="plans-note">
             Business Phone pricing depends on your setup and number of lines.{' '}
-            <a href="#quote">Request a quote</a> and we&apos;ll put together a
-            plan that fits.
+            <Link href="/service-request">Request a quote</Link> and we&apos;ll
+            put together a plan that fits.
           </p>
         </div>
       </section>
@@ -118,9 +118,9 @@ export default function BusinessPage() {
                 access points, firewalls, VPNs. Our team handles the day-to-day
                 so your staff can focus on their work.
               </p>
-              <a href="#quote" className="btn btn-outline" style={{ marginTop: 'var(--space-md)' }}>
+              <Link href="/service-request" className="btn btn-outline" style={{ marginTop: 'var(--space-md)' }}>
                 Request a Quote
-              </a>
+              </Link>
             </div>
 
             <div className="benefit-card">
@@ -130,9 +130,9 @@ export default function BusinessPage() {
                 monitoring. Physical and cyber security for businesses of all
                 sizes.
               </p>
-              <a href="#quote" className="btn btn-outline" style={{ marginTop: 'var(--space-md)' }}>
+              <Link href="/service-request" className="btn btn-outline" style={{ marginTop: 'var(--space-md)' }}>
                 Request a Quote
-              </a>
+              </Link>
             </div>
 
             <div className="benefit-card">
@@ -142,9 +142,9 @@ export default function BusinessPage() {
                 power, climate control, and fiber connectivity to our network
                 backbone.
               </p>
-              <a href="#quote" className="btn btn-outline" style={{ marginTop: 'var(--space-md)' }}>
-                Request a Quote
-              </a>
+              <Link href="/business/data-center-services" className="btn btn-outline" style={{ marginTop: 'var(--space-md)' }}>
+                Learn More
+              </Link>
             </div>
           </div>
         </div>
@@ -187,19 +187,18 @@ export default function BusinessPage() {
         </div>
       </section>
 
-      {/* QUOTE REQUEST */}
-      <section className="contact" id="quote">
+      {/* CTA */}
+      <section className="availability" id="quote">
         <div className="section-container">
-          <div className="contact-grid">
-            <div className="contact-info">
-              <h2 className="section-heading">Get a quote.</h2>
-              <p>
-                Tell us a little about your business and what you need. We&apos;ll
-                put together a custom proposal and get back to you within one
-                business day.
-              </p>
-            </div>
-            <QuoteForm />
+          <div className="avail-box">
+            <h2 className="avail-heading">Ready to get started?</h2>
+            <p className="avail-sub">
+              Tell us about your business and we&apos;ll put together a custom
+              proposal within one business day.
+            </p>
+            <Link href="/service-request" className="btn btn-primary">
+              Request a Quote
+            </Link>
           </div>
         </div>
       </section>
