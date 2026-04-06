@@ -427,12 +427,9 @@ ul, ol {
 
 .plan-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
   margin-bottom: var(--space-lg);
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .plan-card {
