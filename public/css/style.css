@@ -435,6 +435,7 @@ ul, ol {
 
 .plan-grid > * {
   flex: 0 1 calc(33.333% - var(--space-md));
+  max-width: calc(33.333% - var(--space-md));
   min-width: 240px;
 }
 
@@ -819,9 +820,9 @@ ul, ol {
 }
 
 .stat-number {
-  font-size: var(--text-3xl);
-  font-weight: 900;
-  letter-spacing: -0.03em;
+  font-size: var(--text-xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
   color: var(--navy);
 }
 

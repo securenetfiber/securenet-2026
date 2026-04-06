@@ -66,7 +66,7 @@ export function LocalBusinessSchema() {
         name: 'Virginia',
       },
     ],
-    priceRange: '$52 - $152',
+    priceRange: '$52 - $200',
   };
 
   return (

@@ -6,7 +6,7 @@ const STATS = [
   { value: '99.98%', label: 'Network Uptime' },
   { value: '2.4 ms', label: 'Avg Latency' },
   { value: '99.99%', label: 'Packet Delivery' },
-  { value: '5 Gbps', label: 'Peak Throughput' },
+  { value: '8.5 Gbps', label: 'Peak Throughput' },
 ];
 
 const MARKETS = [

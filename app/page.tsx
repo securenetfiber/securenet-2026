@@ -14,7 +14,7 @@ export default function HomePage() {
             <em>works.</em>
           </h1>
           <p className="hero-sub">
-            Fiber-to-the-home with speeds up to 5 Gbps. No contracts.
+            Fiber-to-the-home with speeds up to 8.5 Gbps. No contracts.
             No hidden fees. Starting at $52/mo.
           </p>
           <div className="hero-cta">
@@ -23,7 +23,7 @@ export default function HomePage() {
           </div>
           <div className="hero-proof">
             <div className="proof-item">
-              <strong>Up to 5 Gbps</strong>
+              <strong>Up to 8.5 Gbps</strong>
               <span>Fiber-to-the-Home</span>
             </div>
             <div className="proof-divider"></div>
@@ -87,16 +87,16 @@ export default function HomePage() {
             </div>
             <div className="about-stats">
               <div className="stat">
-                <span className="stat-number">99.9%</span>
-                <span className="stat-label">Network Uptime</span>
+                <span className="stat-number">No Contracts</span>
+                <span className="stat-label">Cancel anytime, no penalties</span>
               </div>
               <div className="stat">
-                <span className="stat-number">&lt;30s</span>
-                <span className="stat-label">Avg. Support Answer Time</span>
+                <span className="stat-number">Free Installation</span>
+                <span className="stat-label">Standard install at no cost</span>
               </div>
               <div className="stat">
-                <span className="stat-number">0</span>
-                <span className="stat-label">Hidden Fees</span>
+                <span className="stat-number">Local Support</span>
+                <span className="stat-label">Real people, not a call center</span>
               </div>
             </div>
           </div>

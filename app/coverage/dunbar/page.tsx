@@ -30,7 +30,7 @@ export default function DunbarPage() {
         <div className="section-container">
           <div className="city-stats">
             <div className="city-stat">
-              <span className="city-stat-value">5 Gbps</span>
+              <span className="city-stat-value">8.5 Gbps</span>
               <span className="city-stat-label">Max speed</span>
             </div>
             <div className="city-stat">

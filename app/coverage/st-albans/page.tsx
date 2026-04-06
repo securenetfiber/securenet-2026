@@ -68,8 +68,8 @@ export default function StAlbansPage() {
               <p>Affordable fiber internet with no surprises on your bill.</p>
             </div>
             <div className="prereg-expect-item">
-              <div className="prereg-expect-value">5 Gbps</div>
-              <h3>Speeds up to 5 Gbps</h3>
+              <div className="prereg-expect-value">8.5 Gbps</div>
+              <h3>Speeds up to 8.5 Gbps</h3>
               <p>Symmetrical upload and download. Fast in both directions.</p>
             </div>
             <div className="prereg-expect-item">
