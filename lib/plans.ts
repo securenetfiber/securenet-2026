@@ -186,7 +186,7 @@ export const residentialPlans: Plan[] = [
     features: [
       'Symmetrical upload and download',
       'The fastest residential internet we offer',
-      'For home labs, prosumers, and future-proofing',
+      'For home labs and prosumers',
       'No data caps',
       'No contracts',
       'Circuit only, no router included',
