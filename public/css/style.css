@@ -446,6 +446,7 @@ ul, ol {
   position: relative;
   transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
 }
 
 .plan-card:hover {
@@ -503,11 +504,13 @@ ul, ol {
 }
 
 .plan-speed {
-  font-size: var(--text-4xl);
+  font-size: clamp(2rem, 4vw, var(--text-4xl));
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1;
   margin-bottom: 0.25rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .plan-speed span {
@@ -534,7 +537,7 @@ ul, ol {
 }
 
 .price-amount {
-  font-size: var(--text-4xl);
+  font-size: clamp(2rem, 4vw, var(--text-4xl));
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1;
