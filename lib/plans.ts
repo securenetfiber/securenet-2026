@@ -74,7 +74,7 @@ export const residentialPlans: Plan[] = [
     speedUnit: 'Mbps',
     price: 52,
     features: [
-      'Symmetrical upload and download',
+      'Same upload and download speeds',
       'Great for streaming, video calls, and working from home',
       'Connect 10+ devices',
       'No data caps',
@@ -101,7 +101,7 @@ export const residentialPlans: Plan[] = [
     speedUnit: 'Gbps',
     price: 72,
     features: [
-      'Symmetrical upload and download',
+      'Same upload and download speeds',
       'Handle 4K streams, large transfers, and gaming at the same time',
       'Connect 25+ devices',
       'No data caps',
@@ -128,7 +128,7 @@ export const residentialPlans: Plan[] = [
     speedUnit: 'Gbps',
     price: 107,
     features: [
-      'Symmetrical upload and download',
+      'Same upload and download speeds',
       'Ideal for gaming, streaming, and large households',
       'Connect 40+ devices',
       'No data caps',
@@ -156,7 +156,7 @@ export const residentialPlans: Plan[] = [
     speedUnit: 'Gbps',
     price: 150,
     features: [
-      'Symmetrical upload and download',
+      'Same upload and download speeds',
       'Built for power users and content creators',
       'Connect 50+ devices',
       'No data caps',
@@ -184,7 +184,7 @@ export const residentialPlans: Plan[] = [
     speedUnit: 'Gbps',
     price: 200,
     features: [
-      'Symmetrical upload and download',
+      'Same upload and download speeds',
       'The fastest residential internet we offer',
       'For home labs and prosumers',
       'No data caps',
@@ -215,7 +215,7 @@ export const businessPlans: Plan[] = [
     speedUnit: 'Mbps',
     price: 72,
     features: [
-      'Symmetrical upload/download',
+      'Same upload and download speeds',
       'No data caps',
       'No contracts',
       'SLA-backed uptime',
@@ -241,7 +241,7 @@ export const businessPlans: Plan[] = [
     speedUnit: 'Gbps',
     price: 92,
     features: [
-      'Symmetrical upload/download',
+      'Same upload and download speeds',
       'No data caps',
       'No contracts',
       'SLA-backed uptime',
@@ -268,7 +268,7 @@ export const businessPlans: Plan[] = [
     speedUnit: 'Gbps',
     price: 132,
     features: [
-      'Symmetrical upload/download',
+      'Same upload and download speeds',
       'No data caps',
       'No contracts',
       'SLA-backed uptime',
@@ -294,7 +294,7 @@ export const businessPlans: Plan[] = [
     speedUnit: 'Gbps',
     price: 252,
     features: [
-      'Symmetrical upload/download',
+      'Same upload and download speeds',
       'No data caps',
       'No contracts',
       'SLA-backed uptime',
@@ -320,7 +320,7 @@ export const businessPlans: Plan[] = [
     speedUnit: 'Gbps',
     price: 325,
     features: [
-      'Symmetrical upload/download',
+      'Same upload and download speeds',
       'No data caps',
       'No contracts',
       'SLA-backed uptime',

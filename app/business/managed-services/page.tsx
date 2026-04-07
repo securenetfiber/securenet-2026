@@ -32,7 +32,7 @@ export default function ManagedServicesPage() {
         <div className="section-container">
           <h1 className="section-heading">Commercial &amp; Managed Services</h1>
           <p className="section-sub">
-            Dedicated fiber with symmetrical speeds and SLA-backed uptime. No
+            Dedicated fiber with the same upload and download speeds, plus SLA-backed uptime. No
             data caps, no contracts.
           </p>
         </div>
@@ -78,7 +78,7 @@ export default function ManagedServicesPage() {
         <div className="section-container">
           <h2 className="section-heading">Dedicated Internet Access (DIA)</h2>
           <p className="section-sub" style={{ marginBottom: 'var(--space-xl)' }}>
-            Symmetrical, uncontended bandwidth for organizations that need
+            Uncontended bandwidth with the same speed up and down, for organizations that need
             guaranteed performance. No sharing with neighbors, no peak hour
             slowdowns.
           </p>
@@ -87,7 +87,7 @@ export default function ManagedServicesPage() {
             <div className="benefit-card">
               <h3>Guaranteed Bandwidth</h3>
               <p>
-                Your circuit is yours. Full symmetrical speeds available 24/7,
+                Your circuit is yours. Full upload and download speeds available 24/7,
                 regardless of what your neighbors are doing on the network.
               </p>
             </div>

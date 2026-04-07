@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from '@/components/SchemaOrg';
 export const metadata: Metadata = {
   title: 'Speed Comparison',
   description:
-    'See how SecureNet Fiber stacks up against cable and DSL providers. Symmetrical speeds, no data caps, and lower latency.',
+    'See how SecureNet Fiber stacks up against cable and DSL providers. Same upload and download speeds, no data caps, and lower latency.',
 };
 
 export default function SpeedComparisonPage() {
@@ -18,7 +18,7 @@ export default function SpeedComparisonPage() {
         <div className="section-container">
           <h1 className="section-heading">Speed Comparison</h1>
           <p className="section-sub">
-            Symmetrical upload and download, no fine print. See how fiber
+            Same upload and download speeds, no fine print. See how fiber
             compares to cable and DSL in our service areas.
           </p>
         </div>
@@ -42,7 +42,7 @@ export default function SpeedComparisonPage() {
               <div className="benefit-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 3 21 3 21 8" /><line x1="4" y1="20" x2="21" y2="3" /><polyline points="21 16 21 21 16 21" /><line x1="15" y1="15" x2="21" y2="21" /><line x1="4" y1="4" x2="9" y2="9" /></svg>
               </div>
-              <h3>Symmetrical speeds</h3>
+              <h3>Same speed up and down</h3>
               <p>
                 Cable upload speeds are often 10&ndash;20x slower than download.
                 With fiber, upload matches download -- critical for video calls,

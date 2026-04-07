@@ -54,7 +54,7 @@ export default function DanvillePage() {
         <div className="section-container">
           <h2 className="section-heading">Plans available in Danville</h2>
           <p className="section-sub">
-            Every plan includes symmetrical speeds, no data caps, and no annual
+            Every plan includes the same upload and download speeds, no data caps, and no annual
             contracts. Additional tiers are on the way as we expand our Virginia network.
           </p>
           <div className="city-plan-grid city-plan-grid--two">
@@ -118,7 +118,7 @@ export default function DanvillePage() {
             </div>
             <div className="city-included-item">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-              <span>Symmetrical speeds</span>
+              <span>Same speed up &amp; down</span>
             </div>
           </div>
         </div>
@@ -140,7 +140,7 @@ export default function DanvillePage() {
             <div className="city-why-card">
               <h3>Real upload speeds</h3>
               <p>
-                With cable, uploads crawl. Fiber delivers symmetrical speeds, so
+                With cable, uploads crawl. Fiber delivers the same speed up and down, so
                 video calls, cloud backups, and uploads work just as fast as
                 downloads.
               </p>

@@ -7,7 +7,7 @@ import { businessPlans } from '@/lib/plans';
 export const metadata: Metadata = {
   title: 'Business Internet',
   description:
-    'Dedicated fiber internet for small businesses in the Kanawha Valley, WV and Danville, VA. Symmetrical speeds, no data caps, no contracts.',
+    'Dedicated fiber internet for small businesses in the Kanawha Valley, WV and Danville, VA. Same upload and download speeds, no data caps, no contracts.',
 };
 
 // Small business page shows only the lower tiers. Higher tiers and managed
@@ -28,7 +28,7 @@ export default function BusinessPage() {
           <h1 className="section-heading">Business Internet</h1>
           <p className="section-sub">
             Dedicated fiber for small businesses in the Kanawha Valley and
-            Danville, VA. Symmetrical speeds, no data caps, no contracts.
+            Danville, VA. Same upload and download speeds, no data caps, no contracts.
           </p>
         </div>
       </section>
@@ -121,31 +121,20 @@ export default function BusinessPage() {
       </section>
 
       {/* MORE SERVICES (link out to MSP page) */}
-      <section className="services" id="services">
+      <section className="msp-banner" id="services">
         <div className="section-container">
-          <h2 className="section-heading">Need more than internet?</h2>
-          <p className="section-sub" style={{ marginBottom: 'var(--space-xl)' }}>
-            We handle managed networks, security, hosted phones, and data
-            center colocation for businesses across our service area.
-          </p>
-
-          <div className="cta-box" style={{ maxWidth: '40rem', margin: '0 auto' }}>
-            <h3 style={{ marginBottom: 'var(--space-sm)' }}>
-              Commercial &amp; Managed Services
-            </h3>
-            <p style={{ marginBottom: 'var(--space-md)' }}>
-              Dedicated fiber up to 8.5 Gbps, dedicated internet access (DIA),
-              SLA-backed uptime, network management, business security, and
-              colocation in our local data center.
-            </p>
-            <div style={{ display: 'flex', gap: 'var(--space-sm)', flexWrap: 'wrap' }}>
-              <Link href="/business/managed-services" className="btn btn-primary">
-                Explore Commercial Services
-              </Link>
-              <Link href="/service-request" className="btn btn-outline">
-                Request a Quote
-              </Link>
+          <div className="msp-banner-inner">
+            <div className="msp-banner-text">
+              <p className="msp-banner-eyebrow">Commercial &amp; Managed Services</p>
+              <h2>Need more than internet?</h2>
+              <p>
+                Dedicated fiber up to 8.5 Gbps, DIA, SLA-backed uptime,
+                managed networks, business security, and colocation.
+              </p>
             </div>
+            <Link href="/business/managed-services" className="btn btn-primary btn-lg">
+              Explore Commercial Services
+            </Link>
           </div>
         </div>
       </section>

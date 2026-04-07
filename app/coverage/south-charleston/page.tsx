@@ -54,7 +54,7 @@ export default function SouthCharlestonPage() {
         <div className="section-container">
           <h2 className="section-heading">Plans available in South Charleston</h2>
           <p className="section-sub">
-            Every plan includes symmetrical speeds, no data caps, and no annual contracts.
+            Every plan includes the same upload and download speeds, no data caps, and no annual contracts.
           </p>
           <div className="city-plan-grid">
             <div className="city-plan-card">
@@ -128,7 +128,7 @@ export default function SouthCharlestonPage() {
             </div>
             <div className="city-included-item">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-              <span>Symmetrical speeds</span>
+              <span>Same speed up &amp; down</span>
             </div>
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function SouthCharlestonPage() {
               </p>
             </div>
             <div className="city-why-card">
-              <h3>Symmetrical upload speeds</h3>
+              <h3>Same upload speed as download</h3>
               <p>
                 With cable, your upload speed is a fraction of your download. Fiber
                 gives you the same speed in both directions. Better for video calls,

@@ -27,9 +27,9 @@ const generalFaq: FaqItem[] = [
       'No. Every plan includes truly unlimited data -- no caps, no throttling, no overage charges.',
   },
   {
-    question: 'What does "symmetrical" speed mean?',
+    question: 'Why does my upload speed matter?',
     answer:
-      'Symmetrical means your upload speed matches your download speed. If you have a 1 Gig plan, you get 1 Gbps down and 1 Gbps up. Cable providers typically offer upload speeds 10-20x slower than download.',
+      'On every SecureNet plan your upload speed matches your download speed. If you have a 1 Gig plan, you get 1 Gbps down AND 1 Gbps up. Cable providers typically offer upload speeds 10-20x slower than their download speeds, which makes video calls, cloud backups, and uploading photos or videos much slower.',
   },
 ];
 

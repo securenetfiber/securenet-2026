@@ -1588,7 +1588,7 @@ ul, ol {
   margin-bottom: var(--space-lg);
 }
 
-/* Collapse top padding when stacked sections share the same background */
+/* Reduce top padding when stacked sections share the same background, but keep some breathing room */
 .why-fiber + .why-fiber,
 .why-fiber + .included,
 .included + .why-fiber,
@@ -1597,7 +1597,7 @@ ul, ol {
 .services + .included,
 .why-fiber + .services,
 .included + .services {
-  padding-top: 0;
+  padding-top: var(--space-lg);
 }
 
 .included-grid {
@@ -3877,6 +3877,74 @@ body.has-alert-bar .page-hero {
     flex-shrink: 0;
     font-size: 0.8rem;
     padding: 0.45rem 0.85rem;
+  }
+}
+
+/* ========== MSP Banner (business page) ========== */
+
+.msp-banner {
+  padding: var(--space-xl) 0;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+  color: #fff;
+}
+
+.msp-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.msp-banner-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.msp-banner-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 0.5rem;
+}
+
+.msp-banner h2 {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #fff;
+  margin: 0 0 0.75rem;
+}
+
+.msp-banner p {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.55;
+  margin: 0;
+  max-width: 38rem;
+}
+
+.msp-banner .btn-primary {
+  background: #fff;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+
+.msp-banner .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--navy);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 56rem) {
+  .msp-banner-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
   }
 }
 

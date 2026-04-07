@@ -18,9 +18,9 @@ export default function NitroPage() {
           <h1 className="section-heading">Real fiber. Finally.</h1>
           <p className="section-sub">
             Nitro deserved better than cable and DSL. Now it has it. SecureNet
-            Fiber is live in Nitro with fiber-to-the-home service. Symmetrical
-            speeds, no data caps, and none of the slowdowns you&apos;re used to
-            during peak hours.
+            Fiber is live in Nitro with fiber-to-the-home service. The same
+            speed up and down, no data caps, and none of the slowdowns
+            you&apos;re used to during peak hours.
           </p>
         </div>
       </section>
@@ -54,7 +54,7 @@ export default function NitroPage() {
         <div className="section-container">
           <h2 className="section-heading">Plans available in Nitro</h2>
           <p className="section-sub">
-            Every plan includes symmetrical speeds, no data caps, and no annual contracts.
+            Every plan includes the same upload and download speeds, no data caps, and no annual contracts.
           </p>
           <div className="city-plan-grid">
             <div className="city-plan-card">
@@ -128,7 +128,7 @@ export default function NitroPage() {
             </div>
             <div className="city-included-item">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-              <span>Symmetrical speeds</span>
+              <span>Same speed up &amp; down</span>
             </div>
           </div>
         </div>

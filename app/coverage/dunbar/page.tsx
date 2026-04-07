@@ -54,7 +54,7 @@ export default function DunbarPage() {
         <div className="section-container">
           <h2 className="section-heading">Plans available in Dunbar</h2>
           <p className="section-sub">
-            Every plan includes symmetrical speeds, no data caps, and no annual contracts.
+            Every plan includes the same upload and download speeds, no data caps, and no annual contracts.
           </p>
           <div className="city-plan-grid">
             <div className="city-plan-card">
@@ -129,7 +129,7 @@ export default function DunbarPage() {
             </div>
             <div className="city-included-item">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-              <span>Symmetrical speeds</span>
+              <span>Same speed up &amp; down</span>
             </div>
           </div>
         </div>
@@ -151,7 +151,7 @@ export default function DunbarPage() {
               <h3>Uploads that keep up</h3>
               <p>
                 Working from home? Backing up photos to the cloud? Fiber gives you
-                symmetrical speeds. Your upload matches your download, every time.
+                the same speed up and down. Your upload matches your download, every time.
               </p>
             </div>
             <div className="city-why-card">

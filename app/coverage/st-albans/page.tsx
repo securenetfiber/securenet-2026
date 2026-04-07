@@ -70,7 +70,7 @@ export default function StAlbansPage() {
             <div className="prereg-expect-item">
               <div className="prereg-expect-value">8.5 Gbps</div>
               <h3>Speeds up to 8.5 Gbps</h3>
-              <p>Symmetrical upload and download. Fast in both directions.</p>
+              <p>Same upload and download speeds. Fast in both directions.</p>
             </div>
             <div className="prereg-expect-item">
               <div className="prereg-expect-value">None</div>

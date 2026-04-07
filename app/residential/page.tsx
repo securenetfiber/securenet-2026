@@ -43,7 +43,7 @@ export default function ResidentialPage() {
         <div className="section-container">
           <h2 className="section-heading">Pick your speed.</h2>
           <p className="section-sub">
-            Every plan includes symmetrical upload and download speeds, no data
+            Every plan includes the same upload and download speeds, no data
             caps, and no annual contracts.
           </p>
 
@@ -152,7 +152,7 @@ export default function ResidentialPage() {
               <div className="benefit-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
               </div>
-              <h3>Symmetrical Speeds</h3>
+              <h3>Same Speed Up and Down</h3>
               <p>
                 Your upload speed matches your download speed. Video calls, cloud
                 backups, and file sharing all work the way they should.

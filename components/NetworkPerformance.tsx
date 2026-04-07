@@ -25,7 +25,7 @@ const MARKETS = [
 ];
 
 const BADGES = [
-  'Symmetrical upload and download',
+  'Same upload and download speeds',
   'No throttling, ever',
   'Locally owned and operated',
   'No data caps',

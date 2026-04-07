@@ -157,7 +157,7 @@ export default function SpeedComparison() {
 
   const tier = tiers[activeTier];
   const securenet: ProviderData = {
-    name: 'SecureNet Fiber', type: 'Fiber -- symmetrical', featured: true,
+    name: 'SecureNet Fiber', type: 'Fiber -- same up and down', featured: true,
     dl: tier.dl, ul: tier.ul, ping: 1,
   };
   const allProviders = [securenet, ...rivals];
@@ -191,7 +191,7 @@ export default function SpeedComparison() {
       </div>
 
       <div className="sc-badge-row">
-        <span className="sc-badge sc-badge--navy"><span className="sc-badge-dot"></span>Symmetrical speeds</span>
+        <span className="sc-badge sc-badge--navy"><span className="sc-badge-dot"></span>Same speed up &amp; down</span>
         <span className="sc-badge sc-badge--navy"><span className="sc-badge-dot"></span>No data caps</span>
         <span className="sc-badge sc-badge--accent"><span className="sc-badge-dot"></span>Local infrastructure</span>
       </div>
