@@ -582,12 +582,23 @@ ul, ol {
    WHY FIBER
    ═══════════════════════════════════════════════ */
 
-.why-fiber {
-  padding: var(--space-3xl) 0;
+.why-fiber,
+.services {
+  padding: var(--space-2xl) 0;
 }
 
-.why-fiber .section-sub {
-  margin-bottom: var(--space-xl);
+.why-fiber .section-heading,
+.why-fiber .section-sub,
+.services .section-heading,
+.services .section-sub {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.why-fiber .section-sub,
+.services .section-sub {
+  margin-bottom: var(--space-lg);
 }
 
 .benefit-grid {
@@ -1563,11 +1574,30 @@ ul, ol {
    ═══════════════════════════════════════════════ */
 
 .included {
-  padding: var(--space-3xl) 0;
+  padding: var(--space-2xl) 0;
+}
+
+.included .section-heading,
+.included .section-sub {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .included .section-sub {
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
+}
+
+/* Collapse top padding when stacked sections share the same background */
+.why-fiber + .why-fiber,
+.why-fiber + .included,
+.included + .why-fiber,
+.included + .included,
+.services + .why-fiber,
+.services + .included,
+.why-fiber + .services,
+.included + .services {
+  padding-top: 0;
 }
 
 .included-grid {
@@ -3858,6 +3888,7 @@ body.has-alert-bar .page-hero {
   gap: var(--space-md);
   max-width: 960px;
   margin: 0 auto;
+  text-align: left;
 }
 
 .addon-card {
