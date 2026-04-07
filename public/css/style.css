@@ -3684,9 +3684,14 @@ body.has-alert-bar .page-hero {
 .signup-sidebar {
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
+  gap: var(--space-md);
   position: sticky;
   top: 6rem;
+}
+
+.signup-sidebar .signup-card {
+  border-radius: var(--radius-lg);
+  margin-bottom: 0;
 }
 
 .signup-sidebar .signup-card h3 {
@@ -3706,7 +3711,8 @@ body.has-alert-bar .page-hero {
 }
 
 .signup-sidebar .signup-phones {
-  gap: var(--space-md);
+  flex-direction: column;
+  gap: var(--space-sm);
 }
 
 @media (max-width: 48rem) {
