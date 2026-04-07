@@ -40,16 +40,14 @@ export default function ManagedServicesPage() {
 
       {/* Jump Nav */}
       <nav className="page-jump-nav" aria-label="Page sections">
-        <div className="section-container">
-          <ul className="jump-nav-list">
-            <li><a href="#circuits">Dedicated Circuits</a></li>
-            <li><a href="#dia">Dedicated Internet Access</a></li>
-            <li><a href="#managed">Managed Services</a></li>
-            <li><a href="#security">Security</a></li>
-            <li><a href="#data-center">Data Center</a></li>
-            <li><a href="#quote">Get a Quote</a></li>
-          </ul>
-        </div>
+        <ul className="jump-nav-list">
+          <li><a href="#circuits">Circuits</a></li>
+          <li><a href="#dia">DIA</a></li>
+          <li><a href="#managed">Managed</a></li>
+          <li><a href="#security">Security</a></li>
+          <li><a href="#data-center">Data Center</a></li>
+          <li><a href="#quote">Get a Quote</a></li>
+        </ul>
       </nav>
 
       {/* Dedicated Circuits */}

@@ -87,8 +87,8 @@ export default function HomePage() {
             </div>
             <div className="about-stats">
               <div className="stat">
-                <span className="stat-number">3-Year Price Lock</span>
-                <span className="stat-label">Your rate stays the same</span>
+                <span className="stat-number">No Contracts</span>
+                <span className="stat-label">3-year price lock included</span>
               </div>
               <div className="stat">
                 <span className="stat-number">Free Installation</span>

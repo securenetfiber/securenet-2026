@@ -33,6 +33,17 @@ export default function BusinessPage() {
         </div>
       </section>
 
+      {/* Jump Nav */}
+      <nav className="page-jump-nav" aria-label="Page sections">
+        <ul className="jump-nav-list">
+          <li><a href="#internet">Internet Plans</a></li>
+          <li><a href="#phone">Business Phone</a></li>
+          <li><a href="#services">Managed Services</a></li>
+          <li><a href="#why">Why SecureNet</a></li>
+          <li><a href="#quote">Get a Quote</a></li>
+        </ul>
+      </nav>
+
       {/* BUSINESS INTERNET PLANS */}
       <section className="plans" id="internet">
         <div className="section-container">
