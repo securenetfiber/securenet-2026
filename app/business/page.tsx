@@ -5,24 +5,30 @@ import { PlanSchema, BreadcrumbSchema } from '@/components/SchemaOrg';
 import { businessPlans } from '@/lib/plans';
 
 export const metadata: Metadata = {
-  title: 'Business Services',
+  title: 'Business Internet',
   description:
-    'Dedicated fiber, managed networks, VoIP phone, security, and data center services for businesses in the Kanawha Valley, WV and Danville, VA.',
+    'Dedicated fiber internet for small businesses in the Kanawha Valley, WV and Danville, VA. Symmetrical speeds, no data caps, no contracts.',
 };
+
+// Small business page shows only the lower tiers. Higher tiers and managed
+// services live on /business/managed-services.
+const smallBusinessPlans = businessPlans.filter((p) =>
+  ['biz-500', 'biz-1g', 'biz-2g'].includes(p.id)
+);
 
 export default function BusinessPage() {
   return (
     <>
-      <PlanSchema plans={businessPlans} />
+      <PlanSchema plans={smallBusinessPlans} />
       <BreadcrumbSchema items={[{ name: 'Home', href: '/' }, { name: 'Business' }]} />
 
       {/* PAGE HERO */}
       <section className="page-hero">
         <div className="section-container">
-          <h1 className="section-heading">Business Services</h1>
+          <h1 className="section-heading">Business Internet</h1>
           <p className="section-sub">
-            Dedicated fiber, managed networks, and full-service IT for businesses
-            in the Kanawha Valley and Danville, VA.
+            Dedicated fiber for small businesses in the Kanawha Valley and
+            Danville, VA. Symmetrical speeds, no data caps, no contracts.
           </p>
         </div>
       </section>
@@ -30,22 +36,24 @@ export default function BusinessPage() {
       {/* BUSINESS INTERNET PLANS */}
       <section className="plans" id="internet">
         <div className="section-container">
-          <h2 className="section-heading">Business Internet</h2>
+          <h2 className="section-heading">Small Business Internet</h2>
           <p className="section-sub">
-            Dedicated fiber with symmetrical speeds and SLA-backed uptime. No
-            data caps, no contracts.
+            Three plans built for offices, retail, and small operations.
           </p>
 
           <div className="plan-grid">
-            {businessPlans.map((plan) => (
+            {smallBusinessPlans.map((plan) => (
               <PlanCardWithLabel key={plan.id} plan={plan} />
             ))}
           </div>
 
           <p className="plans-note">
-            Need more speed? We offer connections up to 10 Gbps and dedicated
-            internet access (DIA) circuits.{' '}
-            <Link href="/service-request">Contact us for custom pricing.</Link>
+            Need more bandwidth, dedicated internet access, or a service level
+            agreement?{' '}
+            <Link href="/business/managed-services">
+              See our commercial and managed services
+            </Link>
+            .
           </p>
         </div>
       </section>
@@ -55,8 +63,8 @@ export default function BusinessPage() {
         <div className="section-container">
           <h2 className="section-heading">Business Phone</h2>
           <p className="section-sub" style={{ marginBottom: 'var(--space-xl)' }}>
-            Hosted Voice service built on our fiber network. Crystal-clear calls,
-            no old-school phone company overhead.
+            Hosted Voice service built on our fiber network. Crystal-clear
+            calls, no old-school phone company overhead.
           </p>
 
           <div className="benefit-grid">
@@ -101,49 +109,30 @@ export default function BusinessPage() {
         </div>
       </section>
 
-      {/* MORE SERVICES */}
+      {/* MORE SERVICES (link out to MSP page) */}
       <section className="services" id="services">
         <div className="section-container">
-          <h2 className="section-heading">More for your business.</h2>
+          <h2 className="section-heading">Need more than internet?</h2>
           <p className="section-sub" style={{ marginBottom: 'var(--space-xl)' }}>
-            Internet and phone are just the start. We handle the rest so you can
-            focus on running your business.
+            We handle managed networks, security, hosted phones, and data
+            center colocation for businesses across our service area.
           </p>
 
-          <div className="benefit-grid">
-            <div className="benefit-card">
-              <h3>Network Management</h3>
-              <p>
-                We design, install, and manage your business network. Switches,
-                access points, firewalls, VPNs. Our team handles the day-to-day
-                so your staff can focus on their work.
-              </p>
-              <Link href="/service-request" className="btn btn-outline" style={{ marginTop: 'var(--space-md)' }}>
-                Request a Quote
+          <div className="cta-box" style={{ maxWidth: '40rem', margin: '0 auto' }}>
+            <h3 style={{ marginBottom: 'var(--space-sm)' }}>
+              Commercial &amp; Managed Services
+            </h3>
+            <p style={{ marginBottom: 'var(--space-md)' }}>
+              Dedicated fiber up to 8.5 Gbps, dedicated internet access (DIA),
+              SLA-backed uptime, network management, business security, and
+              colocation in our local data center.
+            </p>
+            <div style={{ display: 'flex', gap: 'var(--space-sm)', flexWrap: 'wrap' }}>
+              <Link href="/business/managed-services" className="btn btn-primary">
+                Explore Commercial Services
               </Link>
-            </div>
-
-            <div className="benefit-card">
-              <h3>Business Security</h3>
-              <p>
-                Camera systems, access control, endpoint protection, and network
-                monitoring. Physical and cyber security for businesses of all
-                sizes.
-              </p>
-              <Link href="/service-request" className="btn btn-outline" style={{ marginTop: 'var(--space-md)' }}>
+              <Link href="/service-request" className="btn btn-outline">
                 Request a Quote
-              </Link>
-            </div>
-
-            <div className="benefit-card">
-              <h3>Data Center Services</h3>
-              <p>
-                Colocation and rack space in our local data center. Redundant
-                power, climate control, and fiber connectivity to our network
-                backbone.
-              </p>
-              <Link href="/business/data-center-services" className="btn btn-outline" style={{ marginTop: 'var(--space-md)' }}>
-                Learn More
               </Link>
             </div>
           </div>
@@ -166,8 +155,8 @@ export default function BusinessPage() {
                 desc: 'When you call us, you get someone who lives in the valley. No phone trees, no overseas call centers. Our average support response time is under 30 seconds.',
               },
               {
-                title: 'SLA-Backed Uptime',
-                desc: 'Every business connection comes with a service level agreement. We guarantee 99.9% uptime, and if we fall short, you get a credit.',
+                title: 'Reliable Service',
+                desc: 'Dedicated fiber lines with monitored uptime. When something goes wrong, we know about it before you do.',
               },
               {
                 title: 'Scales With You',

@@ -7,7 +7,7 @@ import { residentialPlans } from '@/lib/plans';
 export const metadata: Metadata = {
   title: 'Residential Internet Plans',
   description:
-    'Fiber-to-the-home internet starting at $52/mo. No contracts, no hidden fees, no data caps. Available in the Kanawha Valley, WV and Danville, VA.',
+    '100% fiber internet starting at $52/mo. No contracts, no hidden fees, no data caps. Available in the Kanawha Valley, WV and Danville, VA.',
 };
 
 export default function ResidentialPage() {
@@ -21,10 +21,24 @@ export default function ResidentialPage() {
         <div className="section-container">
           <h1 className="section-heading">Residential Internet</h1>
           <p className="section-sub">
-            Fiber-to-the-home starting at $52/mo. No contracts, no hidden fees.
+            100% fiber starting at $52/mo. No contracts, no hidden fees.
           </p>
         </div>
       </section>
+
+      {/* Jump Nav */}
+      <nav className="page-jump-nav" aria-label="Page sections">
+        <div className="section-container">
+          <ul className="jump-nav-list">
+            <li><a href="#plans">Internet Plans</a></li>
+            <li><a href="#why-fiber">Why Fiber</a></li>
+            <li><a href="#included">What&apos;s Included</a></li>
+            <li><a href="#home-phone">Home Phone</a></li>
+            <li><a href="#add-ons">Add-Ons</a></li>
+            <li><a href="#check">Check Address</a></li>
+          </ul>
+        </div>
+      </nav>
 
       {/* Plans */}
       <section className="plans" id="plans">
@@ -44,7 +58,7 @@ export default function ResidentialPage() {
       </section>
 
       {/* Why Fiber */}
-      <section className="why-fiber">
+      <section className="why-fiber" id="why-fiber">
         <div className="section-container">
           <h2 className="section-heading">Why fiber.</h2>
           <p className="section-sub">
@@ -103,7 +117,7 @@ export default function ResidentialPage() {
       </section>
 
       {/* What's Included */}
-      <section className="included">
+      <section className="included" id="included">
         <div className="section-container">
           <h2 className="section-heading">What&apos;s included.</h2>
           <p className="section-sub">
@@ -117,8 +131,8 @@ export default function ResidentialPage() {
                 desc: 'Use as much internet as you want. We don\u2019t throttle or charge overage fees. Ever.',
               },
               {
-                title: 'No Contracts',
-                desc: 'Stay because you want to, not because you have to. Cancel anytime with no early termination fees.',
+                title: '3-Year Price Lock',
+                desc: 'Your monthly rate stays the same for three years. No surprise increases.',
               },
               {
                 title: 'Free Installation',
@@ -147,6 +161,90 @@ export default function ResidentialPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Home Phone */}
+      <section className="why-fiber" id="home-phone">
+        <div className="section-container">
+          <h2 className="section-heading">Add Home Phone.</h2>
+          <p className="section-sub">
+            Crystal-clear voice service for $23/mo. Keep your existing number,
+            unlimited local and long distance, and all the features you expect.
+          </p>
+          <div className="benefit-grid">
+            <div className="benefit-card">
+              <h3>Unlimited Calling</h3>
+              <p>
+                Unlimited local and long distance calling included. No
+                per-minute charges, no caps.
+              </p>
+            </div>
+            <div className="benefit-card">
+              <h3>Standard Features</h3>
+              <p>
+                Caller ID, call waiting, 3-way calling, call forwarding, voice
+                mail, and do not disturb. Everything you expect from a
+                landline.
+              </p>
+            </div>
+            <div className="benefit-card">
+              <h3>Keep Your Number</h3>
+              <p>
+                Port your existing phone number from your current provider.
+                Transfer typically takes 3 to 5 days.
+              </p>
+            </div>
+            <div className="benefit-card">
+              <h3>E911 Included</h3>
+              <p>
+                Full E911 emergency service, 411 directory assistance, and
+                white page listings. International calling available as an
+                add-on.
+              </p>
+            </div>
+          </div>
+          <p className="plans-note" style={{ marginTop: 'var(--space-lg)' }}>
+            Home Phone is $23/mo plus tax.{' '}
+            <a href="/service-request">Add it to your plan</a>.
+          </p>
+        </div>
+      </section>
+
+      {/* Add-Ons */}
+      <section className="included" id="add-ons">
+        <div className="section-container">
+          <h2 className="section-heading">Add-ons.</h2>
+          <p className="section-sub">
+            Optional services you can add to any internet plan.
+          </p>
+          <div className="addon-grid">
+            <div className="addon-card">
+              <div className="addon-name">FiberProtect</div>
+              <div className="addon-price">$8<span>/mo</span></div>
+              <p>
+                Equipment protection for your fiber line and SecureNet
+                equipment. Covers accidental damage, wear and tear, pets, and
+                vandalism.
+              </p>
+            </div>
+            <div className="addon-card">
+              <div className="addon-name">Extra Mesh Router</div>
+              <div className="addon-price">$10<span>/mo</span></div>
+              <p>
+                Add an extra mesh node to extend Wi-Fi coverage to large homes
+                or hard-to-reach rooms. Per unit, per month.
+              </p>
+            </div>
+            <div className="addon-card">
+              <div className="addon-name">Static IP</div>
+              <div className="addon-price">$10<span>/mo</span></div>
+              <p>
+                A dedicated public IP address for hosting, remote access, VPN,
+                or any service that needs a fixed address.
+              </p>
+            </div>
           </div>
         </div>
       </section>

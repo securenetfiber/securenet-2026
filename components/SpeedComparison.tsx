@@ -10,8 +10,8 @@ const tiers = [
 ];
 
 const rivals = [
-  { name: 'Xfinity / Spectrum', type: 'Cable', dl: 500, ul: 35, ping: 28 },
   { name: 'Optimum', type: 'Cable', dl: 400, ul: 20, ping: 32 },
+  { name: 'Xfinity', type: 'Cable', dl: 500, ul: 35, ping: 28 },
   { name: 'Frontier', type: 'DSL / Fiber mix', dl: 115, ul: 10, ping: 45 },
 ];
 

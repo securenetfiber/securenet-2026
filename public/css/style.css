@@ -3783,3 +3783,107 @@ body.has-alert-bar .page-hero {
   }
 }
 
+/* ========== Page Jump Nav ========== */
+
+.page-jump-nav {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 64px;
+  z-index: 50;
+}
+
+.jump-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  list-style: none;
+  padding: 0.75rem 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.jump-nav-list a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--radius);
+  transition: color 0.15s, background 0.15s;
+}
+
+.jump-nav-list a:hover {
+  color: var(--navy);
+  background: var(--bg-surface);
+}
+
+@media (max-width: 48rem) {
+  .page-jump-nav {
+    position: static;
+  }
+  .jump-nav-list {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 0.75rem var(--space-md);
+  }
+  .jump-nav-list a {
+    white-space: nowrap;
+  }
+}
+
+/* ========== Add-On Cards ========== */
+
+.addon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.addon-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-align: left;
+}
+
+.addon-name {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.addon-price {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.02em;
+}
+
+.addon-price span {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0;
+}
+
+.addon-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 48rem) {
+  .addon-grid {
+    grid-template-columns: 1fr;
+    max-width: 28rem;
+  }
+}
+
