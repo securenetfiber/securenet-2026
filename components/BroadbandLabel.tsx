@@ -90,7 +90,7 @@ export default function BroadbandLabel({ plan }: { plan: Plan }) {
       <div className="bb-footer">
         <Link href={COMPANY_INFO.policyUrls.privacy}>Privacy Policy</Link>
         <span className="bb-sep">&bull;</span>
-        <Link href="/status">Network Management</Link>
+        <Link href={COMPANY_INFO.policyUrls.acceptableUse}>Network Management</Link>
         <span className="bb-sep">&bull;</span>
         <Link href="/contact">Customer Support</Link>
       </div>

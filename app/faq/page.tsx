@@ -83,7 +83,7 @@ const supportFaq: FaqItem[] = [
   {
     question: 'How do I check for outages in my area?',
     answer:
-      'Visit our network status page for real-time information on any service interruptions. You can also call our support line for updates.',
+      'Call our support line at (304) 744-4034 for current outage information. We also post updates on our Facebook page when there is a known service interruption.',
   },
 ];
 

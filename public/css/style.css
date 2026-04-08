@@ -65,6 +65,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -869,10 +870,24 @@ ul, ol {
   gap: var(--space-md);
 }
 
+.contact-methods--grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md) var(--space-lg);
+}
+
 .contact-method {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+}
+
+.contact-method--full {
+  grid-column: 1 / -1;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
 }
 
 .contact-method strong {
@@ -885,8 +900,19 @@ ul, ol {
 
 .contact-method a,
 .contact-method span {
-  font-size: var(--text-lg);
+  font-size: 1rem;
   color: var(--text-primary);
+}
+
+.contact-method--full span {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 30rem) {
+  .contact-methods--grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .contact-method a:hover {
@@ -2481,14 +2507,16 @@ body.has-alert-bar .page-hero {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: var(--space-md) var(--space-lg);
+  padding: var(--space-md) var(--space-md);
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .net-perf-stat-value {
-  font-size: var(--text-3xl);
+  font-size: clamp(1.5rem, 2.4vw, var(--text-3xl));
   font-weight: 900;
   letter-spacing: -0.03em;
   color: var(--navy);
@@ -3951,6 +3979,186 @@ body.has-alert-bar .page-hero {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
+  }
+}
+
+/* ========== DirecTV CTA (residential page) ========== */
+
+.directv-cta {
+  padding: var(--space-lg) 0 var(--space-2xl);
+}
+
+.directv-banner {
+  background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.directv-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.directv-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #4eb8ff;
+  margin: 0 0 0.5rem;
+}
+
+.directv-banner h2 {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #fff;
+  margin: 0 0 0.75rem;
+}
+
+.directv-banner p {
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.55;
+  margin: 0;
+  max-width: 38rem;
+}
+
+.directv-banner .btn-primary {
+  background: #fff;
+  color: #0f1419;
+  flex-shrink: 0;
+}
+
+.directv-banner .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f1419;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 56rem) {
+  .directv-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: var(--space-lg);
+  }
+}
+
+/* ========== Home Phone Section ========== */
+
+.phone-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.phone-price-card {
+  background: var(--bg-card);
+  border: 2px solid var(--navy);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: 0 4px 24px rgba(46, 54, 143, 0.08);
+  position: sticky;
+  top: 8rem;
+}
+
+.phone-price-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-sm);
+}
+
+.phone-price-amount {
+  display: flex;
+  align-items: baseline;
+  gap: 0.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.phone-price-dollar {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--text-secondary);
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.phone-price-value {
+  font-size: var(--text-4xl);
+  font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.phone-price-period {
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.phone-price-note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border);
+}
+
+.phone-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.phone-feature {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.phone-feature h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.phone-feature p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 56rem) {
+  .phone-layout {
+    grid-template-columns: 1fr;
+    max-width: 32rem;
+  }
+  .phone-price-card {
+    position: static;
+  }
+  .phone-features {
+    grid-template-columns: 1fr;
   }
 }
 

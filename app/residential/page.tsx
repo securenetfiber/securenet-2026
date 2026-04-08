@@ -32,6 +32,7 @@ export default function ResidentialPage() {
           <li><a href="#plans">Internet Plans</a></li>
           <li><a href="#home-phone">Home Phone</a></li>
           <li><a href="#add-ons">Add-Ons</a></li>
+          <li><a href="#directv">Streaming TV</a></li>
           <li><a href="#why-fiber">Why Fiber</a></li>
           <li><a href="#included">What&apos;s Included</a></li>
           <li><a href="#check">Check Address</a></li>
@@ -60,45 +61,54 @@ export default function ResidentialPage() {
         <div className="section-container">
           <h2 className="section-heading">Add Home Phone.</h2>
           <p className="section-sub">
-            Crystal-clear voice service for $23/mo. Keep your existing number,
-            unlimited local and long distance, and all the features you expect.
+            Crystal-clear voice service built on our fiber network. Keep your
+            existing number, unlimited local and long distance, and all the
+            features you expect.
           </p>
-          <div className="benefit-grid">
-            <div className="benefit-card">
-              <h3>Unlimited Calling</h3>
-              <p>
-                Unlimited local and long distance calling included. No
-                per-minute charges, no caps.
-              </p>
+          <div className="phone-layout">
+            <div className="phone-price-card">
+              <div className="phone-price-label">Home Phone</div>
+              <div className="phone-price-amount">
+                <span className="phone-price-dollar">$</span>
+                <span className="phone-price-value">23</span>
+                <span className="phone-price-period">/mo</span>
+              </div>
+              <div className="phone-price-note">Plus tax. No contracts.</div>
+              <a href="/service-request" className="btn btn-primary btn-full">
+                Add to Your Plan
+              </a>
             </div>
-            <div className="benefit-card">
-              <h3>Standard Features</h3>
-              <p>
-                Caller ID, call waiting, 3-way calling, call forwarding, voice
-                mail, and do not disturb. Everything you expect from a
-                landline.
-              </p>
-            </div>
-            <div className="benefit-card">
-              <h3>Keep Your Number</h3>
-              <p>
-                Port your existing phone number from your current provider.
-                Transfer typically takes 3 to 5 days.
-              </p>
-            </div>
-            <div className="benefit-card">
-              <h3>E911 Included</h3>
-              <p>
-                Full E911 emergency service, 411 directory assistance, and
-                white page listings. International calling available as an
-                add-on.
-              </p>
+            <div className="phone-features">
+              <div className="phone-feature">
+                <h3>Unlimited Calling</h3>
+                <p>
+                  Unlimited local and long distance calling included. No
+                  per-minute charges, no caps.
+                </p>
+              </div>
+              <div className="phone-feature">
+                <h3>Standard Features</h3>
+                <p>
+                  Caller ID, call waiting, 3-way calling, call forwarding,
+                  voice mail, and do not disturb.
+                </p>
+              </div>
+              <div className="phone-feature">
+                <h3>Keep Your Number</h3>
+                <p>
+                  Port your existing phone number from your current provider.
+                  Transfer takes 3 to 5 days.
+                </p>
+              </div>
+              <div className="phone-feature">
+                <h3>E911 Included</h3>
+                <p>
+                  Full E911 emergency service, 411 directory assistance, and
+                  white page listings.
+                </p>
+              </div>
             </div>
           </div>
-          <p className="plans-note" style={{ marginTop: 'var(--space-lg)' }}>
-            Home Phone is $23/mo plus tax.{' '}
-            <a href="/service-request">Add it to your plan</a>.
-          </p>
         </div>
       </section>
 
@@ -135,6 +145,26 @@ export default function ResidentialPage() {
                 or any service that needs a fixed address.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DirecTV CTA -- TODO: hide or update this CTA when needed */}
+      <section className="directv-cta" id="directv">
+        <div className="section-container">
+          <div className="directv-banner">
+            <div className="directv-text">
+              <p className="directv-eyebrow">Streaming TV Available</p>
+              <h2>Add DirecTV streaming to your plan.</h2>
+              <p>
+                Live sports, local channels, and on-demand content streamed
+                straight to your TV. No contracts, no activation fees, and
+                works right over your SecureNet fiber connection.
+              </p>
+            </div>
+            <a href="/service-request" className="btn btn-primary btn-lg">
+              Call for Details
+            </a>
           </div>
         </div>
       </section>
@@ -227,10 +257,6 @@ export default function ResidentialPage() {
               {
                 title: 'Wi-Fi Router Included',
                 desc: 'Our 500 Mbps, 1 Gig, and 2 Gig plans include a high-performance Wi-Fi router at no extra cost. Our 5 Gig and 8.5 Gig plans are circuit only for customers who prefer their own networking equipment.',
-              },
-              {
-                title: 'Streaming TV Available',
-                desc: 'Want to add TV? DirecTV streaming is available through SecureNet with no contracts and no activation fees. Contact us for pricing and details.',
               },
             ].map((item) => (
               <div className="included-item" key={item.title}>

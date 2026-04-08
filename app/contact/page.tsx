@@ -33,7 +33,7 @@ export default function ContactPage() {
                 have a question about service, need technical support, or just
                 want to say hello, we&apos;d love to hear from you.
               </p>
-              <div className="contact-methods">
+              <div className="contact-methods contact-methods--grid">
                 <div className="contact-method">
                   <strong>West Virginia</strong>
                   <a href="tel:+13047444034">(304) 744-4034</a>
@@ -47,17 +47,22 @@ export default function ContactPage() {
                   <a href="mailto:info@securenetfiber.com">info@securenetfiber.com</a>
                 </div>
                 <div className="contact-method">
-                  <strong>Office</strong>
-                  <span>Monday &ndash; Friday, 9 AM &ndash; 5 PM</span>
+                  <strong>Office Hours</strong>
+                  <span>Mon &ndash; Fri, 9 AM &ndash; 5 PM</span>
                 </div>
                 <div className="contact-method">
-                  <strong>Support</strong>
-                  <span>Monday &ndash; Friday, 8 AM &ndash; 8 PM</span>
-                  <span>Saturday &ndash; Sunday, 12 PM &ndash; 8 PM</span>
+                  <strong>Support Hours</strong>
+                  <span>Mon &ndash; Fri, 8 AM &ndash; 8 PM</span>
+                  <span>Sat &ndash; Sun, 12 PM &ndash; 8 PM</span>
                 </div>
                 <div className="contact-method">
-                  <strong>Location</strong>
-                  <span>South Charleston, WV</span>
+                  <strong>Office Address</strong>
+                  <span>5621 MacCorkle Ave SW</span>
+                  <span>South Charleston, WV 25309</span>
+                </div>
+                <div className="contact-method contact-method--full">
+                  <strong>Mailing Address &middot; Send Bills Here</strong>
+                  <span>SecureNet Fiber, PO Box 8799, South Charleston, WV 25303</span>
                 </div>
               </div>
             </div>
@@ -81,7 +86,7 @@ export default function ContactPage() {
               events.
             </p>
             <div className="social-links">
-              <a href="https://facebook.com/securenetfiber" className="social-link" target="_blank" rel="noopener noreferrer">
+              <a href="https://facebook.com/wvinternet" className="social-link" target="_blank" rel="noopener noreferrer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 <span>Facebook</span>
               </a>
