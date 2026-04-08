@@ -33,36 +33,75 @@ export default function ContactPage() {
                 have a question about service, need technical support, or just
                 want to say hello, we&apos;d love to hear from you.
               </p>
-              <div className="contact-methods contact-methods--grid">
-                <div className="contact-method">
-                  <strong>West Virginia</strong>
-                  <a href="tel:+13047444034">(304) 744-4034</a>
+              <div className="contact-groups">
+                {/* Call Us */}
+                <div className="contact-group">
+                  <div className="contact-group-label">Call Us</div>
+                  <div className="contact-group-body contact-group-body--split">
+                    <div>
+                      <span className="contact-sub">West Virginia</span>
+                      <a className="contact-primary" href="tel:+13047444034">(304) 744-4034</a>
+                    </div>
+                    <div>
+                      <span className="contact-sub">Virginia</span>
+                      <a className="contact-primary" href="tel:+14343540101">(434) 354-0101</a>
+                    </div>
+                  </div>
                 </div>
-                <div className="contact-method">
-                  <strong>Virginia</strong>
-                  <a href="tel:+14343540101">(434) 354-0101</a>
+
+                {/* Hours */}
+                <div className="contact-group">
+                  <div className="contact-group-label">Hours</div>
+                  <div className="contact-group-body">
+                    <div className="contact-hours-row">
+                      <span className="contact-sub">Office</span>
+                      <span>Mon &ndash; Fri, 9 AM &ndash; 5 PM</span>
+                    </div>
+                    <div className="contact-hours-row">
+                      <span className="contact-sub">Support</span>
+                      <span>
+                        Mon &ndash; Fri, 8 AM &ndash; 8 PM
+                        <br />
+                        Sat &ndash; Sun, 12 PM &ndash; 8 PM
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <div className="contact-method">
-                  <strong>Email</strong>
-                  <a href="mailto:info@securenetfiber.com">info@securenetfiber.com</a>
+
+                {/* Email & Visit */}
+                <div className="contact-group">
+                  <div className="contact-group-label">Email &amp; Visit</div>
+                  <div className="contact-group-body">
+                    <div className="contact-line">
+                      <span className="contact-sub">Email</span>
+                      <a href="mailto:info@securenetfiber.com">info@securenetfiber.com</a>
+                    </div>
+                    <div className="contact-line">
+                      <span className="contact-sub">Office</span>
+                      <span>
+                        5621 MacCorkle Ave SW
+                        <br />
+                        South Charleston, WV 25309
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <div className="contact-method">
-                  <strong>Office Hours</strong>
-                  <span>Mon &ndash; Fri, 9 AM &ndash; 5 PM</span>
-                </div>
-                <div className="contact-method">
-                  <strong>Support Hours</strong>
-                  <span>Mon &ndash; Fri, 8 AM &ndash; 8 PM</span>
-                  <span>Sat &ndash; Sun, 12 PM &ndash; 8 PM</span>
-                </div>
-                <div className="contact-method">
-                  <strong>Office Address</strong>
-                  <span>5621 MacCorkle Ave SW</span>
-                  <span>South Charleston, WV 25309</span>
-                </div>
-                <div className="contact-method contact-method--full">
-                  <strong>Mailing Address &middot; Send Bills Here</strong>
-                  <span>SecureNet Fiber, PO Box 8799, South Charleston, WV 25303</span>
+
+                {/* Mailing Address - Featured */}
+                <div className="contact-mailing-card">
+                  <div className="contact-mailing-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
+                  </div>
+                  <div className="contact-mailing-text">
+                    <div className="contact-mailing-label">Send Payments Here</div>
+                    <div className="contact-mailing-address">
+                      SecureNet Fiber
+                      <br />
+                      PO Box 8799
+                      <br />
+                      South Charleston, WV 25303
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

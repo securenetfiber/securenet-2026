@@ -870,24 +870,10 @@ ul, ol {
   gap: var(--space-md);
 }
 
-.contact-methods--grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-md) var(--space-lg);
-}
-
 .contact-method {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-}
-
-.contact-method--full {
-  grid-column: 1 / -1;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: var(--space-sm) var(--space-md);
 }
 
 .contact-method strong {
@@ -900,18 +886,159 @@ ul, ol {
 
 .contact-method a,
 .contact-method span {
-  font-size: 1rem;
+  font-size: var(--text-lg);
   color: var(--text-primary);
 }
 
-.contact-method--full span {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
+/* ========== Grouped contact cards ========== */
+
+.contact-groups {
+  margin-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
 }
 
-@media (max-width: 30rem) {
-  .contact-methods--grid {
-    grid-template-columns: 1fr;
+.contact-group {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.contact-group-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-group-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-group-body--split {
+  flex-direction: row;
+  gap: var(--space-lg);
+}
+
+.contact-group-body--split > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.contact-sub {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.15rem;
+}
+
+.contact-primary {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.contact-primary:hover {
+  color: var(--accent);
+}
+
+.contact-hours-row {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: var(--space-sm);
+  align-items: start;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.contact-hours-row .contact-sub {
+  margin-bottom: 0;
+  padding-top: 0.15rem;
+}
+
+.contact-line {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.contact-line a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.contact-line a:hover {
+  color: var(--accent);
+}
+
+/* Featured mailing address card */
+.contact-mailing-card {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+  background: linear-gradient(135deg, rgba(46, 54, 143, 0.04), rgba(60, 145, 230, 0.04));
+  border: 2px solid var(--navy);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  box-shadow: 0 4px 16px rgba(46, 54, 143, 0.08);
+}
+
+.contact-mailing-icon {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius);
+  background: var(--navy);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-mailing-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-mailing-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.35rem;
+}
+
+.contact-mailing-address {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.55;
+}
+
+@media (max-width: 32rem) {
+  .contact-group-body--split {
+    flex-direction: column;
+    gap: var(--space-md);
   }
 }
 
