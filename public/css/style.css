@@ -310,6 +310,22 @@ ul, ol {
   overflow: hidden;
 }
 
+/* Layered SecureNet lockmark pattern - two sizes offset for organic feel */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("/img/sn-lockmark.png"),
+    url("/img/sn-lockmark.png");
+  background-size: 110px 134px, 70px 85px;
+  background-position: 0 0, 55px 67px;
+  background-repeat: repeat, repeat;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* Subtle radial glow */
 .hero::before {
   content: '';
@@ -321,6 +337,7 @@ ul, ol {
   height: 40rem;
   background: radial-gradient(ellipse at center, rgba(46, 54, 143, 0.08) 0%, rgba(60, 145, 230, 0.04) 40%, transparent 70%);
   pointer-events: none;
+  z-index: 1;
 }
 
 .hero-inner {
@@ -328,6 +345,7 @@ ul, ol {
   margin: 0 auto;
   padding: 0 var(--space-md);
   position: relative;
+  z-index: 2;
 }
 
 .hero-eyebrow {
