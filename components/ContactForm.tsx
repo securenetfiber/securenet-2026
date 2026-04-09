@@ -240,15 +240,18 @@ export default function ContactForm() {
           </div>
           {technicalIssue === 'My Internet Service is Not Working' && (
             <p className="form-help-text">
-              Before reaching out, try restarting your router by unplugging it for 30 seconds.
-              If the lights come back solid but you still have no connection, let us know below.
+              Before submitting, try our{' '}
+              <a href="/support/troubleshooting#not-working">troubleshooting guide</a>.
+              It resolves most connection issues in a few minutes. If you&apos;ve already
+              tried those steps, let us know below.
             </p>
           )}
           {technicalIssue === 'My Internet and/or Wi-Fi is Slow' && (
             <p className="form-help-text">
-              Try connecting a device directly to the router with an ethernet cable. If speeds
-              are normal over ethernet, the issue may be Wi-Fi coverage. Let us know what
-              you&apos;re experiencing below.
+              Before submitting, check our{' '}
+              <a href="/support/troubleshooting#slow">slow speeds guide</a>.
+              The most common cause is a past-due payment. If that&apos;s not the issue,
+              let us know below what speeds you&apos;re seeing and whether you&apos;re on Wi-Fi or wired.
             </p>
           )}
           {technicalIssue === 'I forgot my Wi-Fi Password' && (
