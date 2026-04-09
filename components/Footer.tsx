@@ -17,6 +17,7 @@ export default function Footer() {
               <Link href="/residential/">Residential</Link>
               <Link href="/business/">Business</Link>
               <Link href="/coverage/">Coverage Areas</Link>
+              <Link href="/referral">Refer a Friend</Link>
               <Link href="/speedtest">Speed Comparison</Link>
             </div>
             <div className="footer-col">

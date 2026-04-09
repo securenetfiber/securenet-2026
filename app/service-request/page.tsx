@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import CognitoEmbed from '@/components/CognitoEmbed';
 import { BreadcrumbSchema } from '@/components/SchemaOrg';
+import { isValidReferralCode } from '@/lib/referral';
 
 export const metadata: Metadata = {
   title: 'Sign Up for Service',
@@ -8,7 +9,17 @@ export const metadata: Metadata = {
     'Sign up for SecureNet Fiber internet. Fast, reliable fiber-to-the-home starting at $52/mo with no contracts and no data caps.',
 };
 
-export default function ServiceRequestPage() {
+export default async function ServiceRequestPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const params = await searchParams;
+  const refParam = typeof params.ref === 'string' ? params.ref : undefined;
+  const hasReferral = refParam && isValidReferralCode(refParam);
+
+  const entryData = hasReferral ? { ReferralCode: refParam } : undefined;
+
   return (
     <>
       <BreadcrumbSchema items={[{ name: 'Home', href: '/' }, { name: 'Sign Up' }]} />
@@ -16,6 +27,12 @@ export default function ServiceRequestPage() {
       {/* Hero */}
       <section className="page-hero">
         <div className="section-container">
+          {/* Referral banner */}
+          {hasReferral && (
+            <div className="ref-banner">
+              Referral Applied! You and your friend will each get a free month of service.
+            </div>
+          )}
           <h1 className="section-heading">Sign Up for SecureNet Fiber</h1>
           <p className="section-sub">
             Fill out the form below and we&apos;ll call you within one business
@@ -29,7 +46,7 @@ export default function ServiceRequestPage() {
       <section className="signup-section">
         <div className="section-container signup-container signup-container--form">
           <div className="signup-form-area">
-            <CognitoEmbed formNumber="22" />
+            <CognitoEmbed formNumber="22" entryData={entryData} />
           </div>
           <div className="signup-sidebar">
             <div className="signup-card">

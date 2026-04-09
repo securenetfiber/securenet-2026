@@ -7,6 +7,8 @@ interface CognitoEmbedProps {
   formNumber: string;
   /** Optional CSS class for the wrapper div */
   className?: string;
+  /** Optional entry prefill data (JSON-serializable object) */
+  entryData?: Record<string, string>;
 }
 
 /**
@@ -16,7 +18,7 @@ interface CognitoEmbedProps {
  * To roll back to custom forms, just swap this component out for the
  * original (ContactForm, QuoteForm, etc.) in the parent page.
  */
-export default function CognitoEmbed({ formNumber, className }: CognitoEmbedProps) {
+export default function CognitoEmbed({ formNumber, className, entryData }: CognitoEmbedProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,6 +29,9 @@ export default function CognitoEmbed({ formNumber, className }: CognitoEmbedProp
     script.src = 'https://www.cognitoforms.com/f/seamless.js';
     script.dataset.key = 'FrTHh_lhS0Wf_HJ86stkIg';
     script.dataset.form = formNumber;
+    if (entryData) {
+      script.dataset.entry = JSON.stringify(entryData);
+    }
     script.async = true;
 
     container.appendChild(script);
@@ -36,7 +41,7 @@ export default function CognitoEmbed({ formNumber, className }: CognitoEmbedProp
         container.innerHTML = '';
       }
     };
-  }, [formNumber]);
+  }, [formNumber, entryData]);
 
   return (
     <div
