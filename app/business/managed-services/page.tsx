@@ -130,10 +130,9 @@ export default function ManagedServicesPage() {
             <div className="benefit-card">
               <h3>Network Design &amp; Install</h3>
               <p>
-                Switches, routers, access points, firewalls, structured cabling.
-                Our team brings 30 years of project management experience and
-                deep due diligence on every deployment — we design it right,
-                then build it right.
+                Switches, routers, access points, firewalls, and structured
+                cabling. Backed by 30 years of project management and thorough
+                due diligence on every deployment.
               </p>
             </div>
             <div className="benefit-card">
@@ -147,10 +146,8 @@ export default function ManagedServicesPage() {
               <h3>Wi-Fi for Business</h3>
               <p>
                 Enterprise-grade Wi-Fi with seamless roaming, guest networks,
-                and detailed analytics for retail, hospitality, and offices.
-                We also serve hotels with full-property coverage — captive
-                portal landing pages, whole-building Wi-Fi, and per-room
-                internet solutions.
+                and analytics. Hotel services include captive portal landing
+                pages, whole-property coverage, and per-room internet.
               </p>
             </div>
             <div className="benefit-card">
