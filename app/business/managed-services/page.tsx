@@ -99,7 +99,7 @@ export default function ManagedServicesPage() {
               </p>
             </div>
             <div className="benefit-card">
-              <h3>BGP Available</h3>
+              <h3>Border Gateway Protocol (BGP) Available</h3>
               <p>
                 Bring your own IP space and run BGP with us. Multi-homing,
                 failover, and direct routing control for organizations that
@@ -130,15 +130,17 @@ export default function ManagedServicesPage() {
             <div className="benefit-card">
               <h3>Network Design &amp; Install</h3>
               <p>
-                Switches, access points, firewalls, structured cabling. We
-                build it right the first time.
+                Switches, routers, access points, firewalls, structured cabling.
+                Our team brings 30 years of project management experience and
+                deep due diligence on every deployment — we design it right,
+                then build it right.
               </p>
             </div>
             <div className="benefit-card">
               <h3>Day-to-Day Management</h3>
               <p>
                 Monitoring, firmware updates, configuration changes, and
-                troubleshooting handled by our team.
+                troubleshooting handled by our local team.
               </p>
             </div>
             <div className="benefit-card">
@@ -146,13 +148,16 @@ export default function ManagedServicesPage() {
               <p>
                 Enterprise-grade Wi-Fi with seamless roaming, guest networks,
                 and detailed analytics for retail, hospitality, and offices.
+                We also serve hotels with full-property coverage — captive
+                portal landing pages, whole-building Wi-Fi, and per-room
+                internet solutions.
               </p>
             </div>
             <div className="benefit-card">
-              <h3>VPN &amp; Site-to-Site</h3>
+              <h3>VPN, SD-WAN &amp; Site-to-Site</h3>
               <p>
                 Connect remote workers and branch offices to your main
-                network with managed VPN tunnels.
+                network with managed VPN tunnels and SD-WAN solutions.
               </p>
             </div>
           </div>
@@ -178,14 +183,14 @@ export default function ManagedServicesPage() {
             <div className="benefit-card">
               <h3>Access Control</h3>
               <p>
-                Card readers, keypad entry, and managed access for offices,
-                warehouses, and retail spaces.
+                Card readers, key fobs, biometrics, keypad entry, and managed
+                access for offices, warehouses, and retail spaces.
               </p>
             </div>
             <div className="benefit-card">
               <h3>Endpoint Protection</h3>
               <p>
-                Managed antivirus, patching, and threat detection for your
+                Managed antivirus, patching, and threat prevention for your
                 workstations and servers.
               </p>
             </div>
