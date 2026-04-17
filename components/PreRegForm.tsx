@@ -30,7 +30,7 @@ export default function PreRegForm() {
       if (!res.ok) throw new Error('Submission failed');
       setSubmitted(true);
     } catch {
-      setError('Something went wrong. Please try again or call us at (304) 766-7735.');
+      setError('Something went wrong. Please try again or call us at (304) 744-4034.');
     } finally {
       setLoading(false);
     }
