@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import PreRegForm from '@/components/PreRegForm';
+import CognitoEmbed from '@/components/CognitoEmbed';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -100,7 +100,7 @@ export default function StAlbansPage() {
             at your address. No commitment required.
           </p>
           <div className="prereg-form-wrapper">
-            <PreRegForm />
+            <CognitoEmbed formNumber="54" />
           </div>
         </div>
       </section>
