@@ -4536,7 +4536,7 @@ body.has-alert-bar .page-hero {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-lg);
+  padding: 8rem var(--space-lg) var(--space-lg);
 }
 
 .admin-login-form {
@@ -4587,7 +4587,7 @@ body.has-alert-bar .page-hero {
 .admin-page {
   max-width: 36rem;
   margin: 0 auto;
-  padding: var(--space-lg);
+  padding: 8rem var(--space-lg) var(--space-lg);
 }
 
 .admin-top-bar {
