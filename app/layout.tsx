@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { OrganizationSchema, LocalBusinessSchema } from '@/components/SchemaOrg';
+import { getAlert } from '@/lib/alert-store';
+import { siteAlert } from '@/lib/alerts';
 
 export const metadata: Metadata = {
   title: {
@@ -12,11 +15,19 @@ export const metadata: Metadata = {
     'Fiber internet from SecureNet. Speeds up to 8.5 Gbps, no data caps, no contracts. Serving the Kanawha Valley, WV and Danville, VA.',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  await headers();
+  let alert;
+  try {
+    alert = await getAlert();
+  } catch {
+    alert = { ...siteAlert, updatedAt: '', updatedBy: '' };
+  }
+
   return (
     <html lang="en">
       <head>
@@ -35,7 +46,7 @@ export default function RootLayout({
         <LocalBusinessSchema />
       </head>
       <body>
-        <Header />
+        <Header alert={alert} />
         <main>{children}</main>
         <Footer />
       </body>

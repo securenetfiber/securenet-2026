@@ -4,9 +4,9 @@ import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import AlertBar from '@/components/AlertBar';
-import { siteAlert } from '@/lib/alerts';
+import type { SiteAlert } from '@/lib/alerts';
 
-export default function Header() {
+export default function Header({ alert }: { alert: SiteAlert }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
@@ -38,8 +38,8 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`site-header${scrolled ? ' header--scrolled' : ''}${menuOpen ? ' menu-open' : ''}${siteAlert.enabled ? ' header--with-alert' : ''}`}>
-      <AlertBar alert={siteAlert} />
+    <header className={`site-header${scrolled ? ' header--scrolled' : ''}${menuOpen ? ' menu-open' : ''}${alert.enabled ? ' header--with-alert' : ''}`}>
+      <AlertBar alert={alert} />
       <nav className="nav-container">
         <Link href="/" className="logo" aria-label="SecureNet Fiber home">
           <img src="/img/SN-Logo-Master.png" alt="SecureNet" height={36} />
