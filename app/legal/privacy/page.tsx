@@ -181,19 +181,37 @@ export default function PrivacyPage() {
               Please note that even if you opt out of marketing communications, we may still send you non-marketing messages related to your account, billing, service updates, and other transactional or operational matters.
             </p>
 
-            <h2>11. Links to Other Websites</h2>
+            <h2>11. SMS/Text Messaging</h2>
+
+            <p>
+              SecureNet Fiber offers SMS-based emergency notification services for select customers. By enrolling in our SMS notification programs, you consent to receive automated text messages related to emergency alerts and account notifications.
+            </p>
+
+            <p>
+              Mobile information will not be shared with third parties/affiliates for marketing/promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
+            </p>
+
+            <p>
+              If you wish to be removed from receiving future communications, you can opt out by texting STOP, QUIT, END, REVOKE, OPT OUT, CANCEL, or UNSUBSCRIBE. Message data rates and frequency may apply.
+            </p>
+
+            <p>
+              Message frequency varies based on service activity. Standard message and data rates may apply. For help with SMS services, text HELP to any message or contact us at (304) 744-4034 or <a href="mailto:support@securenetfiber.com">support@securenetfiber.com</a>.
+            </p>
+
+            <h2>12. Links to Other Websites</h2>
 
             <p>
               Our Site may contain links to third-party websites, applications, or services that are not operated by us. We are not responsible for the privacy practices or content of those third-party sites. We encourage you to review the privacy policies of any third-party site you visit.
             </p>
 
-            <h2>12. Business Transfers</h2>
+            <h2>13. Business Transfers</h2>
 
             <p>
               In the event that SecureNet is involved in a merger, acquisition, reorganization, or sale of assets, your personal information may be transferred to the acquiring entity. The acquiring entity will be bound by the terms of this Privacy Policy with respect to information collected prior to the transfer.
             </p>
 
-            <h2>13. Changes to This Privacy Policy</h2>
+            <h2>14. Changes to This Privacy Policy</h2>
 
             <p>
               We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make changes, we will post the revised policy on our Site and update the effective date at the top of this page.
@@ -203,7 +221,7 @@ export default function PrivacyPage() {
               We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information.
             </p>
 
-            <h2>14. Contact Us</h2>
+            <h2>15. Contact Us</h2>
 
             <p>If you have questions or concerns about this Privacy Policy or our privacy practices, please contact us:</p>
 
