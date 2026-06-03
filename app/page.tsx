@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import PlanCard from '@/components/PlanCard';
+import TestimonialStrip from '@/components/TestimonialStrip';
 import AvailabilityCheck from '@/components/AvailabilityCheck';
 import { homePreviewPlans } from '@/lib/plans';
 
@@ -60,6 +61,9 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+
+      {/* TESTIMONIALS */}
+      <TestimonialStrip />
 
       {/* AVAILABILITY CHECK */}
       <AvailabilityCheck />

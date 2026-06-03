@@ -28,6 +28,7 @@ export default function Footer() {
               <strong>Company</strong>
               <Link href="/about">About Us</Link>
               <Link href="/contact">Contact</Link>
+              <Link href="/reviews">Reviews</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/support/troubleshooting">Troubleshooting</Link>
             </div>
