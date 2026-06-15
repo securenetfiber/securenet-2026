@@ -37,6 +37,16 @@ function looksLikeSpam(text: string): boolean {
     /\[url=/i,
     /\[link=/i,
     /<a\s+href/i,
+    /(\bunion\b.*\bselect\b|\bselect\b.*\bfrom\b.*\bwhere\b)/i,
+    /(\bdrop\b\s+\btable\b|\binsert\b\s+\binto\b|\bdelete\b\s+\bfrom\b)/i,
+    /(\bexec\b\s*\(|\bexecute\b\s*\()/i,
+    /('\s*(or|and)\s+['"]?\d+['"]?\s*=\s*['"]?\d+)/i,
+    /(--|;)\s*(drop|alter|create|insert|update|delete|exec|union|select)\b/i,
+    /\b(xp_cmdshell|sp_executesql|information_schema|sysobjects)\b/i,
+    /('|")\s*(or|and)\s+('|")/i,
+    /\b(sleep|benchmark|waitfor)\s*\(/i,
+    /(\%27|\')\s*(union|select|insert|drop|update|delete)\b/i,
+    /1\s*=\s*1|1'\s*or\s*'1/i,
   ];
   return spamPatterns.some((p) => p.test(lower));
 }
