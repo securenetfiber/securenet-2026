@@ -41,6 +41,7 @@ export default function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [phone, setPhone] = useState('');
+  const [loadedAt] = useState(() => Date.now());
 
   const [customerType, setCustomerType] = useState('Residential');
   const [inquiryType, setInquiryType] = useState('');
@@ -75,12 +76,14 @@ export default function ContactForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    const payload: Record<string, string | boolean> = {
+    const payload: Record<string, string | boolean | number> = {
       customerType,
       inquiryType,
       email: data.get('email') as string,
       phone: phone,
       message: data.get('message') as string,
+      _company: data.get('_company') as string,
+      _loadedAt: loadedAt,
     };
 
     if (customerType === 'Business') {
@@ -138,6 +141,10 @@ export default function ContactForm() {
 
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
+      <div style={{ position: 'absolute', left: '-9999px', top: '-9999px' }} aria-hidden="true" tabIndex={-1}>
+        <label htmlFor="_company">Company</label>
+        <input type="text" id="_company" name="_company" autoComplete="off" tabIndex={-1} />
+      </div>
       {/* Customer Type */}
       <div className="form-group">
         <label>Customer Type</label>
