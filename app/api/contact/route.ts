@@ -87,7 +87,28 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    const messageText = [body.message, body.name, body.businessName, body.email]
+    const msg = (body.message || '').trim();
+    if (msg.length < 10 || /^\d+$/.test(msg)) {
+      return NextResponse.json({ success: true });
+    }
+
+    const emailDomain = (body.email || '').split('@')[1]?.toLowerCase() || '';
+    const blockedDomains = ['example.com', 'test.com', 'mailinator.com', 'tempmail.com', 'throwaway.email', 'guerrillamail.com', 'yopmail.com', 'sharklasers.com', 'guerrillamailblock.com', 'grr.la', 'dispostable.com'];
+    if (blockedDomains.includes(emailDomain)) {
+      return NextResponse.json({ success: true });
+    }
+
+    const name = body.name || body.businessName || body.primaryContact || '';
+    if (name && /^[a-zA-Z]{6,}$/.test(name) && !/[aeiou]{2}|[aeiou].*[aeiou].*[aeiou]/i.test(name)) {
+      return NextResponse.json({ success: true });
+    }
+
+    const phone = (body.phone || '').replace(/\D/g, '');
+    if (phone && /^555\d{7}$/.test(phone)) {
+      return NextResponse.json({ success: true });
+    }
+
+    const messageText = [msg, name, body.email]
       .filter(Boolean)
       .join(' ');
     if (looksLikeSpam(messageText)) {
