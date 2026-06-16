@@ -61,8 +61,8 @@ export default function BusinessPage() {
           <p className="plans-note">
             Need more bandwidth, dedicated internet access, or a service level
             agreement?{' '}
-            <Link href="/business/managed-services">
-              See our commercial and managed services
+            <Link href="/enterprise">
+              See our enterprise services
             </Link>
             .
           </p>
@@ -120,20 +120,20 @@ export default function BusinessPage() {
         </div>
       </section>
 
-      {/* MORE SERVICES (link out to MSP page) */}
+      {/* Enterprise services CTA */}
       <section className="msp-banner" id="services">
         <div className="section-container">
           <div className="msp-banner-inner">
             <div className="msp-banner-text">
-              <p className="msp-banner-eyebrow">Commercial &amp; Managed Services</p>
-              <h2>Need more than internet?</h2>
+              <p className="msp-banner-eyebrow">Enterprise Services</p>
+              <h2>Need more than small business internet?</h2>
               <p>
-                Dedicated fiber up to 8.5 Gbps, DIA, SLA-backed uptime,
-                managed networks, business security, and colocation.
+                Dedicated fiber up to 8.5 Gbps, managed networks, business
+                security, cameras, VoIP, and more. Talk to our commercial team.
               </p>
             </div>
-            <Link href="/business/managed-services" className="btn btn-primary btn-lg">
-              Explore Commercial Services
+            <Link href="/enterprise" className="btn btn-primary btn-lg">
+              Explore Enterprise Services
             </Link>
           </div>
         </div>

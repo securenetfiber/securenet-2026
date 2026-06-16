@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import MainShell from '@/components/MainShell';
 import { OrganizationSchema, LocalBusinessSchema } from '@/components/SchemaOrg';
 import { getAlert } from '@/lib/alert-store';
 import { siteAlert } from '@/lib/alerts';
@@ -46,9 +45,9 @@ export default async function RootLayout({
         <LocalBusinessSchema />
       </head>
       <body>
-        <Header alert={alert} />
-        <main>{children}</main>
-        <Footer />
+        <MainShell alert={alert}>
+          {children}
+        </MainShell>
       </body>
     </html>
   );
