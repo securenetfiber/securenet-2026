@@ -73,8 +73,12 @@ export default function ContactPage() {
                   <div className="contact-group-label">Email &amp; Visit</div>
                   <div className="contact-group-body">
                     <div className="contact-line">
-                      <span className="contact-sub">Email</span>
+                      <span className="contact-sub">General</span>
                       <a href="mailto:info@securenetfiber.com">info@securenetfiber.com</a>
+                    </div>
+                    <div className="contact-line">
+                      <span className="contact-sub">Support</span>
+                      <a href="mailto:support@securenetfiber.com">support@securenetfiber.com</a>
                     </div>
                     <div className="contact-line">
                       <span className="contact-sub">Office</span>

@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Enterprise Fiber & Managed Services',
   description:
-    'Enterprise fiber internet, managed networks, business security, and VoIP from SecureNet. Dedicated circuits up to 8.5 Gbps, local support, no contracts.',
+    'Enterprise fiber internet, managed networks, business security, and VoIP from SecureNet. Dedicated circuits up to 8.5 Gbps, local support.',
 };
 
 const serviceCategories = [
@@ -131,8 +131,8 @@ export default function EnterprisePage() {
                 desc: 'Internet, phone, networking, security, and video from one team that knows your setup.',
               },
               {
-                title: 'No Contracts',
-                desc: 'Month-to-month service. We keep your business by earning it, not by locking you in.',
+                title: 'Flexible Terms',
+                desc: 'Service agreements built around your operation, not the other way around.',
               },
               {
                 title: 'Deep Experience',

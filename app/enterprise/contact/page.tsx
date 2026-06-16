@@ -35,9 +35,16 @@ export default function EnterpriseContactPage() {
               </div>
 
               <div className="ent-contact-detail">
-                <span className="ent-contact-label">Email</span>
+                <span className="ent-contact-label">Sales</span>
                 <a href="mailto:enterprise@securenetfiber.com">
                   enterprise@securenetfiber.com
+                </a>
+              </div>
+
+              <div className="ent-contact-detail">
+                <span className="ent-contact-label">Support</span>
+                <a href="mailto:support@securenetfiber.com">
+                  support@securenetfiber.com
                 </a>
               </div>
 

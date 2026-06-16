@@ -85,7 +85,7 @@ export default function ConnectivityPage() {
           <h2 className="ent-section-heading">Dedicated Circuits</h2>
           <p className="ent-section-sub">
             Fiber circuits from 500 Mbps to 8.5 Gbps and beyond. Same speed
-            up and down, no data caps, no contracts.
+            up and down, no data caps.
           </p>
           <div className="ent-speed-list">
             {['500 Mbps', '1 Gbps', '2 Gbps', '5 Gbps', '8.5 Gbps', 'Custom'].map((speed) => (

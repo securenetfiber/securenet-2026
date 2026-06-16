@@ -31,6 +31,7 @@ export default function EnterpriseFooter() {
               <strong>Get in Touch</strong>
               <a href="tel:+13047444667">(304) 744-4667</a>
               <a href="mailto:enterprise@securenetfiber.com">enterprise@securenetfiber.com</a>
+              <a href="mailto:support@securenetfiber.com">support@securenetfiber.com</a>
             </div>
           </div>
         </div>

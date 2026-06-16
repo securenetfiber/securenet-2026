@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Why SecureNet',
   description:
-    'Why enterprise clients choose SecureNet. Local support, real fiber, no contracts, and deep experience in the valley.',
+    'Why enterprise clients choose SecureNet. Local support, real fiber, flexible terms, and deep experience in the valley.',
 };
 
 export default function WhySecureNetPage() {
@@ -40,11 +40,11 @@ export default function WhySecureNetPage() {
               </p>
             </div>
             <div className="ent-benefit-card">
-              <h3>No Contracts</h3>
+              <h3>Flexible Terms</h3>
               <p>
-                Month-to-month service. We keep your business by earning it
-                every month, not by locking you into a multi-year agreement
-                with early termination fees.
+                Service agreements built around your operation, not ours.
+                We structure terms that make sense for your business and
+                scale with you as your needs change.
               </p>
             </div>
             <div className="ent-benefit-card">
