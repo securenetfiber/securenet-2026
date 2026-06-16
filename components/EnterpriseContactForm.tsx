@@ -39,7 +39,7 @@ export default function EnterpriseContactForm() {
         <p>
           We&rsquo;ll get back to you within one business day. If you need
           something sooner, call us at{' '}
-          <a href="tel:+13042050600">(304) 205-0600</a>.
+          <a href="tel:+13047444667">(304) 744-4667</a>.
         </p>
       </div>
     );

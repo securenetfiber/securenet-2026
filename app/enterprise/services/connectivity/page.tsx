@@ -27,7 +27,7 @@ export default function ConnectivityPage() {
           <p className="ent-section-sub">
             We design, build, and manage networks from the ground up.
             Structured cabling, switching, routing, firewalls, and wireless
-            &mdash; all backed by 30 years of project management.
+            &mdash; backed by a team with decades of project management experience.
           </p>
           <div className="ent-benefit-grid">
             <div className="ent-benefit-card">
@@ -167,7 +167,7 @@ export default function ConnectivityPage() {
             <h2>Let&rsquo;s design your network.</h2>
             <p>Call us to discuss your connectivity needs. We&rsquo;ll scope a solution and get back to you within one business day.</p>
             <div className="ent-cta-actions">
-              <a href="tel:+13042050600" className="btn ent-btn-primary btn-lg">Call (304) 205-0600</a>
+              <a href="tel:+13047444667" className="btn ent-btn-primary btn-lg">Call (304) 744-4667</a>
               <Link href="/enterprise/contact" className="btn ent-btn-outline btn-lg">Contact Us</Link>
             </div>
           </div>

@@ -62,25 +62,13 @@ export default function ClientsPage() {
         </div>
       </section>
 
-      {/* Placeholder for logos/testimonials */}
-      <section className="ent-section ent-section--alt">
-        <div className="section-container" style={{ textAlign: 'center' }}>
-          <h2 className="ent-section-heading">Client logos coming soon.</h2>
-          <p className="ent-section-sub" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-            We&rsquo;re working with our clients to feature their logos and
-            testimonials here. In the meantime, give us a call and we&rsquo;ll
-            connect you with references in your industry.
-          </p>
-        </div>
-      </section>
-
       <section className="ent-cta">
         <div className="section-container">
           <div className="ent-cta-inner">
             <h2>Ready to talk?</h2>
             <p>Tell us about your operation and we&rsquo;ll show you what we can do.</p>
             <div className="ent-cta-actions">
-              <a href="tel:+13042050600" className="btn ent-btn-primary btn-lg">Call (304) 205-0600</a>
+              <a href="tel:+13047444667" className="btn ent-btn-primary btn-lg">Call (304) 744-4667</a>
               <Link href="/enterprise/contact" className="btn ent-btn-outline btn-lg">Contact Us</Link>
             </div>
           </div>

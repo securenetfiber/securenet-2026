@@ -4963,16 +4963,16 @@ body.has-alert-bar .page-hero {
    ═══════════════════════════════════════════════ */
 
 .enterprise-theme {
-  --ent-bg:         #0f1219;
-  --ent-bg-alt:     #161b26;
-  --ent-surface:    #1c2233;
-  --ent-border:     rgba(255, 255, 255, 0.08);
-  --ent-border-lt:  rgba(255, 255, 255, 0.12);
+  --ent-bg:         #1a1f3d;
+  --ent-bg-alt:     #21274a;
+  --ent-surface:    #282e56;
+  --ent-border:     rgba(255, 255, 255, 0.10);
+  --ent-border-lt:  rgba(255, 255, 255, 0.15);
   --ent-text:       #f0f2f5;
-  --ent-text-sec:   #9ca3b4;
-  --ent-text-muted: #6b7280;
+  --ent-text-sec:   #a3aac0;
+  --ent-text-muted: #7a82a0;
   --ent-accent:     #3C91E6;
-  --ent-accent-glow: rgba(60, 145, 230, 0.15);
+  --ent-accent-glow: rgba(60, 145, 230, 0.18);
 
   background: var(--ent-bg);
   color: var(--ent-text);
@@ -4996,14 +4996,14 @@ body.has-alert-bar .page-hero {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(15, 18, 25, 0.92);
+  background: rgba(26, 31, 61, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--ent-border);
 }
 
 .ent-header--scrolled {
-  background: rgba(15, 18, 25, 0.97);
+  background: rgba(26, 31, 61, 0.97);
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -5039,6 +5039,19 @@ body.has-alert-bar .page-hero {
   color: var(--ent-text-sec);
   border-left: 1px solid var(--ent-border-lt);
   padding-left: 0.65rem;
+}
+
+.ent-main-site-link {
+  font-size: 0.8rem;
+  color: var(--ent-text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+  margin-left: auto;
+  margin-right: 0.5rem;
+}
+
+.ent-main-site-link:hover {
+  color: var(--ent-text-sec);
 }
 
 .ent-nav-links {
@@ -5383,7 +5396,7 @@ body.has-alert-bar .page-hero {
 
 .ent-cta {
   padding: var(--space-2xl) 0;
-  background: linear-gradient(135deg, #1a2040 0%, #0f1219 100%);
+  background: linear-gradient(135deg, #252b5a 0%, #1a1f3d 100%);
   border-top: 1px solid var(--ent-border);
 }
 
@@ -5731,6 +5744,10 @@ body.has-alert-bar .page-hero {
 @media (max-width: 48rem) {
   .ent-nav-links,
   .ent-nav-actions {
+    display: none;
+  }
+
+  .ent-main-site-link {
     display: none;
   }
 

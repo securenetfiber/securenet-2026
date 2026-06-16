@@ -43,6 +43,9 @@ export default function EnterpriseHeader() {
           <img src="/img/White-NoTagline.png" alt="SecureNet" height={32} />
           <span className="ent-logo-label">Enterprise</span>
         </Link>
+        <Link href="/" className="ent-main-site-link">
+          &larr; SecureNet Home
+        </Link>
         <ul className={`ent-nav-links${menuOpen ? ' ent-nav-links--open' : ''}`} role="list">
           {navItems.map((item) => (
             <li key={item.href}>
@@ -56,8 +59,8 @@ export default function EnterpriseHeader() {
           ))}
         </ul>
         <div className={`ent-nav-actions${menuOpen ? ' ent-nav-actions--open' : ''}`}>
-          <a href="tel:+13042050600" className="btn ent-btn-primary">
-            (304) 205-0600
+          <a href="tel:+13047444667" className="btn ent-btn-primary">
+            (304) 744-4667
           </a>
         </div>
         <button

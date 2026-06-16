@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Why SecureNet',
   description:
-    'Why enterprise clients choose SecureNet. Local support, real fiber, no contracts, and 30+ years in the valley.',
+    'Why enterprise clients choose SecureNet. Local support, real fiber, no contracts, and deep experience in the valley.',
 };
 
 export default function WhySecureNetPage() {
@@ -56,11 +56,11 @@ export default function WhySecureNetPage() {
               </p>
             </div>
             <div className="ent-benefit-card">
-              <h3>30+ Years in the Valley</h3>
+              <h3>Deep Experience</h3>
               <p>
-                Three decades of building and managing networks in this region.
-                We know the infrastructure, the terrain, and the businesses
-                that depend on connectivity.
+                Our team brings decades of combined experience building and
+                managing networks in this region. We know the infrastructure,
+                the terrain, and the businesses that depend on connectivity.
               </p>
             </div>
             <div className="ent-benefit-card">
@@ -97,7 +97,7 @@ export default function WhySecureNetPage() {
             <h2>See the difference.</h2>
             <p>Call us to discuss what SecureNet can do for your operation.</p>
             <div className="ent-cta-actions">
-              <a href="tel:+13042050600" className="btn ent-btn-primary btn-lg">Call (304) 205-0600</a>
+              <a href="tel:+13047444667" className="btn ent-btn-primary btn-lg">Call (304) 744-4667</a>
               <Link href="/enterprise/contact" className="btn ent-btn-outline btn-lg">Contact Us</Link>
             </div>
           </div>

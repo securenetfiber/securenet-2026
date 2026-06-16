@@ -25,10 +25,11 @@ export default function EnterpriseFooter() {
               <Link href="/enterprise/clients">Who We Work With</Link>
               <Link href="/enterprise/why-securenet">Why SecureNet</Link>
               <Link href="/enterprise/contact">Contact</Link>
+              <Link href="/">SecureNet Home</Link>
             </div>
             <div className="ent-footer-col">
               <strong>Get in Touch</strong>
-              <a href="tel:+13042050600">(304) 205-0600</a>
+              <a href="tel:+13047444667">(304) 744-4667</a>
               <a href="mailto:enterprise@securenetfiber.com">enterprise@securenetfiber.com</a>
             </div>
           </div>

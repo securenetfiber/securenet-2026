@@ -29,8 +29,8 @@ export default function EnterpriseContactPage() {
             <div className="ent-contact-info">
               <div className="ent-contact-phone-block">
                 <span className="ent-contact-label">Call us directly</span>
-                <a href="tel:+13042050600" className="ent-contact-phone">
-                  (304) 205-0600
+                <a href="tel:+13047444667" className="ent-contact-phone">
+                  (304) 744-4667
                 </a>
               </div>
 
@@ -44,8 +44,8 @@ export default function EnterpriseContactPage() {
               <div className="ent-contact-detail">
                 <span className="ent-contact-label">Office</span>
                 <p>
-                  600 Virginia St W, Suite 200<br />
-                  Charleston, WV 25302
+                  2505 MacCorkle Ave<br />
+                  St Albans, WV
                 </p>
               </div>
 

@@ -94,8 +94,8 @@ export default function ServicesHubPage() {
               right solution together.
             </p>
             <div className="ent-cta-actions">
-              <a href="tel:+13042050600" className="btn ent-btn-primary btn-lg">
-                Call (304) 205-0600
+              <a href="tel:+13047444667" className="btn ent-btn-primary btn-lg">
+                Call (304) 744-4667
               </a>
               <Link href="/enterprise/contact" className="btn ent-btn-outline btn-lg">
                 Contact Us

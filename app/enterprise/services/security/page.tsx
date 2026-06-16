@@ -64,7 +64,7 @@ export default function SecurityPage() {
             <h2>Secure your operation.</h2>
             <p>Call us to discuss cameras, access control, or network security for your business.</p>
             <div className="ent-cta-actions">
-              <a href="tel:+13042050600" className="btn ent-btn-primary btn-lg">Call (304) 205-0600</a>
+              <a href="tel:+13047444667" className="btn ent-btn-primary btn-lg">Call (304) 744-4667</a>
               <Link href="/enterprise/contact" className="btn ent-btn-outline btn-lg">Contact Us</Link>
             </div>
           </div>

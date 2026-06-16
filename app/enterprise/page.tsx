@@ -69,8 +69,8 @@ export default function EnterprisePage() {
             on our fiber network, backed by people you can actually talk to.
           </p>
           <div className="ent-hero-cta">
-            <a href="tel:+13042050600" className="btn ent-btn-primary btn-lg">
-              Call (304) 205-0600
+            <a href="tel:+13047444667" className="btn ent-btn-primary btn-lg">
+              Call (304) 744-4667
             </a>
             <Link href="/enterprise/contact" className="btn ent-btn-outline btn-lg">
               Contact Us
@@ -135,8 +135,8 @@ export default function EnterprisePage() {
                 desc: 'Month-to-month service. We keep your business by earning it, not by locking you in.',
               },
               {
-                title: '30+ Years',
-                desc: 'Three decades of building and managing networks in this valley. We know the infrastructure.',
+                title: 'Deep Experience',
+                desc: 'Our team brings decades of combined experience building and managing networks in this valley.',
               },
             ].map((item) => (
               <div className="ent-benefit-card" key={item.title}>
@@ -158,8 +158,8 @@ export default function EnterprisePage() {
               solution and get back to you within one business day.
             </p>
             <div className="ent-cta-actions">
-              <a href="tel:+13042050600" className="btn ent-btn-primary btn-lg">
-                Call (304) 205-0600
+              <a href="tel:+13047444667" className="btn ent-btn-primary btn-lg">
+                Call (304) 744-4667
               </a>
               <Link href="/enterprise/contact" className="btn ent-btn-outline btn-lg">
                 Contact Us
