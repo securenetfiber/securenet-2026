@@ -43,9 +43,6 @@ export default function EnterpriseHeader() {
           <img src="/img/White-NoTagline.png" alt="SecureNet" height={32} />
           <span className="ent-logo-label">Enterprise</span>
         </Link>
-        <Link href="/" className="ent-main-site-link">
-          &larr; SecureNet Home
-        </Link>
         <ul className={`ent-nav-links${menuOpen ? ' ent-nav-links--open' : ''}`} role="list">
           {navItems.map((item) => (
             <li key={item.href}>
