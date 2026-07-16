@@ -14,11 +14,11 @@ export default function StAlbansPage() {
       {/* HERO */}
       <section className="prereg-hero">
         <div className="section-container">
-          <span className="prereg-badge">Coming Soon</span>
-          <h1 className="section-heading">Fiber is coming to St. Albans.</h1>
+          <span className="prereg-badge">Now Live</span>
+          <h1 className="section-heading">Fiber is live in St. Albans.</h1>
           <p className="section-sub">
-            We&apos;re actively building our fiber network in St. Albans, WV.
-            Pre-register today to be first in line when service goes live in your neighborhood.
+            We&apos;re now serving our first customers in St. Albans — Pfaff Street to West Street, north of the railroad tracks.
+            More neighborhoods are on the way. Pre-register below to be first in line when we reach your street.
           </p>
         </div>
       </section>
@@ -43,11 +43,11 @@ export default function StAlbansPage() {
             <div className="prereg-step prereg-step--upcoming">
               <div className="prereg-step-icon">3</div>
               <h3>Connecting Homes</h3>
-              <p>Coming soon</p>
+              <p>First neighborhood live</p>
             </div>
             <div className="prereg-step prereg-step--upcoming">
               <div className="prereg-step-icon">4</div>
-              <h3>Service Goes Live</h3>
+              <h3>Full Coverage</h3>
               <p>Coming soon</p>
             </div>
           </div>
@@ -111,10 +111,11 @@ export default function StAlbansPage() {
           <h2 className="section-heading">Common Questions</h2>
           <div className="prereg-faq-list">
             <div className="prereg-faq-item">
-              <h3>When will fiber be available in St. Albans?</h3>
+              <h3>When will fiber be available in my neighborhood?</h3>
               <p>
-                Construction is actively underway. We&apos;re connecting neighborhoods
-                as we go and expect to begin service in the coming months.
+                We&apos;re live now from Pfaff Street to West Street, north of the railroad tracks.
+                We&apos;ll share more about our expansion plans as they develop.
+                Pre-register and we&apos;ll contact you as soon as we reach your area.
               </p>
             </div>
             <div className="prereg-faq-item">
