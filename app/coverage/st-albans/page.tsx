@@ -17,7 +17,7 @@ export default function StAlbansPage() {
           <span className="prereg-badge">Now Live</span>
           <h1 className="section-heading">Fiber is live in St. Albans.</h1>
           <p className="section-sub">
-            We&apos;re now serving our first customers in St. Albans — Pfaff Street to West Street, north of the railroad tracks.
+            We&apos;re now serving our first customers in St. Albans - Pfaff Street to West Street, north of the railroad tracks.
             More neighborhoods are on the way. Pre-register below to be first in line when we reach your street.
           </p>
         </div>
