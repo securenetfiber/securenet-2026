@@ -5887,3 +5887,164 @@ body.has-alert-bar .page-hero {
   }
 }
 
+/* ─────────────────────────────────────
+   STORM RESPONSE PAGE
+   ───────────────────────────────────── */
+
+.storm-hero-actions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  margin-top: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+/* Storm status banner */
+.storm-status-section {
+  padding: 0 0 var(--space-lg);
+}
+
+.storm-status {
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--border);
+}
+
+.storm-status--clear {
+  border-color: var(--green);
+  background: rgba(22, 163, 74, 0.06);
+}
+
+.storm-status--warning {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.06);
+}
+
+.storm-status--critical {
+  border-color: var(--red);
+  background: rgba(237, 37, 78, 0.06);
+}
+
+.storm-status-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.storm-status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.storm-status--clear .storm-status-dot {
+  background: var(--green);
+  box-shadow: 0 0 8px rgba(22, 163, 74, 0.4);
+}
+
+.storm-status--warning .storm-status-dot {
+  background: #f59e0b;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+.storm-status--critical .storm-status-dot {
+  background: var(--red);
+  box-shadow: 0 0 8px rgba(237, 37, 78, 0.4);
+}
+
+.storm-status-label {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.storm-status-message {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Form + sidebar layout (matches service-request) */
+.storm-form-section {
+  padding: var(--space-2xl) 0;
+}
+
+.storm-form-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.storm-form-area {
+  min-width: 0;
+}
+
+.storm-form-intro {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-lg);
+}
+
+.storm-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.storm-fb-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: var(--space-sm);
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.storm-fb-link:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* Underground fiber advantage */
+.storm-fiber-section {
+  padding: 0 0 var(--space-3xl);
+}
+
+.storm-fiber-card {
+  max-width: 740px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--green);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.storm-fiber-card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 48rem) {
+  .storm-form-container {
+    grid-template-columns: 1fr;
+  }
+
+  .storm-hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .storm-hero-actions .btn {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+}
+
