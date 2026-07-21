@@ -40,19 +40,6 @@ export default function StormPage() {
             Report storm damage or service issues, check current status, and find
             troubleshooting steps to get back online.
           </p>
-          <div className="storm-hero-actions">
-            <a href="tel:+13047444034" className="btn btn--accent">
-              Call Us: (304) 744-4034
-            </a>
-            <a
-              href="https://facebook.com/wvinternet"
-              className="btn btn--outline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Real-Time Updates on Facebook
-            </a>
-          </div>
         </div>
       </section>
 
@@ -72,21 +59,13 @@ export default function StormPage() {
       )}
 
       {/* Damage Report Form */}
-      <section className="storm-form-section">
-        <div className="section-container storm-form-container">
-          <div className="storm-form-area">
-            <h2 className="section-heading" style={{ textAlign: 'left' }}>
-              Report an Issue
-            </h2>
-            <p className="storm-form-intro">
-              If your service is down or you&apos;ve noticed damage to SecureNet
-              equipment, let us know. We&apos;ll get a crew out as quickly as
-              possible.
-            </p>
+      <section className="signup-section">
+        <div className="section-container signup-container signup-container--form">
+          <div className="signup-form-area">
             <CognitoEmbed formNumber="20" />
           </div>
 
-          <div className="storm-sidebar">
+          <div className="signup-sidebar">
             {/* Troubleshooting */}
             <div className="signup-card">
               <h3>Internet out? Try this first.</h3>
@@ -131,7 +110,7 @@ export default function StormPage() {
             {/* Facebook */}
             <div className="signup-card">
               <h3>Follow us for live updates</h3>
-              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
+              <p>
                 During active weather events, we post real-time restoration
                 updates on our Facebook page.
               </p>
