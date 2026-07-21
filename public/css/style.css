@@ -3806,6 +3806,25 @@ body.has-alert-bar .page-hero {
   opacity: 0.7 !important;
 }
 
+/* File upload */
+.cognito-embed .cog-cognito .cog-file-upload,
+.cognito-embed .cog-cognito .cog-upload {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  flex-wrap: wrap !important;
+}
+
+.cognito-embed .cog-cognito .cog-file-upload .cog-button,
+.cognito-embed .cog-cognito .cog-upload .cog-button,
+.cognito-embed .cog-cognito .cog-file-upload button,
+.cognito-embed .cog-cognito .cog-upload button[type="button"] {
+  width: auto !important;
+  min-height: auto !important;
+  padding: 0.5rem 1.25rem !important;
+  font-size: 0.9rem !important;
+}
+
 /* Confirmation / success message */
 .cognito-embed .cog-cognito .cog-confirmation {
   color: var(--text-primary) !important;
@@ -4775,6 +4794,28 @@ body.has-alert-bar .page-hero {
   color: var(--text-muted);
   font-size: 0.875rem;
   margin-top: var(--space-md);
+}
+
+.admin-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: var(--space-xl) 0;
+}
+
+.admin-section-heading {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.admin-section-sub {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-lg);
+}
+
+.admin-section-sub a {
+  color: var(--accent);
 }
 
 
@@ -5974,23 +6015,8 @@ body.has-alert-bar .page-hero {
   text-decoration: underline;
 }
 
-/* Underground fiber advantage */
+/* Underground fiber note */
 .storm-fiber-section {
-  padding: 0 0 var(--space-3xl);
-}
-
-.storm-fiber-card {
-  max-width: 740px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--green);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-}
-
-.storm-fiber-card p {
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin: 0;
+  padding: var(--space-xl) 0 var(--space-3xl);
 }
 

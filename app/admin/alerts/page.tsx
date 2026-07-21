@@ -13,10 +13,28 @@ interface AlertState {
   updatedBy: string;
 }
 
+interface StormState {
+  enabled: boolean;
+  phase: 'monitoring' | 'active' | 'restoring' | 'clear';
+  message: string;
+  updatedAt: string;
+  updatedBy: string;
+}
+
+const phaseLabels: Record<string, string> = {
+  monitoring: 'Monitoring',
+  active: 'Active Storm',
+  restoring: 'Restoring',
+  clear: 'All Clear',
+};
+
 export default function AdminAlerts() {
   const [alert, setAlert] = useState<AlertState | null>(null);
+  const [storm, setStorm] = useState<StormState | null>(null);
   const [saving, setSaving] = useState(false);
+  const [savingStorm, setSavingStorm] = useState(false);
   const [feedback, setFeedback] = useState('');
+  const [stormFeedback, setStormFeedback] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
 
@@ -25,6 +43,10 @@ export default function AdminAlerts() {
       .then((r) => r.json())
       .then(setAlert)
       .catch(() => setError('Failed to load alert state'));
+    fetch('/api/storm')
+      .then((r) => r.json())
+      .then(setStorm)
+      .catch(() => {});
   }, []);
 
   async function handleSave(e: FormEvent) {
@@ -64,6 +86,40 @@ export default function AdminAlerts() {
       setError('Something went wrong');
     } finally {
       setSaving(false);
+    }
+  }
+
+  async function handleStormSave(e: FormEvent) {
+    e.preventDefault();
+    if (!storm) return;
+
+    setSavingStorm(true);
+    setStormFeedback('');
+
+    try {
+      const res = await fetch('/api/storm', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          enabled: storm.enabled,
+          phase: storm.phase,
+          message: storm.message,
+        }),
+      });
+
+      if (res.ok) {
+        const updated = await res.json();
+        setStorm(updated);
+        setStormFeedback(
+          `Storm status updated at ${new Date(updated.updatedAt).toLocaleString()}`,
+        );
+      } else if (res.status === 401) {
+        router.push('/admin/login');
+      }
+    } catch {
+      setStormFeedback('Something went wrong');
+    } finally {
+      setSavingStorm(false);
     }
   }
 
@@ -181,6 +237,88 @@ export default function AdminAlerts() {
           Last updated: {new Date(alert.updatedAt).toLocaleString()} by{' '}
           {alert.updatedBy}
         </p>
+      )}
+
+      {/* Storm Status */}
+      {storm && (
+        <>
+          <hr className="admin-divider" />
+          <h2 className="admin-section-heading">Storm Status</h2>
+          <p className="admin-section-sub">
+            Controls the status banner on the <a href="/storm" target="_blank">/storm</a> page.
+          </p>
+
+          <form onSubmit={handleStormSave} className="admin-form">
+            <div className="admin-toggle-row">
+              <span className="admin-toggle-label">Storm banner active</span>
+              <button
+                type="button"
+                role="switch"
+                aria-checked={storm.enabled}
+                className={`admin-toggle ${storm.enabled ? 'admin-toggle--on' : ''}`}
+                onClick={() => setStorm({ ...storm, enabled: !storm.enabled })}
+              >
+                <span className="admin-toggle-knob" />
+              </button>
+              <span
+                className={`admin-status ${storm.enabled ? 'admin-status--on' : 'admin-status--off'}`}
+              >
+                {storm.enabled ? 'ON' : 'OFF'}
+              </span>
+            </div>
+
+            <fieldset className="admin-fieldset">
+              <legend>Phase</legend>
+              <div className="admin-severity-options">
+                {(['monitoring', 'active', 'restoring', 'clear'] as const).map((p) => (
+                  <label
+                    key={p}
+                    className={`admin-severity-option ${storm.phase === p ? 'admin-severity-option--selected' : ''}`}
+                  >
+                    <input
+                      type="radio"
+                      name="phase"
+                      value={p}
+                      checked={storm.phase === p}
+                      onChange={() => setStorm({ ...storm, phase: p })}
+                    />
+                    {phaseLabels[p]}
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+
+            <div className="admin-field">
+              <label htmlFor="stormMessage">Custom message (optional)</label>
+              <textarea
+                id="stormMessage"
+                value={storm.message}
+                onChange={(e) => setStorm({ ...storm, message: e.target.value })}
+                maxLength={500}
+                rows={3}
+                placeholder="Leave blank to use the default message for the selected phase"
+              />
+              <small className="admin-char-count">{storm.message.length}/500</small>
+            </div>
+
+            {stormFeedback && <p className="admin-feedback">{stormFeedback}</p>}
+
+            <button
+              type="submit"
+              disabled={savingStorm}
+              className="btn btn-primary admin-save-btn"
+            >
+              {savingStorm ? 'Saving...' : 'Save storm status'}
+            </button>
+          </form>
+
+          {storm.updatedAt && (
+            <p className="admin-last-updated">
+              Last updated: {new Date(storm.updatedAt).toLocaleString()} by{' '}
+              {storm.updatedBy}
+            </p>
+          )}
+        </>
       )}
     </div>
   );

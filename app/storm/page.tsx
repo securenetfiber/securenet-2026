@@ -1,13 +1,16 @@
 import type { Metadata } from 'next';
 import CognitoEmbed from '@/components/CognitoEmbed';
 import { BreadcrumbSchema } from '@/components/SchemaOrg';
-import { stormStatus, getStormMessage } from '@/lib/alerts';
+import { getStorm } from '@/lib/storm-store';
+import { getStormMessage } from '@/lib/alerts';
 
 export const metadata: Metadata = {
   title: 'Storm Updates & Service Reports',
   description:
     'Report storm damage or service issues to SecureNet Fiber. Check current storm status, troubleshooting steps, and get real-time updates.',
 };
+
+export const dynamic = 'force-dynamic';
 
 const phaseVariant: Record<string, string> = {
   monitoring: 'storm-status--warning',
@@ -23,10 +26,12 @@ const phaseLabel: Record<string, string> = {
   clear: 'All Clear',
 };
 
-export default function StormPage() {
-  const message = getStormMessage(stormStatus);
-  const variant = phaseVariant[stormStatus.phase];
-  const label = phaseLabel[stormStatus.phase];
+export default async function StormPage() {
+  const storm = await getStorm();
+  const stormForMessage = { enabled: storm.enabled, phase: storm.phase, message: storm.message || undefined };
+  const message = getStormMessage(stormForMessage);
+  const variant = phaseVariant[storm.phase];
+  const label = phaseLabel[storm.phase];
 
   return (
     <>
@@ -44,7 +49,7 @@ export default function StormPage() {
       </section>
 
       {/* Storm Status */}
-      {stormStatus.enabled && (
+      {storm.enabled && (
         <section className="storm-status-section">
           <div className="section-container">
             <div className={`storm-status ${variant}`}>
@@ -71,8 +76,8 @@ export default function StormPage() {
               <h3>Internet out? Try this first.</h3>
               <ol className="signup-steps">
                 <li>
-                  <strong>Check your power.</strong> No power means no internet
-                  &mdash; that&apos;s normal during an outage.
+                  <strong>Check your power.</strong> No power means no internet.
+                  That&apos;s normal during a power outage.
                 </li>
                 <li>
                   <strong>Wait 15 minutes</strong> after power returns for your
@@ -103,7 +108,7 @@ export default function StormPage() {
                 </div>
               </div>
               <p className="signup-hours">
-                Monday &ndash; Friday, 9 AM &ndash; 5 PM
+                Monday - Friday, 9 AM - 5 PM
               </p>
             </div>
 
@@ -128,22 +133,16 @@ export default function StormPage() {
         </div>
       </section>
 
-      {/* Underground Fiber Advantage */}
+      {/* Underground Fiber Note */}
       <section className="storm-fiber-section">
-        <div className="section-container">
-          <div className="storm-fiber-card">
-            <h2 className="section-heading" style={{ textAlign: 'left', marginBottom: '0.75rem' }}>
-              Built to weather the storm.
-            </h2>
-            <p>
-              Most of SecureNet&apos;s fiber network is buried underground,
-              protecting it from wind, falling trees, and the storm damage that
-              commonly takes out aerial lines. While no network is immune to
-              every situation, underground fiber dramatically reduces
-              weather-related outages compared to traditional copper or cable
-              infrastructure.
-            </p>
-          </div>
+        <div className="section-container" style={{ maxWidth: '740px' }}>
+          <h2 className="section-heading">Why fiber holds up better</h2>
+          <p className="section-sub">
+            Most of our network is underground, so it&apos;s protected from
+            wind and falling trees. That doesn&apos;t make it bulletproof, but
+            it means fewer weather-related outages than you&apos;d get with
+            aerial copper or cable lines.
+          </p>
         </div>
       </section>
     </>
