@@ -132,19 +132,6 @@ export default async function StormPage() {
           </div>
         </div>
       </section>
-
-      {/* Underground Fiber Note */}
-      <section className="storm-fiber-section">
-        <div className="section-container" style={{ maxWidth: '740px' }}>
-          <h2 className="section-heading">Why fiber holds up better</h2>
-          <p className="section-sub">
-            Most of our network is underground, so it&apos;s protected from
-            wind and falling trees. That doesn&apos;t make it bulletproof, but
-            it means fewer weather-related outages than you&apos;d get with
-            aerial copper or cable lines.
-          </p>
-        </div>
-      </section>
     </>
   );
 }
