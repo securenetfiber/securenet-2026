@@ -5955,19 +5955,20 @@ body.has-alert-bar .page-hero {
 .storm-status {
   padding: var(--space-md) var(--space-lg);
   border-radius: var(--radius-md);
-  border: none;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
 }
 
 .storm-status--clear {
-  background: rgba(22, 163, 74, 0.08);
+  border-color: var(--green);
 }
 
 .storm-status--warning {
-  background: rgba(245, 158, 11, 0.08);
+  border-color: #f59e0b;
 }
 
 .storm-status--critical {
-  background: rgba(237, 37, 78, 0.08);
+  border-color: var(--red);
 }
 
 .storm-status-header {
