@@ -3807,28 +3807,39 @@ body.has-alert-bar .page-hero {
 }
 
 /* File upload */
-.cognito-embed .cog-cognito .cog-file-drop-target,
-.cognito-embed .cog-cognito .cog-file-upload,
-.cognito-embed .cog-cognito .cog-upload,
-.cognito-embed .cog-cognito [class*="file-drop"],
-.cognito-embed .cog-cognito [class*="file-upload"] {
+.cognito-embed .cog-cognito .el-upload-dragger {
   display: flex !important;
   align-items: center !important;
   gap: 0.75rem !important;
-  white-space: nowrap !important;
+  padding: 1rem !important;
+  border: 1.5px dashed var(--border-light) !important;
+  border-radius: var(--radius-md) !important;
+  background: transparent !important;
+  width: 100% !important;
+  height: auto !important;
 }
 
-.cognito-embed .cog-cognito .cog-file-upload .cog-button,
-.cognito-embed .cog-cognito .cog-upload .cog-button,
-.cognito-embed .cog-cognito .cog-file-drop-target .cog-button,
-.cognito-embed .cog-cognito .cog-file-upload button,
-.cognito-embed .cog-cognito .cog-upload button[type="button"],
-.cognito-embed .cog-cognito [class*="file-drop"] button,
-.cognito-embed .cog-cognito [class*="file-upload"] button {
+.cognito-embed .cog-cognito .el-upload-dragger > div {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+}
+
+.cognito-embed .cog-cognito .cog-upload__upload-button {
   width: auto !important;
   min-height: auto !important;
   padding: 0.5rem 1.25rem !important;
   font-size: 0.9rem !important;
+}
+
+.cognito-embed .cog-cognito .cog-upload__drag-text {
+  white-space: nowrap !important;
+  color: var(--text-muted) !important;
+  font-size: 0.9rem !important;
+}
+
+.cognito-embed .cog-cognito .el-upload {
+  width: 100% !important;
 }
 
 /* Confirmation / success message */
@@ -5944,20 +5955,20 @@ body.has-alert-bar .page-hero {
 .storm-status {
   padding: var(--space-md) var(--space-lg);
   border-radius: var(--radius-md);
-  border-left: 4px solid var(--border);
+  border: 1px solid var(--border);
   background: var(--bg-card);
 }
 
 .storm-status--clear {
-  border-left-color: var(--green);
+  border-color: var(--green);
 }
 
 .storm-status--warning {
-  border-left-color: #f59e0b;
+  border-color: #f59e0b;
 }
 
 .storm-status--critical {
-  border-left-color: var(--red);
+  border-color: var(--red);
 }
 
 .storm-status-header {
