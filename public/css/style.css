@@ -5949,26 +5949,25 @@ body.has-alert-bar .page-hero {
 
 /* Storm status banner */
 .storm-status-section {
-  padding: 0 0 var(--space-lg);
+  padding: var(--space-xl) 0 var(--space-lg);
 }
 
 .storm-status {
   padding: var(--space-md) var(--space-lg);
   border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  background: var(--bg-card);
+  border: none;
 }
 
 .storm-status--clear {
-  border-color: var(--green);
+  background: rgba(22, 163, 74, 0.08);
 }
 
 .storm-status--warning {
-  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.08);
 }
 
 .storm-status--critical {
-  border-color: var(--red);
+  background: rgba(237, 37, 78, 0.08);
 }
 
 .storm-status-header {

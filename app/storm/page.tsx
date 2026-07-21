@@ -134,7 +134,7 @@ export default async function StormPage() {
       </section>
 
       {/* Why Fiber Holds Up */}
-      <section className="why-fiber">
+      <section className="why-fiber" style={{ background: 'var(--bg-surface)' }}>
         <div className="section-container">
           <h2 className="section-heading">Why fiber holds up better.</h2>
           <p className="section-sub">
