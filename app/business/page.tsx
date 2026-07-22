@@ -128,7 +128,7 @@ export default function BusinessPage() {
               <p className="msp-banner-eyebrow">Enterprise Services</p>
               <h2>Need more than small business internet?</h2>
               <p>
-                Dedicated fiber up to 8.5 Gbps, managed networks, business
+                Dedicated multi-gig fiber, managed networks, business
                 security, cameras, VoIP, and more. Talk to our commercial team.
               </p>
             </div>

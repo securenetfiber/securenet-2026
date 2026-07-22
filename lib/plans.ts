@@ -27,6 +27,7 @@ export interface Plan {
   fees: Fee[];
   contractRequired: boolean;
   planType: 'residential' | 'business';
+  hidden?: boolean;
 }
 
 export const COMPANY_INFO = {
@@ -193,6 +194,7 @@ export const residentialPlans: Plan[] = [
       'Wi-Fi 7 router available for $30/mo',
     ],
     featured: false,
+    hidden: true,
     circuitOnly: true,
     ctaText: 'Get Started',
     ctaHref: '/service-request',
@@ -327,6 +329,7 @@ export const businessPlans: Plan[] = [
       'SLA-backed uptime',
     ],
     featured: false,
+    hidden: true,
     circuitOnly: true,
     ctaText: 'Get Started',
     ctaHref: '/service-request',

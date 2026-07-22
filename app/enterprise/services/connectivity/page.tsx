@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Connectivity',
   description:
-    'Enterprise fiber connectivity from SecureNet. Network design, dedicated internet access, circuits up to 8.5 Gbps, enterprise Wi-Fi, point-to-point, and dark fiber.',
+    'Enterprise fiber connectivity from SecureNet. Network design, dedicated internet access, multi-gig circuits, enterprise Wi-Fi, point-to-point, and dark fiber.',
 };
 
 export default function ConnectivityPage() {
@@ -84,11 +84,11 @@ export default function ConnectivityPage() {
         <div className="section-container">
           <h2 className="ent-section-heading">Dedicated Circuits</h2>
           <p className="ent-section-sub">
-            Fiber circuits from 500 Mbps to 8.5 Gbps and beyond. Same speed
+            Fiber circuits from 500 Mbps to 5 Gbps and beyond. Same speed
             up and down, no data caps.
           </p>
           <div className="ent-speed-list">
-            {['500 Mbps', '1 Gbps', '2 Gbps', '5 Gbps', '8.5 Gbps', 'Custom'].map((speed) => (
+            {['500 Mbps', '1 Gbps', '2 Gbps', '5 Gbps', 'Custom'].map((speed) => (
               <div className="ent-speed-item" key={speed}>
                 <span className="ent-speed-value">{speed}</span>
                 <span className="ent-speed-label">symmetric fiber</span>
@@ -96,7 +96,7 @@ export default function ConnectivityPage() {
             ))}
           </div>
           <p className="ent-section-note">
-            Need something beyond 8.5 Gbps? We do custom configurations,
+            Need something beyond 5 Gbps? We do custom configurations,
             dark fiber, and wavelength services.{' '}
             <Link href="/enterprise/contact">Let&rsquo;s talk</Link>.
           </p>

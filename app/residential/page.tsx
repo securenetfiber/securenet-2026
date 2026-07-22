@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ResidentialPage() {
   return (
     <>
-      <PlanSchema plans={residentialPlans} />
+      <PlanSchema plans={residentialPlans.filter((p) => !p.hidden)} />
       <BreadcrumbSchema items={[{ name: 'Home', href: '/' }, { name: 'Residential' }]} />
 
       {/* Page Hero */}
@@ -49,7 +49,7 @@ export default function ResidentialPage() {
           </p>
 
           <div className="plan-grid">
-            {residentialPlans.map((plan) => (
+            {residentialPlans.filter((p) => !p.hidden).map((plan) => (
               <PlanCardWithLabel key={plan.id} plan={plan} />
             ))}
           </div>
@@ -256,7 +256,7 @@ export default function ResidentialPage() {
               },
               {
                 title: 'Wi-Fi Router Included',
-                desc: 'Our 500 Mbps, 1 Gig, and 2 Gig plans include a high-performance Wi-Fi router at no extra cost. Our 5 Gig and 8.5 Gig plans are circuit only for customers who prefer their own networking equipment.',
+                desc: 'Our 500 Mbps, 1 Gig, and 2 Gig plans include a high-performance Wi-Fi router at no extra cost. Our 5 Gig plan is circuit only for customers who prefer their own networking equipment.',
               },
             ].map((item) => (
               <div className="included-item" key={item.title}>

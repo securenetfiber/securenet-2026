@@ -43,7 +43,6 @@ export default function CoveragePage() {
                   <li><strong>1 Gbps</strong> starting at $72/mo</li>
                   <li><strong>2 Gbps</strong> starting at $107/mo</li>
                   <li><strong>5 Gbps</strong> starting at $150/mo</li>
-                  <li><strong>8.5 Gbps</strong> starting at $200/mo</li>
                 </ul>
               </div>
               <div className="market-cities">

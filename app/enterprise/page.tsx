@@ -4,13 +4,13 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Enterprise Fiber & Managed Services',
   description:
-    'Enterprise fiber internet, managed networks, business security, and VoIP from SecureNet. Dedicated circuits up to 8.5 Gbps, local support.',
+    'Enterprise fiber internet, managed networks, business security, and VoIP from SecureNet. Dedicated multi-gig circuits, local support.',
 };
 
 const serviceCategories = [
   {
     title: 'Connectivity',
-    desc: 'Dedicated fiber circuits up to 8.5 Gbps, DIA, network design, structured cabling, and enterprise Wi-Fi.',
+    desc: 'Dedicated multi-gig fiber circuits, DIA, network design, structured cabling, and enterprise Wi-Fi.',
     href: '/enterprise/services/connectivity',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="28" height="28">

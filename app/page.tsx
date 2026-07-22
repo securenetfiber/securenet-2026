@@ -15,7 +15,7 @@ export default function HomePage() {
             <em>works.</em>
           </h1>
           <p className="hero-sub">
-            100% fiber with speeds up to 8.5 Gbps. No contracts.
+            100% fiber with multi-gig speeds. No contracts.
             No hidden fees. Starting at $52/mo.
           </p>
           <div className="hero-cta">
@@ -24,7 +24,7 @@ export default function HomePage() {
           </div>
           <div className="hero-proof">
             <div className="proof-item">
-              <strong>Up to 8.5 Gbps</strong>
+              <strong>Multi-Gig Speeds</strong>
               <span>100% Fiber</span>
             </div>
             <div className="proof-divider"></div>

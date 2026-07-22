@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 // Higher tier business plans for commercial / managed clients.
 const commercialPlans = businessPlans.filter((p) =>
-  ['biz-2g', 'biz-5g', 'biz-8g'].includes(p.id)
+  ['biz-2g', 'biz-5g', 'biz-8g'].includes(p.id) && !p.hidden
 );
 
 export default function ManagedServicesPage() {
@@ -66,7 +66,7 @@ export default function ManagedServicesPage() {
           </div>
 
           <p className="plans-note">
-            Need something custom? We offer connections beyond 8.5 Gbps and
+            Need something custom? We offer connections beyond 5 Gbps and
             point-to-point configurations.{' '}
             <Link href="/service-request">Request a quote</Link>.
           </p>

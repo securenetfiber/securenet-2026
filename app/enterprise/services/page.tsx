@@ -14,7 +14,7 @@ const categories = [
     items: [
       'Network Design & Structured Cabling',
       'Dedicated Internet Access (DIA)',
-      'Dedicated Circuits up to 8.5 Gbps',
+      'Dedicated Multi-Gig Circuits',
       'Enterprise Wi-Fi & Hospitality',
       'Point-to-Point & Dark Fiber',
       'BGP & Custom Configurations',

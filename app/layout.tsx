@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: '%s | SecureNet Fiber',
   },
   description:
-    'Fiber internet from SecureNet. Speeds up to 8.5 Gbps, no data caps, no contracts. Serving the Kanawha Valley, WV and Danville, VA.',
+    'Fiber internet from SecureNet. Multi-gig speeds, no data caps, no contracts. Serving the Kanawha Valley, WV and Danville, VA.',
 };
 
 export default async function RootLayout({

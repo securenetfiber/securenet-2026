@@ -30,7 +30,7 @@ export default function NitroPage() {
         <div className="section-container">
           <div className="city-stats">
             <div className="city-stat">
-              <span className="city-stat-value">8.5 Gbps</span>
+              <span className="city-stat-value">5 Gbps</span>
               <span className="city-stat-label">Max speed</span>
             </div>
             <div className="city-stat">
@@ -96,7 +96,7 @@ export default function NitroPage() {
             </div>
           </div>
           <p className="city-plan-more">
-            Need more speed? <Link href="/residential">View all plans</Link> including our 5 Gig and 8.5 Gig options.
+            Need more speed? <Link href="/residential">View all plans</Link> including our 5 Gig option.
           </p>
         </div>
       </section>
