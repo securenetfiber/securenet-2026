@@ -35,20 +35,6 @@ export default function EnterpriseContactPage() {
               </div>
 
               <div className="ent-contact-detail">
-                <span className="ent-contact-label">Sales</span>
-                <a href="mailto:enterprise@securenetfiber.com">
-                  enterprise@securenetfiber.com
-                </a>
-              </div>
-
-              <div className="ent-contact-detail">
-                <span className="ent-contact-label">Support</span>
-                <a href="mailto:support@securenetfiber.com">
-                  support@securenetfiber.com
-                </a>
-              </div>
-
-              <div className="ent-contact-detail">
                 <span className="ent-contact-label">Office</span>
                 <p>
                   2505 MacCorkle Ave<br />
@@ -59,8 +45,18 @@ export default function EnterpriseContactPage() {
               <div className="ent-contact-detail">
                 <span className="ent-contact-label">Hours</span>
                 <p>
-                  Monday &ndash; Friday: 8 AM &ndash; 5 PM<br />
+                  Monday &ndash; Friday: 9 AM &ndash; 5 PM<br />
+                  Closed 12 PM &ndash; 1 PM for lunch<br />
                   24/7 emergency support for managed clients
+                </p>
+              </div>
+
+              <div className="ent-contact-detail">
+                <span className="ent-contact-label">Payments</span>
+                <p>
+                  Payments for SecureNet internet can be mailed to
+                  P.O. Box 8799, South Charleston, WV or paid online
+                  on our website.
                 </p>
               </div>
             </div>

@@ -180,13 +180,13 @@ export default function BusinessPage() {
       <section className="availability" id="quote">
         <div className="section-container">
           <div className="avail-box">
-            <h2 className="avail-heading">Ready to get started?</h2>
+            <h2 className="avail-heading">Ready to get connected?</h2>
             <p className="avail-sub">
-              Tell us about your business and we&apos;ll put together a custom
-              proposal within one business day.
+              Pick a plan, schedule your install, and get fast fiber in your
+              business.
             </p>
             <Link href="/service-request" className="btn btn-primary">
-              Request a Quote
+              Get Started
             </Link>
           </div>
         </div>
