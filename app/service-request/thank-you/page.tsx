@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import Link from 'next/link';
 import { BreadcrumbSchema } from '@/components/SchemaOrg';
 
@@ -18,6 +19,14 @@ export default function ThankYouPage() {
           { name: 'Thank You' },
         ]}
       />
+
+      <Script id="gtag-conversion" strategy="afterInteractive">
+        {`gtag('event', 'conversion', {
+  'send_to': 'AW-18360544898/mTprCMSXidkcEILd_rJE',
+  'value': 1.0,
+  'currency': 'USD'
+});`}
+      </Script>
 
       <section className="page-hero">
         <div className="section-container">

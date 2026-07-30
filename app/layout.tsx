@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { headers } from 'next/headers';
 import MainShell from '@/components/MainShell';
 import { OrganizationSchema, LocalBusinessSchema } from '@/components/SchemaOrg';
@@ -45,6 +46,16 @@ export default async function RootLayout({
         <LocalBusinessSchema />
       </head>
       <body>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18360544898"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-18360544898');`}
+        </Script>
         <MainShell alert={alert}>
           {children}
         </MainShell>
