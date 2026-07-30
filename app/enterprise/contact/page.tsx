@@ -56,7 +56,7 @@ export default function EnterpriseContactPage() {
                 <p>
                   Payments for SecureNet internet can be mailed to
                   P.O. Box 8799, South Charleston, WV or paid online
-                  on our website.
+                  on <a href="https://securenetfiber.com">our website</a>.
                 </p>
               </div>
             </div>

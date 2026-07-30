@@ -58,7 +58,6 @@ export default function EnterprisePage() {
       {/* Hero */}
       <section className="ent-hero">
         <div className="section-container">
-          <p className="ent-hero-eyebrow">SecureNet Enterprise</p>
           <h1 className="ent-hero-heading">
             Enterprise fiber.<br />
             Local team.

@@ -5350,7 +5350,26 @@ body.has-alert-bar .page-hero {
 
 .ent-service-icon {
   color: var(--ent-accent);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-md);
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--ent-accent-glow);
+  box-shadow: 0 0 0 rgba(60, 145, 230, 0);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.ent-service-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.ent-service-card:hover .ent-service-icon {
+  background: rgba(60, 145, 230, 0.28);
+  box-shadow: 0 0 18px rgba(60, 145, 230, 0.25);
 }
 
 .ent-service-card h3 {
