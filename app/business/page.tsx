@@ -36,38 +36,25 @@ export default function BusinessPage() {
       </nav>
 
       {/* BUSINESS INTERNET */}
-      <section className="why-fiber" id="internet">
+      <section className="availability" id="internet">
         <div className="section-container">
-          <h2 className="section-heading">Small Business Internet</h2>
-          <p className="section-sub" style={{ marginBottom: 'var(--space-xl)' }}>
-            Symmetrical fiber for offices, retail, and small operations. Every
-            plan includes the same upload and download speeds, no data caps, no
-            contracts, and SLA-backed uptime.
-          </p>
-
-          <div className="avail-box" style={{ textAlign: 'center' }}>
-            <h3 className="avail-heading">Contact Claire for Pricing</h3>
+          <div className="avail-box">
+            <h2 className="avail-heading">Contact Claire for Pricing</h2>
             <p className="avail-sub">
-              Every business is different. Give us a call or send a request and
-              Claire will put together a plan that fits your needs and budget.
+              Symmetrical fiber with the same upload and download speeds, no
+              data caps, no contracts, and SLA-backed uptime. Every business is
+              different — give us a call and Claire will put together a plan
+              that fits.
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="tel:+13049514114" className="btn btn-primary">
                 Call (304) 951-4114
               </a>
-              <Link href="/service-request" className="btn btn-primary" style={{ background: 'var(--navy)' }}>
+              <Link href="/service-request" className="btn btn-primary" style={{ background: 'var(--accent)' }}>
                 Request a Quote
               </Link>
             </div>
           </div>
-
-          <p className="plans-note">
-            Need dedicated internet access or a service level agreement?{' '}
-            <Link href="/enterprise">
-              See our enterprise services
-            </Link>
-            .
-          </p>
         </div>
       </section>
 
