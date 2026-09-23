@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import PlanCardWithLabel from '@/components/PlanCardWithLabel';
-import { PlanSchema, BreadcrumbSchema } from '@/components/SchemaOrg';
-import { businessPlans } from '@/lib/plans';
+import { BreadcrumbSchema } from '@/components/SchemaOrg';
 
 export const metadata: Metadata = {
   title: 'Business Internet',
@@ -10,16 +8,9 @@ export const metadata: Metadata = {
     'Dedicated fiber internet for small businesses in the Kanawha Valley, WV and Danville, VA. Same upload and download speeds, no data caps, no contracts.',
 };
 
-// Small business page shows only the lower tiers. Higher tiers and managed
-// services live on /business/managed-services.
-const smallBusinessPlans = businessPlans.filter((p) =>
-  ['biz-500', 'biz-1g', 'biz-2g'].includes(p.id)
-);
-
 export default function BusinessPage() {
   return (
     <>
-      <PlanSchema plans={smallBusinessPlans} />
       <BreadcrumbSchema items={[{ name: 'Home', href: '/' }, { name: 'Business' }]} />
 
       {/* PAGE HERO */}
@@ -44,23 +35,34 @@ export default function BusinessPage() {
         </ul>
       </nav>
 
-      {/* BUSINESS INTERNET PLANS */}
-      <section className="plans" id="internet">
+      {/* BUSINESS INTERNET */}
+      <section className="why-fiber" id="internet">
         <div className="section-container">
           <h2 className="section-heading">Small Business Internet</h2>
-          <p className="section-sub">
-            Three plans built for offices, retail, and small operations.
+          <p className="section-sub" style={{ marginBottom: 'var(--space-xl)' }}>
+            Symmetrical fiber for offices, retail, and small operations. Every
+            plan includes the same upload and download speeds, no data caps, no
+            contracts, and SLA-backed uptime.
           </p>
 
-          <div className="plan-grid">
-            {smallBusinessPlans.map((plan) => (
-              <PlanCardWithLabel key={plan.id} plan={plan} />
-            ))}
+          <div className="avail-box" style={{ textAlign: 'center' }}>
+            <h3 className="avail-heading">Contact Claire for Pricing</h3>
+            <p className="avail-sub">
+              Every business is different. Give us a call or send a request and
+              Claire will put together a plan that fits your needs and budget.
+            </p>
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <a href="tel:+13049514114" className="btn btn-primary">
+                Call (304) 951-4114
+              </a>
+              <Link href="/service-request" className="btn btn-primary" style={{ background: 'var(--navy)' }}>
+                Request a Quote
+              </Link>
+            </div>
           </div>
 
           <p className="plans-note">
-            Need more bandwidth, dedicated internet access, or a service level
-            agreement?{' '}
+            Need dedicated internet access or a service level agreement?{' '}
             <Link href="/enterprise">
               See our enterprise services
             </Link>
