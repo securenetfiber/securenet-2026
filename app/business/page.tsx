@@ -43,7 +43,7 @@ export default function BusinessPage() {
             <p className="avail-sub">
               Symmetrical fiber with the same upload and download speeds, no
               data caps, no contracts, and SLA-backed uptime. Every business is
-              different — give us a call and Claire will put together a plan
+              different. Give us a call and Claire will put together a plan
               that fits.
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
