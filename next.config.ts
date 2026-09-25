@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
         destination: '/enterprise',
         permanent: true,
       },
+      // Vanity URLs for print pieces. Temporary so destinations can change.
+      { source: '/mail', destination: '/switch?src=mail1', permanent: false },
+      { source: '/door', destination: '/switch?src=hanger', permanent: false },
+      { source: '/sign', destination: '/switch?src=sign', permanent: false },
     ];
   },
 }

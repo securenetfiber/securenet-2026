@@ -6048,3 +6048,414 @@ body.has-alert-bar .page-hero {
 }
 
 
+/* ═══════════════════════════════════════════════
+   SWITCH LANDING PAGE (switch-)
+   /switch and /switch/thank-you only
+   ═══════════════════════════════════════════════ */
+
+/* Minimal header */
+.switch-call-btn {
+  margin-left: auto;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.25rem;
+  min-height: 2.75rem;
+  white-space: nowrap;
+}
+
+.switch-call-btn svg {
+  flex-shrink: 0;
+}
+
+/* Minimal footer */
+.switch-footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.switch-footer-logo {
+  height: 2.75rem;
+  width: auto;
+}
+
+.switch-footer-legal {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.switch-footer-legal a {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.switch-footer-legal a:hover {
+  color: var(--text-primary);
+}
+
+/* Hero */
+.switch-hero {
+  padding-bottom: var(--space-2xl);
+}
+
+.switch-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.switch-hero .section-heading {
+  font-size: clamp(2.25rem, 4.5vw, var(--text-4xl));
+  line-height: 1.08;
+  margin-bottom: var(--space-sm);
+}
+
+.switch-hero .section-sub {
+  margin-bottom: var(--space-lg);
+}
+
+.switch-proof {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.switch-proof li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.switch-proof svg {
+  flex-shrink: 0;
+  color: #4ade80;
+}
+
+/* Address check card */
+.switch-check-card {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.18);
+}
+
+.switch-check-heading {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.switch-check-sub {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.switch-check-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.switch-check-form .prereg-input {
+  width: 100%;
+}
+
+.switch-check-form .prereg-input:disabled {
+  opacity: 0.6;
+}
+
+.switch-result-icon {
+  margin-bottom: 0.75rem;
+}
+
+.switch-result-icon--yes {
+  color: var(--green);
+}
+
+.switch-result-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.switch-result-actions .btn {
+  text-align: center;
+}
+
+.switch-link-btn {
+  background: none;
+  border: none;
+  padding: 0.75rem 0 0;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.switch-link-btn:hover {
+  color: var(--navy);
+}
+
+.switch-check-phone {
+  display: inline-block;
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: var(--space-md);
+}
+
+.switch-check-card .prereg-form {
+  gap: var(--space-sm);
+}
+
+/* Signup form */
+.switch-section-heading {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.switch-signup-sub {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+}
+
+.switch-price-line {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--navy) !important;
+  margin-bottom: 0.25rem;
+}
+
+/* Plan picker (only when more than one plan is eligible) */
+.switch-plan-picker {
+  margin-bottom: var(--space-lg);
+}
+
+.switch-plan-picker-heading {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.switch-plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: var(--space-sm);
+}
+
+.switch-plan-option {
+  font-family: var(--font);
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  gap: 0.2rem;
+  padding: var(--space-md);
+}
+
+.switch-plan-option--selected {
+  outline: 2px solid var(--navy);
+  outline-offset: -1px;
+}
+
+.switch-plan-speed {
+  font-size: var(--text-2xl);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.switch-plan-promo {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.switch-plan-regular {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.switch-plan-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+/* Why switch */
+.switch-why .section-heading {
+  margin-bottom: var(--space-lg);
+}
+
+.switch-benefit-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* How switching works */
+.switch-how .ts-steps {
+  margin-top: var(--space-lg);
+}
+
+/* Reviews */
+.switch-reviews {
+  padding: var(--space-2xl) 0 var(--space-lg);
+}
+
+.switch-reviews .section-heading {
+  text-align: center;
+}
+
+.switch-reviews + .ts-strip {
+  background: transparent;
+}
+
+/* FAQ */
+.switch-faq {
+  padding-top: var(--space-xl);
+}
+
+.switch-faq-container {
+  max-width: 48rem;
+}
+
+.switch-faq .section-heading {
+  margin-bottom: var(--space-md);
+}
+
+/* Fine print */
+.switch-fine-print {
+  padding: var(--space-lg) 0;
+}
+
+.switch-fine-print p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 60rem;
+}
+
+/* Thank-you page */
+.switch-thanks-note {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  padding-bottom: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Cognito extras for the switch form: yes/no radios, help text,
+   file upload on narrow screens */
+.switch-signup .cognito-embed .cog-cognito .cog-yesno .cog-input,
+.switch-signup .cognito-embed .cog-cognito .cog-choice--radiobuttons .cog-input {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.5rem 1.5rem !important;
+}
+
+.switch-signup .cognito-embed .cog-cognito .cog-checkable,
+.switch-signup .cognito-embed .cog-cognito .el-radio,
+.switch-signup .cognito-embed .cog-cognito .el-checkbox {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  font-weight: 500 !important;
+  color: var(--text-primary) !important;
+}
+
+.switch-signup .cognito-embed .cog-cognito input[type="checkbox"],
+.switch-signup .cognito-embed .cog-cognito input[type="radio"] {
+  width: 1.15rem !important;
+  height: 1.15rem !important;
+}
+
+.switch-signup .cognito-embed .cog-cognito .cog-helptext,
+.switch-signup .cognito-embed .cog-cognito .cog-field__helptext {
+  color: var(--text-muted) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+}
+
+@media (max-width: 64rem) {
+  .switch-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 48rem) {
+  /* Mobile: headline, subhead, then the address input, then proof points */
+  .switch-hero-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-md);
+  }
+
+  .switch-hero-copy {
+    display: contents;
+  }
+
+  .switch-hero .section-heading,
+  .switch-hero .section-sub {
+    margin-bottom: 0;
+  }
+
+  .switch-check-card {
+    order: 1;
+    padding: var(--space-md);
+  }
+
+  .switch-proof {
+    order: 2;
+  }
+
+  .switch-hero {
+    padding-bottom: var(--space-xl);
+  }
+
+  .switch-signup .cognito-embed .cog-cognito .cog-upload__drag-text {
+    white-space: normal !important;
+  }
+}
+
+@media (max-width: 30rem) {
+  .switch-call-label {
+    display: none;
+  }
+
+  .switch-nav {
+    gap: 0.75rem;
+  }
+
+  .switch-nav .logo img {
+    height: 2.25rem;
+  }
+
+  .switch-call-btn {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    gap: 0.4rem;
+  }
+
+  .switch-hero .section-sub {
+    font-size: var(--text-base);
+  }
+}

@@ -2,7 +2,26 @@
 
 import { useState, FormEvent } from 'react';
 
-export default function PreRegForm() {
+interface PreRegFormProps {
+  /** Placeholder for the address input. Defaults to the St. Albans text. */
+  addressPlaceholder?: string;
+  /** Initial value for the address input. */
+  defaultAddress?: string;
+  /** Submit button text. Defaults to "Pre-Register for Fiber". */
+  buttonText?: string;
+  /** Optional Source tag sent to /api/prereg (e.g. "switch-waitlist"). */
+  source?: string;
+  /** Optional attribution values (src, utm_source, etc.) sent to /api/prereg. */
+  attribution?: Record<string, string>;
+}
+
+export default function PreRegForm({
+  addressPlaceholder = 'Your street address in St. Albans',
+  defaultAddress,
+  buttonText = 'Pre-Register for Fiber',
+  source,
+  attribution,
+}: PreRegFormProps = {}) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -13,12 +32,14 @@ export default function PreRegForm() {
     setError(null);
 
     const form = e.currentTarget;
-    const data = {
+    const data: Record<string, unknown> = {
       name: (form.elements.namedItem('name') as HTMLInputElement).value,
       email: (form.elements.namedItem('email') as HTMLInputElement).value,
       address: (form.elements.namedItem('address') as HTMLInputElement).value,
       phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
     };
+    if (source) data.source = source;
+    if (attribution) data.attribution = attribution;
 
     try {
       const res = await fetch('/api/prereg', {
@@ -60,7 +81,7 @@ export default function PreRegForm() {
       </div>
       <div className="prereg-field">
         <label className="prereg-label" htmlFor="prereg-address">Address</label>
-        <input className="prereg-input" type="text" id="prereg-address" name="address" placeholder="Your street address in St. Albans" required />
+        <input className="prereg-input" type="text" id="prereg-address" name="address" placeholder={addressPlaceholder} defaultValue={defaultAddress} required />
       </div>
       <div className="prereg-field">
         <label className="prereg-label" htmlFor="prereg-phone">
@@ -70,7 +91,7 @@ export default function PreRegForm() {
       </div>
       {error && <p className="prereg-error">{error}</p>}
       <button type="submit" className="prereg-btn" disabled={loading}>
-        {loading ? 'Submitting…' : 'Pre-Register for Fiber'}
+        {loading ? 'Submitting…' : buttonText}
       </button>
     </form>
   );
