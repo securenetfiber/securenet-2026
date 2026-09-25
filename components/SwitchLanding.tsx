@@ -220,6 +220,13 @@ export default function SwitchLanding({ from }: { from?: string }) {
                 </li>
               ))}
             </ul>
+            <div className="switch-current-customer">
+              <strong>{SWITCH_COPY.currentCustomer.heading}</strong>{' '}
+              {SWITCH_COPY.currentCustomer.body}{' '}
+              <a href={`tel:${SWITCH_OFFER.phone.tel}`}>
+                {SWITCH_COPY.currentCustomer.callLabel(SWITCH_OFFER.phone.display)}
+              </a>
+            </div>
           </div>
           <SwitchAddressCheck
             onVerified={handleVerified}
@@ -341,7 +348,7 @@ export default function SwitchLanding({ from }: { from?: string }) {
       <section className="faq-section switch-faq">
         <div className="section-container switch-faq-container">
           <h2 className="section-heading">{SWITCH_COPY.faq.heading}</h2>
-          <FaqAccordion items={SWITCH_COPY.faq.items(vars)} />
+          <FaqAccordion items={SWITCH_COPY.faq.items(vars, SWITCH_OFFER.phone.display)} />
         </div>
       </section>
 

@@ -57,6 +57,13 @@ export const SWITCH_COPY = {
     ],
   },
 
+  // For current customers who see the ad or mailer. Shown in the hero.
+  currentCustomer: {
+    heading: 'Already a customer?',
+    body: 'Thanks for being with us. Ask us how to get a free month by putting a SecureNet yard sign in your yard.',
+    callLabel: (phone: string) => `Call ${phone}`,
+  },
+
   /**
    * Competitor-specific headlines, keyed by the `from` URL param
    * (optimum, frontier, tmobile). Leave empty for v1. If a key exists,
@@ -145,10 +152,14 @@ export const SWITCH_COPY = {
 
   faq: {
     heading: 'Questions',
-    items: (v: SwitchPriceVars) => [
+    items: (v: SwitchPriceVars, phone: string) => [
       {
         question: `What happens after ${v.months} months?`,
         answer: `Your price goes to $${v.regular}/mo for ${v.speed} and stays locked there for ${v.years} years from your install date.`,
+      },
+      {
+        question: 'I\'m already a SecureNet customer. What about me?',
+        answer: `The switcher price is for people coming from another provider. As a thank-you, current customers can get a free month by putting a SecureNet yard sign in their yard. Call us at ${phone} and we'll set it up.`,
       },
       {
         question: 'Why do you want my current bill?',
