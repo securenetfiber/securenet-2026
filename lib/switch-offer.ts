@@ -32,8 +32,6 @@ export const SWITCH_OFFER = {
  *
  * serviceAddress is a Cognito Address-type field, prefilled as an object
  * using the part names below. Set it to '' to skip the address prefill.
- * NOTE (9/25): form 60 does not have a Service Address field yet. Once one
- * is added, make sure its internal name matches this value.
  */
 export const SWITCH_COGNITO_FIELDS = {
   source: 'Source',
@@ -47,8 +45,26 @@ export const SWITCH_COGNITO_FIELDS = {
   plan: 'Plan',
   landingPage: 'LandingPage',
   addressVerified: 'AddressVerified',
-  serviceAddress: 'ServiceAddress',
+  serviceAddress: 'Address',
+  howHeard: 'HowDidYouHearAboutUs',
 } as const;
+
+/**
+ * Prefills "How did you hear about us?" from the `src` URL param, so ad and
+ * print visitors don't have to answer it. Values must match the Cognito
+ * choice labels exactly. `sign` and `referral` also make "Who referred you?"
+ * show, through the form's own rule. Unlisted src values leave it blank.
+ */
+export const SWITCH_HOW_HEARD_BY_SOURCE: Record<string, string> = {
+  fb: 'Facebook/Instagram',
+  google: 'Google',
+  mail1: 'Postcard',
+  mail2: 'Postcard',
+  hanger: 'Door Hanger',
+  sign: 'Yard Sign',
+  email: 'Email',
+  referral: 'Referral',
+};
 
 export const SWITCH_COGNITO_ADDRESS_PARTS = {
   line1: 'Line1',
@@ -56,7 +72,7 @@ export const SWITCH_COGNITO_ADDRESS_PARTS = {
   city: 'City',
   state: 'State',
   zip: 'PostalCode',
-  // 'abbr' sends "WV", 'name' sends "West Virginia". Test against the live form.
+  // 'abbr' sends "WV", 'name' sends "West Virginia". Form 60 uses full names.
   stateFormat: 'name' as 'abbr' | 'name',
 };
 

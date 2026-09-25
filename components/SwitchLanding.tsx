@@ -12,6 +12,7 @@ import {
   SWITCH_OFFER,
   SWITCH_COGNITO_FIELDS,
   SWITCH_COGNITO_ADDRESS_PARTS,
+  SWITCH_HOW_HEARD_BY_SOURCE,
   getSwitchPlans,
   switchPlanLabel,
   type SwitchPlan,
@@ -115,6 +116,8 @@ function buildPrefill(
     const value = attribution[key];
     if (value) data[f[ATTR_TO_FIELD[key]]] = value;
   }
+  const howHeard = attribution.src ? SWITCH_HOW_HEARD_BY_SOURCE[attribution.src] : undefined;
+  if (howHeard) data[f.howHeard] = howHeard;
   data[f.plan] = switchPlanLabel(plan);
   data[f.landingPage] = SWITCH_OFFER.landingPage;
   data[f.addressVerified] = signup.verified ? 'yes' : 'no';
