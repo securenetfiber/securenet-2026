@@ -44,7 +44,7 @@ export default function ThankYouPage() {
             <h2 style={{ marginBottom: '0.5rem' }}>Ready to pick your install date?</h2>
             <p style={{ marginBottom: '1.5rem', color: 'var(--dark)' }}>
               If you already know when works best, go ahead and schedule your
-              installation now. Otherwise, sit tight &mdash; we&apos;ll be in
+              installation now. Otherwise, sit tight. We&apos;ll be in
               touch within one business day.
             </p>
             <a
