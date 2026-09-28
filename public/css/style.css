@@ -6234,12 +6234,14 @@ body.has-alert-bar .page-hero {
   color: var(--navy);
 }
 
-.switch-check-phone {
-  display: inline-block;
-  font-size: var(--text-xl);
-  font-weight: 800;
-  color: var(--navy);
+.switch-check-heading--form {
   margin-bottom: var(--space-md);
+}
+
+.switch-check-phone {
+  font-weight: 700;
+  color: var(--navy);
+  white-space: nowrap;
 }
 
 .switch-check-card .prereg-form {
@@ -6383,6 +6385,12 @@ body.has-alert-bar .page-hero {
   padding-bottom: var(--space-lg);
   margin-bottom: var(--space-lg);
   border-bottom: 1px solid var(--border-light);
+}
+
+.switch-thanks-note--last {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
 }
 
 /* Cognito extras for the switch form: yes/no radios, help text,

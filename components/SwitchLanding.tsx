@@ -213,7 +213,7 @@ export default function SwitchLanding({ from }: { from?: string }) {
             <h1 className="section-heading">{headlineFn(lowestPromo)}</h1>
             <p className="section-sub">{SWITCH_COPY.hero.subhead(heroVars)}</p>
             <ul className="switch-proof" role="list">
-              {SWITCH_COPY.hero.proofPoints(heroVars).map((point) => (
+              {SWITCH_COPY.hero.proofPoints.map((point) => (
                 <li key={point}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   <span>{point}</span>
@@ -242,9 +242,10 @@ export default function SwitchLanding({ from }: { from?: string }) {
         <section className="signup-section switch-signup" id="switch-signup">
           <div className="section-container signup-container signup-container--form">
             <div className="signup-form-area">
-              <h2 className="switch-section-heading">{SWITCH_COPY.signup.heading}</h2>
               <p className="switch-signup-sub">
-                {signup.verified ? SWITCH_COPY.signup.sub : SWITCH_COPY.signup.unverifiedSub}
+                {signup.verified && signup.address
+                  ? SWITCH_COPY.check.serviceableBody(signup.address.address)
+                  : SWITCH_COPY.signup.signUpAnywayIntro}
               </p>
 
               {plans.length > 1 && (
@@ -348,7 +349,7 @@ export default function SwitchLanding({ from }: { from?: string }) {
       <section className="faq-section switch-faq">
         <div className="section-container switch-faq-container">
           <h2 className="section-heading">{SWITCH_COPY.faq.heading}</h2>
-          <FaqAccordion items={SWITCH_COPY.faq.items(vars, SWITCH_OFFER.phone.display)} />
+          <FaqAccordion items={SWITCH_COPY.faq.items(vars)} />
         </div>
       </section>
 
@@ -357,7 +358,6 @@ export default function SwitchLanding({ from }: { from?: string }) {
         <div className="section-container">
           <div className="avail-box">
             <h2 className="avail-heading">{SWITCH_COPY.bottomCta.heading}</h2>
-            <p className="avail-sub">{SWITCH_COPY.bottomCta.sub}</p>
             <button type="button" className="btn btn-primary" onClick={scrollToChecker}>
               {SWITCH_COPY.bottomCta.button}
             </button>

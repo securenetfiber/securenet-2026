@@ -21,6 +21,8 @@ export const SWITCH_OFFER = {
   callbackPromise: 'We\'ll call you soon, usually the same business day.',
   // When Harrison's instant CSR text is live, change to:
   // 'A real person will call you within 15 minutes during business hours.'
+
+  showCalendly: true, // Kevin deciding; false hides the Schedule Installation button on the thank-you page
   landingPage: '/switch',
   thankYouPath: '/switch/thank-you',
   waitlistSource: 'switch-waitlist',

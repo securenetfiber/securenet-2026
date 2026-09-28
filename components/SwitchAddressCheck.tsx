@@ -110,8 +110,7 @@ export default function SwitchAddressCheck({
     <div className="switch-check-card" id="switch-check">
       {showInput && (
         <>
-          <h2 className="switch-check-heading">{c.heading}</h2>
-          <p className="switch-check-sub">{c.sub}</p>
+          <h2 className="switch-check-heading switch-check-heading--form">{c.heading}</h2>
           <form className="switch-check-form" onSubmit={handleSubmit}>
             <label htmlFor={SWITCH_ADDRESS_INPUT_ID} className="sr-only">
               {c.label}
@@ -190,13 +189,16 @@ export default function SwitchAddressCheck({
           <h2 className="switch-check-heading">
             {state.kind === 'not_found' ? c.notFoundHeading : c.errorHeading}
           </h2>
-          <p className="switch-check-sub">
-            {state.kind === 'not_found' ? c.notFoundBody : c.errorBody}
-          </p>
-          {state.kind === 'error' && (
-            <a href={`tel:${SWITCH_OFFER.phone.tel}`} className="switch-check-phone">
-              {SWITCH_OFFER.phone.display}
-            </a>
+          {state.kind === 'not_found' ? (
+            <p className="switch-check-sub">{c.notFoundBody}</p>
+          ) : (
+            <p className="switch-check-sub">
+              {c.errorBodyBeforePhone}
+              <a href={`tel:${SWITCH_OFFER.phone.tel}`} className="switch-check-phone">
+                {SWITCH_OFFER.phone.display}
+              </a>
+              {c.errorBodyAfterPhone}
+            </p>
           )}
           <div className="switch-result-actions">
             <button

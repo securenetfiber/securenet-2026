@@ -1,12 +1,17 @@
 /**
  * All user-facing copy for /switch and /switch/thank-you.
- * Draft pending Kevin's approval (Mon 9/28). Edit copy here only.
+ * Downstream copy of section 5 ("Web: /switch") of the Obsidian copy deck:
+ * Marketing/Campaigns/Switch to Fiber - Fall 2026.md. The deck is the source
+ * of truth. Change it there first, then here, word for word.
  *
  * Prices are never typed here. Functions receive them from
  * lib/switch-offer.ts and lib/plans.ts so a config change updates the copy.
+ * Contract and early termination fee wording comes from lib/contract.ts.
  *
  * No em dashes or en dashes anywhere in this file's copy.
  */
+
+import { contractShortWording, contractFaqAnswer, etfSentence } from '@/lib/contract';
 
 export interface SwitchPriceVars {
   /** Switcher price, e.g. 35 */
@@ -34,9 +39,13 @@ function orList(items: string[]): string {
   return `${items.slice(0, -1).join(', ')}, or ${items[items.length - 1]}`;
 }
 
+// /switch uses the switcher contract terms (waivable), the rest of the site doesn't.
+const FOR_SWITCHERS = true;
+
 export const SWITCH_COPY = {
   meta: {
-    title: 'Switch to Fiber',
+    /** Browser tab. The site template adds " | SecureNet Fiber". */
+    title: (lowestPromo: number) => `Switch to Local Fiber for $${lowestPromo}/mo`,
     description: 'Switch to SecureNet Fiber. Local fiber internet in the Kanawha Valley.',
     thankYouTitle: 'You\'re on your way to fiber',
   },
@@ -47,17 +56,18 @@ export const SWITCH_COPY = {
 
   hero: {
     /** `lowestPromo` is the lowest switcher price across eligible plans. */
-    headline: (lowestPromo: number) => `Switch to fiber for $${lowestPromo} a month.`,
+    headline: (lowestPromo: number) => `Switch to local fiber for $${lowestPromo} a month.`,
     subhead: (v: SwitchPriceVars) =>
-      `$${v.promo}/mo for your first ${v.months} months. Then $${v.regular}/mo, locked for ${v.years} years. Free install. No contract.`,
-    proofPoints: (v: SwitchPriceVars) => [
+      `For your first ${v.months} months when you switch from another provider. Then $${v.regular}, locked for ${v.years} years. Free install. ${contractShortWording(FOR_SWITCHERS)}.`,
+    proofPoints: [
       '100% fiber, same speed up and down',
-      `Price locked for ${v.years} years`,
+      'No data caps',
       'Local people answer the phone',
     ],
   },
 
   // For current customers who see the ad or mailer. Shown in the hero.
+  // Not in the copy deck yet (added at Josh's request 9/25).
   currentCustomer: {
     heading: 'Already a customer?',
     body: 'Thanks for being with us. Ask us how to get a free month by putting a SecureNet yard sign in your yard.',
@@ -65,23 +75,24 @@ export const SWITCH_COPY = {
   },
 
   /**
-   * Competitor-specific headlines, keyed by the `from` URL param
-   * (optimum, frontier, tmobile). Leave empty for v1. If a key exists,
-   * its headline replaces the default.
-   * Example: optimum: (lowestPromo) => `Leaving Optimum? Switch to fiber for $${lowestPromo} a month.`,
+   * Competitor-specific headlines, keyed by the `from` URL param.
+   * If a key exists, its headline replaces the default.
    */
-  headlineByFrom: {} as Record<string, (lowestPromo: number) => string>,
+  headlineByFrom: {
+    optimum: (lowestPromo: number) => `Done with Optimum price hikes? Switch to local fiber for $${lowestPromo}.`,
+    frontier: (lowestPromo: number) => `Frontier is Verizon now. Switch to local fiber for $${lowestPromo}.`,
+    tmobile: (lowestPromo: number) => `Tired of 5G slowing down at night? Switch to local fiber for $${lowestPromo}.`,
+  } as Record<string, (lowestPromo: number) => string>,
 
   check: {
     heading: 'Check your address',
-    sub: 'See if fiber is available at your house. It takes a few seconds.',
     label: 'Street address',
     placeholder: 'Enter your street address',
     button: 'Check My Address',
     buttonLoading: 'Checking...',
-    tryAgain: 'Try again',
+    tryAgain: 'Try Again',
     checkAnother: 'Check a different address',
-    signUpAnyway: 'Sign up anyway and we\'ll check it for you',
+    signUpAnyway: 'Sign Up Anyway',
 
     serviceableHeading: 'You\'re in. Let\'s get you switched.',
     serviceableBody: (address: string) =>
@@ -95,10 +106,12 @@ export const SWITCH_COPY = {
     notServiceableBody: 'Leave your info and we\'ll let you know the day we get there.',
 
     notFoundHeading: 'We couldn\'t find that exact address.',
-    notFoundBody: 'Sometimes our search misses an address that\'s formatted differently. Try it again, or sign up anyway and we\'ll check it by hand.',
+    notFoundBody: 'It might be a typo, or our system didn\'t like the format. Try again, or sign up and we\'ll check it for you.',
 
     errorHeading: 'We couldn\'t check that address right now.',
-    errorBody: 'Give us a call and we\'ll check it for you, or sign up anyway and we\'ll check it by hand.',
+    /** The WV phone number is rendered as a link between these two parts. */
+    errorBodyBeforePhone: 'Sign up anyway and we\'ll check it for you, or call us at ',
+    errorBodyAfterPhone: '.',
   },
 
   waitlist: {
@@ -107,9 +120,8 @@ export const SWITCH_COPY = {
   },
 
   signup: {
-    heading: 'Almost done.',
-    sub: 'Fill this out and someone from our South Charleston office will call you.',
-    unverifiedSub: 'Fill this out and we\'ll check your address and call you.',
+    /** Shown above the form on the "sign up anyway" path. */
+    signUpAnywayIntro: 'No problem. Fill this out and we\'ll confirm your address before we call.',
     pickerHeading: 'Pick your speed',
     pickerPromo: (v: SwitchOfferPlanVars, months: number) => `$${v.promo}/mo for ${months} months`,
     pickerRegular: (v: SwitchOfferPlanVars, years: number) => `Then $${v.regular}/mo, locked for ${years} years`,
@@ -120,15 +132,15 @@ export const SWITCH_COPY = {
   },
 
   why: {
-    heading: 'Why people switch',
+    heading: 'Why switch',
     items: (v: SwitchPriceVars) => [
       {
-        title: 'Promo prices jump. Ours doesn\'t.',
-        body: `Most promo rates go up after a few months. After your ${v.months} months at $${v.promo}, you pay $${v.regular}, and it stays $${v.regular} for ${v.years} years.`,
+        title: `$${v.promo} now. $${v.regular} later. That's it.`,
+        body: `Most promo rates go up and keep going up. Ours goes up once: after your ${v.months} months at $${v.promo}, you pay $${v.regular}, and it stays $${v.regular} for ${v.years} years from install. You'll know every price before you sign up.`,
       },
       {
-        title: 'Fiber doesn\'t slow down at 7pm.',
-        body: '5G home internet shares the airwaves with every phone in the neighborhood. Fiber runs straight to your house.',
+        title: 'Real fiber, all the way to your house.',
+        body: 'Same speed up and down, no data caps, and no sharing the airwaves with every phone on your street. It doesn\'t slow down when the neighborhood gets home.',
       },
       {
         title: 'Call us. Somebody local picks up.',
@@ -141,29 +153,33 @@ export const SWITCH_COPY = {
     heading: 'How switching works',
     steps: [
       { title: 'Sign up here.', body: 'It takes about two minutes.' },
-      { title: 'We install for free.', body: 'Keep your old service running until we\'re live.' },
-      { title: 'Cancel your old provider once you\'re online.', body: '' },
+      { title: 'We call you, then install for free.', body: 'Keep your old service running until we\'re live.' },
+      { title: 'Once you\'re online, cancel your old provider.', body: '' },
     ],
   },
 
   reviews: {
-    heading: 'From people who already switched',
+    heading: 'What your neighbors say',
   },
 
   faq: {
     heading: 'Questions',
-    items: (v: SwitchPriceVars, phone: string) => [
+    items: (v: SwitchPriceVars) => [
       {
         question: `What happens after ${v.months} months?`,
         answer: `Your price goes to $${v.regular}/mo for ${v.speed} and stays locked there for ${v.years} years from your install date.`,
       },
       {
-        question: 'I\'m already a SecureNet customer. What about me?',
-        answer: `The switcher price is for people coming from another provider. As a thank-you, current customers can get a free month by putting a SecureNet yard sign in their yard. Call us at ${phone} and we'll set it up.`,
-      },
-      {
         question: 'Why do you want my current bill?',
         answer: `The $${v.promo} price is for people switching from another internet provider. A recent bill is how we confirm that. Upload it now or send it later. Switcher pricing starts once we have it.`,
+      },
+      {
+        question: 'What if I don\'t have internet right now?',
+        answer: `The $${v.promo} price is for switchers, but you can still sign up at our regular price of $${v.regular}/mo, locked for ${v.years} years.`,
+      },
+      {
+        question: 'I\'m in a contract with my current provider. Now what?',
+        answer: 'Check your bill or account for an early termination fee before you cancel. Most home internet plans don\'t have contracts anymore, but it\'s worth a look.',
       },
       {
         question: 'Do I cancel my old service first?',
@@ -171,39 +187,46 @@ export const SWITCH_COPY = {
       },
       {
         question: 'Is there a contract?',
-        answer: 'No contract and no cancellation fee.',
+        answer: contractFaqAnswer(FOR_SWITCHERS),
       },
       {
         question: 'Is installation really free?',
         answer: 'Yes. Standard installation is free.',
       },
       {
+        question: 'Do I need to be home for the install?',
+        answer: 'Yes, someone 18 or older needs to be there. We\'ll set a time that works for you.',
+      },
+      {
         question: `Is ${v.speed} enough?`,
         answer: 'For most homes, yes. It handles streaming, video calls, and gaming on 10+ devices at once, with the same speed up and down.',
+      },
+      {
+        question: 'Can I get faster speeds?',
+        answer: `Yes. The switcher price is on ${v.speed}, and 1 Gig and faster are available at regular pricing.`,
       },
     ],
   },
 
   bottomCta: {
     heading: 'Ready to switch?',
-    sub: 'Check your address and see if fiber is available at your house.',
-    button: 'Check your address',
+    button: 'Check Your Address',
   },
 
+  /** Full disclosure, deck section 4. */
   finePrint: (plans: SwitchOfferPlanVars[], months: number, years: number) => {
-    const promos = orList(plans.map((p) => `$${p.promo}/mo on ${p.speed}`));
+    const promos = orList(plans.map((p) => `$${p.promo}/mo for the first ${months} months on ${p.speed} service`));
     const regulars = plans.length === 1
       ? `service is $${plans[0].regular}/mo`
       : `service is ${orList(plans.map((p) => `$${p.regular}/mo for ${p.speed}`))}`;
-    return `Switcher offer: ${promos} service for the first ${months} months for new residential customers switching from another internet provider. Proof of current internet service (a bill dated within the last 60 days) is required before promotional pricing applies. After ${months} months, ${regulars}, price-locked for ${years} years from installation. Free standard installation. No contract. Available at serviceable addresses in the Kanawha Valley, WV. Offer may end at any time.`;
+    const contract = [`${contractShortWording(FOR_SWITCHERS)}.`, etfSentence(FOR_SWITCHERS)].filter(Boolean).join(' ');
+    return `Switcher offer: ${promos} for new residential customers switching from another internet provider. Proof of current internet service (a bill dated within the last 60 days) is required before promotional pricing applies. After ${months} months, ${regulars}, price-locked for ${years} years from installation. Free standard installation. ${contract} Available at serviceable addresses in the Kanawha Valley, WV. Offer may end at any time for new signups.`;
   },
 
   thankYou: {
     heading: 'Got it. You\'re on your way to fiber.',
     // Body is SWITCH_OFFER.callbackPromise.
     note: 'Have your current internet bill handy when we call.',
-    scheduleHeading: 'Ready to pick your install date?',
-    scheduleBody: 'If you already know when works best, go ahead and schedule your installation now. Otherwise, sit tight. We\'ll be in touch soon.',
     scheduleButton: 'Schedule Installation',
     callHeading: 'Questions?',
     callHours: 'Monday to Friday, 9 AM to 5 PM',

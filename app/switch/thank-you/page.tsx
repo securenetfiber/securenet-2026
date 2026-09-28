@@ -24,18 +24,18 @@ export default function SwitchThankYouPage() {
       <section className="signup-section">
         <div className="section-container signup-container signup-container--form">
           <div className="signup-form-area switch-thanks-body">
-            <p className="switch-thanks-note">{t.note}</p>
+            <p className={`switch-thanks-note${SWITCH_OFFER.showCalendly ? '' : ' switch-thanks-note--last'}`}>{t.note}</p>
 
-            <h2 className="switch-section-heading">{t.scheduleHeading}</h2>
-            <p className="switch-signup-sub">{t.scheduleBody}</p>
-            <a
-              href="https://calendly.com/securenetoperations"
-              className="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t.scheduleButton}
-            </a>
+            {SWITCH_OFFER.showCalendly && (
+              <a
+                href="https://calendly.com/securenetoperations"
+                className="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t.scheduleButton}
+              </a>
+            )}
           </div>
 
           <div className="signup-sidebar">
