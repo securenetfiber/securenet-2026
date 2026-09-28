@@ -7,7 +7,7 @@ import { residentialPlans } from '@/lib/plans';
 export const metadata: Metadata = {
   title: 'Residential Internet Plans',
   description:
-    '100% fiber internet starting at $52/mo. No contracts, no hidden fees, no data caps. Available in the Kanawha Valley, WV and Danville, VA.',
+    '100% fiber internet starting at $52/mo. No long-term contracts, no hidden fees, no data caps. Available in the Kanawha Valley, WV and Danville, VA.',
 };
 
 export default function ResidentialPage() {
@@ -21,7 +21,7 @@ export default function ResidentialPage() {
         <div className="section-container">
           <h1 className="section-heading">Residential Internet</h1>
           <p className="section-sub">
-            100% fiber starting at $52/mo. No contracts, no hidden fees.
+            100% fiber starting at $52/mo. No long-term contracts, no hidden fees.
           </p>
         </div>
       </section>
@@ -73,7 +73,7 @@ export default function ResidentialPage() {
                 <span className="phone-price-value">23</span>
                 <span className="phone-price-period">/mo</span>
               </div>
-              <div className="phone-price-note">Plus tax. No contracts.</div>
+              <div className="phone-price-note">Plus tax. No long-term contract.</div>
               <a href="/service-request" className="btn btn-primary btn-full">
                 Add to Your Plan
               </a>

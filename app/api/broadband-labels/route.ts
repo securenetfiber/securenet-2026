@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { residentialPlans, businessPlans, COMPANY_INFO } from '@/lib/plans';
+import { CONTRACT } from '@/lib/contract';
 
 export async function GET() {
   const plans = [...residentialPlans, ...businessPlans].map((plan) => ({
@@ -13,6 +14,10 @@ export async function GET() {
     typicalLatencyMs: plan.typicalLatency,
     dataAllowance: plan.dataAllowance,
     contractRequired: plan.contractRequired,
+    earlyTerminationFee: {
+      amount: CONTRACT.etfAmount,
+      appliesWithinDays: CONTRACT.etfWindowDays,
+    },
     fees: plan.fees.map((f) => ({
       name: f.name,
       amount: f.amount,

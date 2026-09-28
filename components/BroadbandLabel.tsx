@@ -1,5 +1,6 @@
 import type { Plan } from '@/lib/plans';
 import { COMPANY_INFO } from '@/lib/plans';
+import { etfLabelValue } from '@/lib/contract';
 import Link from 'next/link';
 
 export default function BroadbandLabel({ plan }: { plan: Plan }) {
@@ -82,7 +83,7 @@ export default function BroadbandLabel({ plan }: { plan: Plan }) {
         </div>
         <div className="bb-row">
           <span>Early Termination Fee</span>
-          <strong>None</strong>
+          <strong>{etfLabelValue()}</strong>
         </div>
       </div>
 

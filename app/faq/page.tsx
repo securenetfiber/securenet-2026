@@ -3,6 +3,7 @@ import Link from 'next/link';
 import FaqAccordion from '@/components/FaqAccordion';
 import { BreadcrumbSchema } from '@/components/SchemaOrg';
 import type { FaqItem } from '@/components/FaqAccordion';
+import { contractFaqAnswer } from '@/lib/contract';
 
 export const metadata: Metadata = {
   title: 'FAQ',
@@ -18,8 +19,7 @@ const generalFaq: FaqItem[] = [
   },
   {
     question: 'Is there a contract?',
-    answer:
-      'No. All SecureNet Fiber plans are month-to-month with no long-term contracts or early termination fees.',
+    answer: contractFaqAnswer(),
   },
   {
     question: 'Are there data caps?',

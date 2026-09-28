@@ -74,7 +74,7 @@ export default function StAlbansPage() {
             </div>
             <div className="prereg-expect-item">
               <div className="prereg-expect-value">None</div>
-              <h3>No contracts, no data caps</h3>
+              <h3>No long-term contract, no data caps</h3>
               <p>Month-to-month service. Use as much data as you want.</p>
             </div>
             <div className="prereg-expect-item">

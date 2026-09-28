@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from '@/components/SchemaOrg';
 export const metadata: Metadata = {
   title: 'Sign Up for Service',
   description:
-    'Sign up for SecureNet Fiber internet. Fast, reliable fiber-to-the-home starting at $52/mo with no contracts and no data caps.',
+    'Sign up for SecureNet Fiber internet. Fast, reliable fiber-to-the-home starting at $52/mo with no long-term contracts and no data caps.',
 };
 
 export default function ServiceRequestPage() {
