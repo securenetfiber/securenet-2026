@@ -1,32 +1,33 @@
 /**
- * Contract and early termination fee (ETF) terms, shared by the site-wide
- * plan data, the FCC broadband labels, and /switch.
+ * Contract and early termination fee (ETF) terms, shared by the site FAQ,
+ * the FCC broadband labels, and /switch.
  *
- * Kevin decides etfAmount and etfWaivedForSwitchers. Each is a one-line change.
- * NOTE: app/legal/terms/page.tsx currently describes this fee as a $200
- * "drop recovery fee." Keep the two in sync once the amount is confirmed.
+ * The 90-day ETF was dropped company-wide on 9/29, so etfEnabled is false and
+ * everything reads "No contract." To bring an ETF back, set etfEnabled: true
+ * and fill in etfAmount; the wording, FAQ answers, and labels follow.
+ *
+ * NOTE: app/legal/terms/page.tsx still describes a $200 "drop recovery fee."
+ * It isn't confirmed whether that is this fee or a separate one, so the terms
+ * page does not read from this config.
  */
 export const CONTRACT = {
+  etfEnabled: false,
   etfWindowDays: 90,
-  etfAmount: null as number | null, // Josh fills in once Kevin confirms, e.g. 150
-  etfWaivedForSwitchers: false,     // true if Kevin waives the ETF on /switch
+  etfAmount: null as number | null,
+  etfWaivedForSwitchers: false, // only matters when etfEnabled is true
 };
 
-/** True when the ETF does not apply. `forSwitchers` is only for /switch. */
+/** True when no ETF applies. `forSwitchers` is only for /switch. */
 export function etfWaived(forSwitchers = false): boolean {
-  return forSwitchers && CONTRACT.etfWaivedForSwitchers;
+  return !CONTRACT.etfEnabled || (forSwitchers && CONTRACT.etfWaivedForSwitchers);
 }
 
-/** "No long-term contract", or "No contract" when the ETF is waived. */
+/** "No contract", or "No long-term contract" when an ETF applies. */
 export function contractShortWording(forSwitchers = false): string {
   return etfWaived(forSwitchers) ? 'No contract' : 'No long-term contract';
 }
 
-/**
- * The ETF disclosure sentence, or '' when the ETF is waived.
- * With no amount set: "An early termination fee applies if service is
- * canceled within the first 90 days. After 90 days, cancel anytime with no fee."
- */
+/** The ETF disclosure sentence, or '' when no ETF applies. */
 export function etfSentence(forSwitchers = false): string {
   if (etfWaived(forSwitchers)) return '';
   const days = CONTRACT.etfWindowDays;
@@ -44,6 +45,7 @@ export function contractFaqAnswer(forSwitchers = false): string {
 
 /** Early Termination Fee value for the FCC broadband label. */
 export function etfLabelValue(): string {
+  if (!CONTRACT.etfEnabled) return 'None';
   const days = CONTRACT.etfWindowDays;
   return CONTRACT.etfAmount === null
     ? `Applies within first ${days} days`

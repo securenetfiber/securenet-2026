@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from '@/components/SchemaOrg';
 export const metadata: Metadata = {
   title: 'Business Internet',
   description:
-    'Dedicated fiber internet for small businesses in the Kanawha Valley, WV and Danville, VA. Same upload and download speeds, no data caps, no long-term contracts.',
+    'Dedicated fiber internet for small businesses in the Kanawha Valley, WV and Danville, VA. Same upload and download speeds, no data caps, no contracts.',
 };
 
 export default function BusinessPage() {
@@ -19,7 +19,7 @@ export default function BusinessPage() {
           <h1 className="section-heading">Business Internet</h1>
           <p className="section-sub">
             Dedicated fiber for small businesses in the Kanawha Valley and
-            Danville, VA. Same upload and download speeds, no data caps, no long-term contracts.
+            Danville, VA. Same upload and download speeds, no data caps, no contracts.
           </p>
         </div>
       </section>
@@ -42,7 +42,7 @@ export default function BusinessPage() {
             <h2 className="avail-heading">Contact Claire for Pricing</h2>
             <p className="avail-sub">
               Symmetrical fiber with the same upload and download speeds, no
-              data caps, no long-term contracts, and SLA-backed uptime. Every business is
+              data caps, no contracts, and SLA-backed uptime. Every business is
               different. Give us a call and Claire will put together a plan
               that fits.
             </p>

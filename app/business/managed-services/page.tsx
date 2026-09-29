@@ -33,7 +33,7 @@ export default function ManagedServicesPage() {
           <h1 className="section-heading">Commercial &amp; Managed Services</h1>
           <p className="section-sub">
             Dedicated fiber with the same upload and download speeds, plus SLA-backed uptime. No
-            data caps, no long-term contracts.
+            data caps, no contracts.
           </p>
         </div>
       </section>

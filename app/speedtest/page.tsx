@@ -94,7 +94,7 @@ export default function SpeedComparisonPage() {
           <div className="avail-box">
             <h2 className="avail-heading">Ready to switch?</h2>
             <p className="avail-sub">
-              Fiber internet starting at $52/mo with no long-term contracts. Check
+              Fiber internet starting at $52/mo with no contracts. Check
               availability at your address.
             </p>
             <div style={{ display: 'flex', gap: 'var(--space-sm)', justifyContent: 'center', flexWrap: 'wrap' }}>

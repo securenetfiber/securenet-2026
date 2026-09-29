@@ -15,7 +15,7 @@ export default function HomePage() {
             <em>works.</em>
           </h1>
           <p className="hero-sub">
-            100% fiber with multi-gig speeds. No long-term contracts.
+            100% fiber with multi-gig speeds. No contracts.
             No hidden fees. Starting at $52/mo.
           </p>
           <div className="hero-cta">
@@ -34,7 +34,7 @@ export default function HomePage() {
             </div>
             <div className="proof-divider"></div>
             <div className="proof-item">
-              <strong>No Long-Term Contract</strong>
+              <strong>No Contracts</strong>
               <span>No Hidden Fees</span>
             </div>
           </div>
@@ -46,7 +46,7 @@ export default function HomePage() {
         <div className="section-container">
           <h2 className="section-heading">Pick your speed.</h2>
           <p className="section-sub">
-            100% fiber starting at $52/mo. No long-term contracts, no hidden fees.
+            100% fiber starting at $52/mo. No contracts, no hidden fees.
           </p>
 
           <div className="plan-grid">
@@ -56,7 +56,7 @@ export default function HomePage() {
           </div>
 
           <p className="plans-note">
-            All prices are monthly. No long-term contracts. No hidden fees.{' '}
+            All prices are monthly. No contracts. No hidden fees.{' '}
             <Link href="/residential/">See full plan details.</Link>
           </p>
         </div>
@@ -91,7 +91,7 @@ export default function HomePage() {
             </div>
             <div className="about-stats">
               <div className="stat">
-                <span className="stat-number">No Long-Term Contract</span>
+                <span className="stat-number">No Contracts</span>
                 <span className="stat-label">3-year price lock included</span>
               </div>
               <div className="stat">

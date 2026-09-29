@@ -14,10 +14,9 @@ export async function GET() {
     typicalLatencyMs: plan.typicalLatency,
     dataAllowance: plan.dataAllowance,
     contractRequired: plan.contractRequired,
-    earlyTerminationFee: {
-      amount: CONTRACT.etfAmount,
-      appliesWithinDays: CONTRACT.etfWindowDays,
-    },
+    earlyTerminationFee: CONTRACT.etfEnabled
+      ? { amount: CONTRACT.etfAmount, appliesWithinDays: CONTRACT.etfWindowDays }
+      : null,
     fees: plan.fees.map((f) => ({
       name: f.name,
       amount: f.amount,
