@@ -1,4 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
+import {
+  MIN_SUBMIT_TIME_MS,
+  getClientIp,
+  hasInjectionOrLink,
+  isBlockedEmail,
+  isFakePhone,
+  isGibberishName,
+  isRateLimited,
+  looksLikeSpam,
+} from '@/lib/spam';
 
 const COGNITO_API_URL = 'https://www.cognitoforms.com/api/forms/54/entries';
 
@@ -31,6 +41,13 @@ async function postEntry(apiKey: string, entry: Record<string, string>) {
 
 export async function POST(req: NextRequest) {
   try {
+    if (isRateLimited('prereg', getClientIp(req))) {
+      return NextResponse.json(
+        { error: 'Too many submissions. Please wait a minute and try again.' },
+        { status: 429 }
+      );
+    }
+
     const apiKey = process.env.COGNITO_API_KEY;
     if (!apiKey) {
       return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
@@ -38,11 +55,43 @@ export async function POST(req: NextRequest) {
 
     const body = await req.json();
 
+    // Bot rejections get a fake success so they don't retry with tweaks
+    if (body._company) return NextResponse.json({ success: true });
+
+    // Unlike the contact form, the timestamp is required here. Scripts
+    // posting straight to the API never load the page, so they won't have it.
+    const loadedAt = Number(body._loadedAt);
+    if (!loadedAt || Date.now() - loadedAt < MIN_SUBMIT_TIME_MS) {
+      return NextResponse.json({ success: true });
+    }
+
+    const fields = [body.name, body.email, body.address, body.phone];
+    if (fields.some((v) => v != null && typeof v !== 'string')) {
+      return NextResponse.json({ success: true });
+    }
+    const name = (body.name || '').trim();
+    const email = (body.email || '').trim();
+    const address = (body.address || '').trim();
+    const phone = (body.phone || '').trim();
+
+    if (!name || !email || !address || name.length > 100 || email.length > 254 || address.length > 200 || phone.length > 30) {
+      return NextResponse.json({ success: true });
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || isBlockedEmail(email)) {
+      return NextResponse.json({ success: true });
+    }
+    if (phone && (/[^\d\s()+.\-]/.test(phone) || isFakePhone(phone))) {
+      return NextResponse.json({ success: true });
+    }
+    if (isGibberishName(name) || hasInjectionOrLink(`${name} ${address}`) || looksLikeSpam(fields.join(' '))) {
+      return NextResponse.json({ success: true });
+    }
+
     const entry: Record<string, string> = {
-      Name: body.name,
-      Email: body.email,
-      Address: body.address,
-      Phone: body.phone || '',
+      Name: name,
+      Email: email,
+      Address: address,
+      Phone: phone,
     };
 
     // Source tag and attribution are optional. Pages that don't send them

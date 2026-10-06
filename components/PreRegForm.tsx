@@ -25,6 +25,7 @@ export default function PreRegForm({
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [loadedAt] = useState(() => Date.now());
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -37,6 +38,8 @@ export default function PreRegForm({
       email: (form.elements.namedItem('email') as HTMLInputElement).value,
       address: (form.elements.namedItem('address') as HTMLInputElement).value,
       phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
+      _company: (form.elements.namedItem('_company') as HTMLInputElement).value,
+      _loadedAt: loadedAt,
     };
     if (source) data.source = source;
     if (attribution) data.attribution = attribution;
@@ -71,6 +74,10 @@ export default function PreRegForm({
 
   return (
     <form className="prereg-form" onSubmit={handleSubmit}>
+      <div style={{ position: 'absolute', left: '-9999px', top: '-9999px' }} aria-hidden="true" tabIndex={-1}>
+        <label htmlFor="prereg-company">Company</label>
+        <input type="text" id="prereg-company" name="_company" autoComplete="off" tabIndex={-1} />
+      </div>
       <div className="prereg-field">
         <label className="prereg-label" htmlFor="prereg-name">Name</label>
         <input className="prereg-input" type="text" id="prereg-name" name="name" placeholder="Your name" required />

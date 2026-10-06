@@ -1,64 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
+import {
+  MIN_SUBMIT_TIME_MS,
+  getClientIp,
+  isBlockedEmail,
+  isFakePhone,
+  isGibberishName,
+  isRateLimited,
+  looksLikeSpam,
+} from '@/lib/spam';
 
 const COGNITO_API_URL = 'https://www.cognitoforms.com/api/forms/52/entries';
 
-const RATE_LIMIT_WINDOW = 60 * 1000;
-const MAX_REQUESTS_PER_WINDOW = 3;
-const MIN_SUBMIT_TIME_MS = 3000;
-
-const ipRequests = new Map<string, number[]>();
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const timestamps = ipRequests.get(ip) || [];
-  const recent = timestamps.filter((t) => now - t < RATE_LIMIT_WINDOW);
-  if (recent.length >= MAX_REQUESTS_PER_WINDOW) return true;
-  recent.push(now);
-  ipRequests.set(ip, recent);
-  return false;
-}
-
-setInterval(() => {
-  const now = Date.now();
-  for (const [ip, timestamps] of ipRequests) {
-    const recent = timestamps.filter((t) => now - t < RATE_LIMIT_WINDOW);
-    if (recent.length === 0) ipRequests.delete(ip);
-    else ipRequests.set(ip, recent);
-  }
-}, 5 * 60 * 1000);
-
-function looksLikeSpam(text: string): boolean {
-  const lower = text.toLowerCase();
-  const spamPatterns = [
-    /\b(viagra|cialis|casino|poker|lottery|crypto.*invest|bitcoin.*profit)\b/i,
-    /\b(buy now|act now|limited time|click here|free money)\b/i,
-    /\b(nigerian prince|wire transfer|western union)\b/i,
-    /(https?:\/\/[^\s]+){3,}/,
-    /\[url=/i,
-    /\[link=/i,
-    /<a\s+href/i,
-    /(\bunion\b.*\bselect\b|\bselect\b.*\bfrom\b.*\bwhere\b)/i,
-    /(\bdrop\b\s+\btable\b|\binsert\b\s+\binto\b|\bdelete\b\s+\bfrom\b)/i,
-    /(\bexec\b\s*\(|\bexecute\b\s*\()/i,
-    /('\s*(or|and)\s+['"]?\d+['"]?\s*=\s*['"]?\d+)/i,
-    /(--|;)\s*(drop|alter|create|insert|update|delete|exec|union|select)\b/i,
-    /\b(xp_cmdshell|sp_executesql|information_schema|sysobjects)\b/i,
-    /('|")\s*(or|and)\s+('|")/i,
-    /\b(sleep|benchmark|waitfor)\s*\(/i,
-    /(\%27|\')\s*(union|select|insert|drop|update|delete)\b/i,
-    /1\s*=\s*1|1'\s*or\s*'1/i,
-  ];
-  return spamPatterns.some((p) => p.test(lower));
-}
-
 export async function POST(req: NextRequest) {
   try {
-    const ip =
-      req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-      req.headers.get('x-real-ip') ||
-      'unknown';
-
-    if (isRateLimited(ip)) {
+    if (isRateLimited('contact', getClientIp(req))) {
       return NextResponse.json(
         { error: 'Too many submissions. Please wait a minute and try again.' },
         { status: 429 }
@@ -92,19 +47,16 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: true });
     }
 
-    const emailDomain = (body.email || '').split('@')[1]?.toLowerCase() || '';
-    const blockedDomains = ['example.com', 'test.com', 'mailinator.com', 'tempmail.com', 'throwaway.email', 'guerrillamail.com', 'yopmail.com', 'sharklasers.com', 'guerrillamailblock.com', 'grr.la', 'dispostable.com'];
-    if (blockedDomains.includes(emailDomain)) {
+    if (isBlockedEmail(body.email)) {
       return NextResponse.json({ success: true });
     }
 
     const name = body.name || body.businessName || body.primaryContact || '';
-    if (name && /^[a-zA-Z]{6,}$/.test(name) && !/[aeiou]{2}|[aeiou].*[aeiou].*[aeiou]/i.test(name)) {
+    if (isGibberishName(name)) {
       return NextResponse.json({ success: true });
     }
 
-    const phone = (body.phone || '').replace(/\D/g, '');
-    if (phone && /^555\d{7}$/.test(phone)) {
+    if (isFakePhone(body.phone)) {
       return NextResponse.json({ success: true });
     }
 
