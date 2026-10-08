@@ -136,7 +136,7 @@ export const SWITCH_COPY = {
     items: (v: SwitchPriceVars) => [
       {
         title: `$${v.promo} now. $${v.regular} later. That's it.`,
-        body: `Most promo rates go up and keep going up. Ours goes up once: after your ${v.months} months at $${v.promo}, you pay $${v.regular}, and it stays $${v.regular} for ${v.years} years from install. You'll know every price before you sign up.`,
+        body: `Most promo rates go up and keep going up. Ours goes up once: after your ${v.months} months at $${v.promo}, you pay $${v.regular}, and it stays $${v.regular} for ${v.years} years. You'll know every price before you sign up.`,
       },
       {
         title: 'Real fiber, all the way to your house.',
@@ -167,7 +167,7 @@ export const SWITCH_COPY = {
     items: (v: SwitchPriceVars) => [
       {
         question: `What happens after ${v.months} months?`,
-        answer: `Your price goes to $${v.regular}/mo for ${v.speed} and stays locked there for ${v.years} years from your install date.`,
+        answer: `Your price goes to $${v.regular}/mo for ${v.speed} and stays locked there for ${v.years} years.`,
       },
       {
         question: 'Why do you want my current bill?',
@@ -220,7 +220,7 @@ export const SWITCH_COPY = {
       ? `service is $${plans[0].regular}/mo`
       : `service is ${orList(plans.map((p) => `$${p.regular}/mo for ${p.speed}`))}`;
     const contract = [`${contractShortWording(FOR_SWITCHERS)}.`, etfSentence(FOR_SWITCHERS)].filter(Boolean).join(' ');
-    return `Switcher offer: ${promos} for new residential customers switching from another internet provider. Proof of current internet service (a bill dated within the last 60 days) is required before promotional pricing applies. After ${months} months, ${regulars}, price-locked for ${years} years from installation. Free standard installation. ${contract} Available at serviceable addresses in the Kanawha Valley, WV. Offer may end at any time for new signups.`;
+    return `Switcher offer: ${promos} for new residential customers switching from another internet provider. Proof of current internet service (a bill dated within the last 60 days) is required before promotional pricing applies. After ${months} months, ${regulars}, price-locked for ${years} years. Free standard installation. ${contract} Available at serviceable addresses in the Kanawha Valley, WV. Offer may end at any time for new signups.`;
   },
 
   thankYou: {
