@@ -112,6 +112,12 @@ export const SWITCH_COPY = {
     /** The WV phone number is rendered as a link between these two parts. */
     errorBodyBeforePhone: 'Sign up anyway and we\'ll check it for you, or call us at ',
     errorBodyAfterPhone: '.',
+
+    // Shown while the live lookup is off (lib/address-check.ts). Not in the deck yet.
+    uncheckedHeading: 'Thanks. One more step.',
+    uncheckedBody: (address: string) =>
+      `Fill this out and we'll confirm fiber is available at ${address} before we call.`,
+    changeAddress: 'Use a different address',
   },
 
   waitlist: {
@@ -122,6 +128,8 @@ export const SWITCH_COPY = {
   signup: {
     /** Shown above the form on the "sign up anyway" path. */
     signUpAnywayIntro: 'No problem. Fill this out and we\'ll confirm your address before we call.',
+    /** Shown above the form while the live lookup is off. Not in the deck yet. */
+    uncheckedIntro: 'Fill this out and we\'ll confirm your address before we call.',
     pickerHeading: 'Pick your speed',
     pickerPromo: (v: SwitchOfferPlanVars, months: number) => `$${v.promo}/mo for ${months} months`,
     pickerRegular: (v: SwitchOfferPlanVars, years: number) => `Then $${v.regular}/mo, locked for ${years} years`,

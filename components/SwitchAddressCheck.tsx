@@ -5,6 +5,7 @@ import PreRegForm from '@/components/PreRegForm';
 import { COMPANY_INFO } from '@/lib/plans';
 import { SWITCH_OFFER } from '@/lib/switch-offer';
 import { SWITCH_COPY } from '@/lib/switch-copy';
+import { ADDRESS_CHECK } from '@/lib/address-check';
 
 export interface VerifiedAddress {
   address: string;
@@ -19,6 +20,7 @@ type CheckState =
   | { kind: 'idle' }
   | { kind: 'loading' }
   | { kind: 'eligible'; address: string }
+  | { kind: 'unchecked'; address: string }
   | { kind: 'not_eligible' }
   | { kind: 'not_serviceable' }
   | { kind: 'not_found' }
@@ -53,6 +55,13 @@ export default function SwitchAddressCheck({
     e.preventDefault();
     const trimmed = address.trim();
     if (!trimmed || state.kind === 'loading') return;
+
+    // Live lookup off: take the address as typed and let the CSR confirm it
+    if (!ADDRESS_CHECK.enabled) {
+      setState({ kind: 'unchecked', address: trimmed });
+      onSignUpAnyway(trimmed);
+      return;
+    }
 
     setState({ kind: 'loading' });
     onReset();
@@ -148,6 +157,16 @@ export default function SwitchAddressCheck({
           <p className="switch-check-sub">{c.serviceableBody(state.address)}</p>
           <button type="button" className="switch-link-btn" onClick={handleTryAgain}>
             {c.checkAnother}
+          </button>
+        </div>
+      )}
+
+      {state.kind === 'unchecked' && (
+        <div className="switch-result">
+          <h2 className="switch-check-heading">{c.uncheckedHeading}</h2>
+          <p className="switch-check-sub">{c.uncheckedBody(state.address)}</p>
+          <button type="button" className="switch-link-btn" onClick={handleTryAgain}>
+            {c.changeAddress}
           </button>
         </div>
       )}

@@ -18,6 +18,7 @@ import {
   type SwitchPlan,
 } from '@/lib/switch-offer';
 import { SWITCH_COPY, type SwitchPriceVars } from '@/lib/switch-copy';
+import { ADDRESS_CHECK } from '@/lib/address-check';
 import {
   captureSwitchAttribution,
   SWITCH_ATTR_KEYS,
@@ -245,7 +246,9 @@ export default function SwitchLanding({ from }: { from?: string }) {
               <p className="switch-signup-sub">
                 {signup.verified && signup.address
                   ? SWITCH_COPY.check.serviceableBody(signup.address.address)
-                  : SWITCH_COPY.signup.signUpAnywayIntro}
+                  : ADDRESS_CHECK.enabled
+                    ? SWITCH_COPY.signup.signUpAnywayIntro
+                    : SWITCH_COPY.signup.uncheckedIntro}
               </p>
 
               {plans.length > 1 && (

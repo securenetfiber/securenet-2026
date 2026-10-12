@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import Link from 'next/link';
+import { ADDRESS_CHECK } from '@/lib/address-check';
 
 interface CheckResult {
   serviceable: boolean;
@@ -14,10 +15,17 @@ export default function AvailabilityCheck() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<CheckResult | null>(null);
   const [error, setError] = useState(false);
+  // Address the visitor entered while the live lookup is off (lib/address-check.ts)
+  const [unchecked, setUnchecked] = useState<string | null>(null);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!address.trim() || loading) return;
+
+    if (!ADDRESS_CHECK.enabled) {
+      setUnchecked(address.trim());
+      return;
+    }
 
     setLoading(true);
     setResult(null);
@@ -47,6 +55,7 @@ export default function AvailabilityCheck() {
   function handleReset() {
     setResult(null);
     setError(false);
+    setUnchecked(null);
     setAddress('');
   }
 
@@ -54,7 +63,32 @@ export default function AvailabilityCheck() {
     <section className="availability" id="check">
       <div className="section-container">
         <div className="avail-box">
-          {error ? (
+          {unchecked ? (
+            <>
+              <h2 className="avail-heading">Let&apos;s check it for you.</h2>
+              <p className="avail-sub">
+                Sign up and we&apos;ll confirm SecureNet Fiber is available at{' '}
+                <strong>{unchecked}</strong> before we call. Or give us a call
+                and we&apos;ll check it right now.
+              </p>
+              <div className="avail-actions">
+                <Link href="/service-request" className="btn btn-primary">
+                  Sign Up
+                </Link>
+                <button
+                  type="button"
+                  className="btn btn-ghost"
+                  onClick={handleReset}
+                >
+                  Use a Different Address
+                </button>
+              </div>
+              <div className="avail-phones">
+                <a href="tel:+13047444034" className="avail-phone-link">WV: (304) 744-4034</a>
+                <a href="tel:+14343540101" className="avail-phone-link">VA: (434) 354-0101</a>
+              </div>
+            </>
+          ) : error ? (
             <>
               <div className="avail-icon avail-icon--error">
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
