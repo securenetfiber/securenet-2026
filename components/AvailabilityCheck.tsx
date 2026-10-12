@@ -65,11 +65,11 @@ export default function AvailabilityCheck() {
         <div className="avail-box">
           {unchecked ? (
             <>
-              <h2 className="avail-heading">Let&apos;s check it for you.</h2>
+              <h2 className="avail-heading">We&apos;ll verify your address.</h2>
               <p className="avail-sub">
-                Sign up and we&apos;ll confirm SecureNet Fiber is available at{' '}
+                Sign up and we&apos;ll verify SecureNet Fiber is available at{' '}
                 <strong>{unchecked}</strong> before we call. Or give us a call
-                and we&apos;ll check it right now.
+                and we&apos;ll verify it right now.
               </p>
               <div className="avail-actions">
                 <Link href="/service-request" className="btn btn-primary">

@@ -114,9 +114,9 @@ export const SWITCH_COPY = {
     errorBodyAfterPhone: '.',
 
     // Shown while the live lookup is off (lib/address-check.ts). Not in the deck yet.
-    uncheckedHeading: 'Thanks. One more step.',
+    uncheckedHeading: 'Next, we\'ll verify your address.',
     uncheckedBody: (address: string) =>
-      `Fill this out and we'll confirm fiber is available at ${address} before we call.`,
+      `Fill this out and we'll verify fiber is available at ${address} before we call.`,
     changeAddress: 'Use a different address',
   },
 
@@ -129,7 +129,7 @@ export const SWITCH_COPY = {
     /** Shown above the form on the "sign up anyway" path. */
     signUpAnywayIntro: 'No problem. Fill this out and we\'ll confirm your address before we call.',
     /** Shown above the form while the live lookup is off. Not in the deck yet. */
-    uncheckedIntro: 'Fill this out and we\'ll confirm your address before we call.',
+    uncheckedIntro: 'We need to verify your address before we call. Fill this out and we\'ll take it from there.',
     pickerHeading: 'Pick your speed',
     pickerPromo: (v: SwitchOfferPlanVars, months: number) => `$${v.promo}/mo for ${months} months`,
     pickerRegular: (v: SwitchOfferPlanVars, years: number) => `Then $${v.regular}/mo, locked for ${years} years`,
