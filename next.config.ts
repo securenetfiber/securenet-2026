@@ -20,6 +20,11 @@ const nextConfig: NextConfig = {
       { source: '/optimum', destination: '/switch?src=obj-optimum&from=optimum', permanent: false },
       { source: '/frontier', destination: '/switch?src=obj-frontier&from=frontier', permanent: false },
       { source: '/5g', destination: '/switch?src=obj-tmobile&from=tmobile', permanent: false },
+      // Same Fiber (Danville) mailers. Typed URL and QR scan are counted separately.
+      { source: '/samefiber', destination: '/danville-fiber?src=mail1&utm_source=postcard&utm_medium=mail&utm_campaign=same-fiber&utm_content=drop1-typed', permanent: false },
+      { source: '/samefiber/scan', destination: '/danville-fiber?src=mail1&utm_source=postcard&utm_medium=mail&utm_campaign=same-fiber&utm_content=drop1-qr', permanent: false },
+      { source: '/samefiber2', destination: '/danville-fiber?src=mail2&utm_source=postcard&utm_medium=mail&utm_campaign=same-fiber&utm_content=drop2-typed', permanent: false },
+      { source: '/samefiber2/scan', destination: '/danville-fiber?src=mail2&utm_source=postcard&utm_medium=mail&utm_campaign=same-fiber&utm_content=drop2-qr', permanent: false },
     ];
   },
 }
