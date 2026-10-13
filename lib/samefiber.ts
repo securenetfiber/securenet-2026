@@ -9,14 +9,14 @@ import { residentialPlans, type Plan } from '@/lib/plans';
  */
 export const SAME_FIBER = {
   // Plans offered on the page, in display order. formValue must match the
-  // Cognito "Which speed?" choice label exactly.
+  // Cognito "Which Plan?" choice label exactly.
   plans: [
     { planId: 'res-500', formValue: '500 Mbps' },
     { planId: 'res-1g', formValue: '1 Gig' },
   ],
   lockYears: null as number | null, // Kevin: does the 3-year lock apply in Danville? null hides all lock language.
   phone: { display: '(434) 354-0101', tel: '+14343540101' }, // may become a tracking number
-  cognitoFormNumber: 'XX', // "Same Fiber Signup (Danville)". 'XX' shows the call-us fallback.
+  cognitoFormNumber: '62', // "Same Fiber Signup (Danville)". 'XX' shows the call-us fallback.
   conversionSendTo: 'AW-18360544898/XXXXXXXX', // "Same Fiber Signup" conversion. XX fires nothing.
   callbackPromise: 'We\'ll call you soon, usually the same business day.',
   // 'provider-exit' swaps the hero and leads the FAQ with the provider question.
@@ -43,7 +43,8 @@ export const sameFiberFormReady = !/x/i.test(SAME_FIBER.cognitoFormNumber);
 export const sameFiberConversionReady = !/x{4,}/i.test(SAME_FIBER.conversionSendTo);
 
 /**
- * Internal field names on the Same Fiber Cognito form. Case matters.
+ * Internal field names on the Same Fiber Cognito form (62). Case matters.
+ * Confirmed against the live form 10/13.
  * serviceAddress is a Cognito Address field, prefilled as an object.
  */
 export const SAME_FIBER_FIELDS = {
@@ -57,7 +58,7 @@ export const SAME_FIBER_FIELDS = {
   landingPage: 'LandingPage',
   addressVerified: 'AddressVerified',
   serviceAddress: 'Address',
-  plan: 'Plan',
+  plan: 'WhichPlan',
   howHeard: 'HowDidYouHearAboutUs',
 } as const;
 
@@ -81,11 +82,11 @@ export const SAME_FIBER_STATE_NAMES: Record<string, string> = {
  * match the Cognito choices exactly.
  */
 export const SAME_FIBER_SOURCES: Record<string, { meaning: string; howHeard: string }> = {
-  mail1: { meaning: 'Mailer drop 1', howHeard: 'Postcard or mailer' },
-  mail2: { meaning: 'Mailer drop 2', howHeard: 'Postcard or mailer' },
+  mail1: { meaning: 'Mailer drop 1', howHeard: 'Postcard' },
+  mail2: { meaning: 'Mailer drop 2', howHeard: 'Postcard' },
   google: { meaning: 'Danville Google Ads', howHeard: 'Google' },
-  fb: { meaning: 'Facebook / Instagram', howHeard: 'Facebook or Instagram' },
-  hanger: { meaning: 'Door hanger', howHeard: 'Door hanger' },
+  fb: { meaning: 'Facebook / Instagram', howHeard: 'Facebook' },
+  hanger: { meaning: 'Door hanger', howHeard: 'Door Hanger' },
 };
 
 export interface SameFiberPlan {
