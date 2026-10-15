@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import Link from 'next/link';
 import { BreadcrumbSchema } from '@/components/SchemaOrg';
+import MetaLeadOnce from '@/components/MetaLeadOnce';
 
 export const metadata: Metadata = {
   title: 'Request Received',
@@ -27,6 +28,8 @@ export default function ThankYouPage() {
   'currency': 'USD'
 });`}
       </Script>
+
+      <MetaLeadOnce contentName="service_request_form_22" />
 
       <section className="page-hero">
         <div className="section-container">

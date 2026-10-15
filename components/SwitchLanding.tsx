@@ -25,11 +25,7 @@ import {
   type SwitchAttribution,
 } from '@/lib/switch-attribution';
 
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-  }
-}
+import { trackMeta } from '@/lib/meta-pixel';
 
 interface SignupState {
   verified: boolean;
@@ -79,6 +75,12 @@ function handleAfterSubmit(event: CognitoEvent) {
 
   // If gtag is blocked or slow, don't strand the customer on the form.
   window.setTimeout(goToThankYou, 1500);
+
+  try {
+    trackMeta('Lead', { content_name: 'switch_form_60' }, transactionId);
+  } catch {
+    // Never block the redirect
+  }
 
   try {
     if (typeof window.gtag === 'function') {
