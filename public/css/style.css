@@ -6104,7 +6104,7 @@ body.has-alert-bar .page-hero {
 
 .switch-hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
   gap: var(--space-xl);
   align-items: center;
 }
@@ -6599,6 +6599,56 @@ body.has-alert-bar .page-hero {
 
   .switch-form-card {
     padding: var(--space-md);
+  }
+}
+
+/* Compact form 60: Cognito drops to one field per line in a narrow
+   column, so put paired fields back side by side and tighten the gaps */
+.switch-signup .cognito-embed .cog-cognito .cog-row {
+  row-gap: 0.75rem !important;
+  column-gap: 0.75rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.switch-signup .cognito-embed .cog-cognito .cog-row:has(> .cog-name__first),
+.switch-signup .cognito-embed .cog-cognito .cog-row:has(> .cog-col--12) {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+}
+
+.switch-signup .cognito-embed .cog-cognito .cog-row:has(> .cog-address__street) {
+  display: grid !important;
+  grid-template-columns: 1.3fr 1.2fr 0.9fr !important;
+}
+
+.switch-signup .cognito-embed .cog-cognito .cog-row > .cog-address__street,
+.switch-signup .cognito-embed .cog-cognito .cog-row > .cog-address__line-2 {
+  grid-column: 1 / -1 !important;
+}
+
+.switch-signup .cognito-embed .cog-cognito .cog-row > * {
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+/* Desktop: keep the offer beside the form while it scrolls */
+@media (min-width: 48rem) {
+  .switch-hero-copy {
+    position: sticky;
+    top: 7rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  /* Phones: city on its own line, then state and zip */
+  .switch-signup .cognito-embed .cog-cognito .cog-row:has(> .cog-address__street) {
+    grid-template-columns: 1.4fr 1fr !important;
+  }
+
+  .switch-signup .cognito-embed .cog-cognito .cog-row > .cog-address__city {
+    grid-column: 1 / -1 !important;
   }
 }
 
