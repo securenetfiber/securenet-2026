@@ -31,3 +31,13 @@ export function trackMeta(event: MetaEvent, params?: Record<string, unknown>, ev
     // Tracking must never break the page
   }
 }
+
+/** Fire a Meta custom event (funnel steps). No-ops if the Pixel is blocked, never throws. */
+export function trackMetaCustom(event: string, params?: Record<string, unknown>) {
+  try {
+    if (typeof window === 'undefined' || typeof window.fbq !== 'function') return;
+    window.fbq('trackCustom', event, params ?? {});
+  } catch {
+    // Tracking must never break the page
+  }
+}

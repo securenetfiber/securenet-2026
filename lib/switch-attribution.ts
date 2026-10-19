@@ -61,3 +61,12 @@ export function captureSwitchAttribution(search: string): SwitchAttribution {
 
   return merged;
 }
+
+export const SWITCH_MARKETS = ['dunbar', 'nitro', 'stalbans'] as const;
+export type SwitchMarket = (typeof SWITCH_MARKETS)[number] | 'unknown';
+
+/** Market from an ad campaign like "switch_fall26_nitro". Anything else is 'unknown'. */
+export function marketFromCampaign(campaign?: string | null): SwitchMarket {
+  const value = (campaign ?? '').toLowerCase();
+  return SWITCH_MARKETS.find((m) => value.split(/[^a-z0-9]+/).includes(m)) ?? 'unknown';
+}

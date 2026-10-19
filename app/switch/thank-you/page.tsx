@@ -17,7 +17,7 @@ export default function SwitchThankYouPage() {
       <section className="page-hero">
         <div className="section-container">
           <h1 className="section-heading">{t.heading}</h1>
-          <p className="section-sub">{SWITCH_OFFER.callbackPromise}</p>
+          <p className="section-sub">{t.body(SWITCH_OFFER.phone.display)}</p>
         </div>
       </section>
 

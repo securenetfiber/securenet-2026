@@ -18,7 +18,7 @@ export default async function SwitchPage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const params = await searchParams;
-  const from = typeof params.from === 'string' ? params.from.slice(0, 50) : undefined;
+  const campaign = typeof params.utm_campaign === 'string' ? params.utm_campaign.slice(0, 200) : undefined;
 
-  return <SwitchLanding from={from} />;
+  return <SwitchLanding campaign={campaign} />;
 }

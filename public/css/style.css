@@ -6325,14 +6325,6 @@ body.has-alert-bar .page-hero {
   margin-top: 0.5rem;
 }
 
-/* Why switch */
-.switch-why .section-heading {
-  margin-bottom: var(--space-lg);
-}
-
-.switch-benefit-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
 
 /* How switching works */
 .switch-how .ts-steps {
@@ -6393,6 +6385,223 @@ body.has-alert-bar .page-hero {
   border-bottom: none;
 }
 
+/* ── /switch rebuild: hero, form card, why list, sticky call ── */
+
+.switch-hero-grid {
+  align-items: start;
+}
+
+.switch-market {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  margin-bottom: var(--space-sm);
+}
+
+.switch-local {
+  color: #EC4899;
+}
+
+.switch-hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 24rem;
+}
+
+.switch-hero-btn {
+  width: 100%;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3.25rem;
+  font-size: 1.05rem;
+}
+
+.switch-hero-btn--call {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+}
+
+.switch-hero-btn--call:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.switch-form-card {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.18);
+  scroll-margin-top: 5.5rem;
+}
+
+.switch-form-intro {
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+/* Placeholder while Cognito loads */
+.switch-form-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.switch-skel-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.switch-skel-field,
+.switch-skel-button {
+  height: 3rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(90deg, #eef0f6 25%, #f6f7fb 50%, #eef0f6 75%);
+  background-size: 200% 100%;
+  animation: switch-skel 1.4s ease-in-out infinite;
+}
+
+.switch-skel-field--tall {
+  height: 6rem;
+}
+
+.switch-skel-button {
+  width: 10rem;
+  background: rgba(46, 54, 143, 0.15);
+}
+
+@keyframes switch-skel {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .switch-skel-field,
+  .switch-skel-button {
+    animation: none;
+  }
+}
+
+/* Why switch */
+.switch-why {
+  padding: var(--space-2xl) 0;
+}
+
+.switch-why .section-heading {
+  margin-bottom: var(--space-md);
+}
+
+.switch-why-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: var(--space-lg);
+}
+
+.switch-why-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.switch-why-list svg {
+  flex-shrink: 0;
+  color: var(--green);
+}
+
+.switch-why .switch-current-customer {
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+}
+
+.switch-why .switch-current-customer strong,
+.switch-why .switch-current-customer a {
+  color: var(--navy);
+}
+
+/* Sticky call bar, phones only */
+.switch-sticky-call {
+  display: none;
+}
+
+@media (max-width: 47.99rem) {
+  .switch-sticky-call {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 3.5rem;
+    padding-bottom: env(safe-area-inset-bottom);
+    box-sizing: content-box;
+    background: var(--navy);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+  }
+
+  .switch-sticky-call--hidden {
+    transform: translateY(110%);
+    pointer-events: none;
+  }
+
+  body:has(.switch-sticky-call) {
+    padding-bottom: calc(3.5rem + env(safe-area-inset-bottom));
+  }
+
+  /* One phone screen: copy, both buttons, then the top of the form */
+  .switch-hero {
+    padding-top: 5.5rem;
+    padding-bottom: var(--space-xl);
+  }
+
+  .switch-hero-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-md);
+  }
+
+  .switch-hero .section-heading {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .switch-hero .section-sub {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-md);
+  }
+
+  .switch-hero-actions {
+    max-width: none;
+  }
+
+  .switch-form-card {
+    padding: var(--space-md);
+  }
+}
+
 /* Cognito extras for the switch form: yes/no radios, help text,
    file upload on narrow screens */
 .switch-signup .cognito-embed .cog-cognito .cog-yesno .cog-input,
@@ -6425,48 +6634,7 @@ body.has-alert-bar .page-hero {
   line-height: 1.5 !important;
 }
 
-@media (max-width: 64rem) {
-  .switch-benefit-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 48rem) {
-  /* Mobile: headline, subhead, then the address input, then proof points */
-  .switch-hero-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: var(--space-md);
-  }
-
-  .switch-hero-copy {
-    display: contents;
-  }
-
-  .switch-hero .section-heading,
-  .switch-hero .section-sub {
-    margin-bottom: 0;
-  }
-
-  .switch-check-card {
-    order: 1;
-    padding: var(--space-md);
-  }
-
-  .switch-proof {
-    order: 2;
-  }
-
-  .switch-current-customer {
-    order: 3;
-    margin-top: 0;
-  }
-
-  .switch-hero {
-    padding-bottom: var(--space-xl);
-  }
-
   .switch-signup .cognito-embed .cog-cognito .cog-upload__drag-text {
     white-space: normal !important;
   }
