@@ -29,7 +29,7 @@ export default function ThankYouPage() {
 });`}
       </Script>
 
-      <MetaLeadOnce contentName="service_request_form_22" />
+      <MetaLeadOnce contentName="service_request_form_22" gaForm="service_request" />
 
       <section className="page-hero">
         <div className="section-container">

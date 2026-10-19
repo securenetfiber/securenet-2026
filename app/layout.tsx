@@ -4,7 +4,9 @@ import Script from 'next/script';
 import { headers } from 'next/headers';
 import MainShell from '@/components/MainShell';
 import MetaPixelRouteTracker from '@/components/MetaPixelRouteTracker';
+import CallClickTracker from '@/components/CallClickTracker';
 import { META_PIXEL_ID } from '@/lib/meta-pixel';
+import { GA4_ID } from '@/lib/analytics';
 import { OrganizationSchema, LocalBusinessSchema } from '@/components/SchemaOrg';
 import { getAlert } from '@/lib/alert-store';
 import { siteAlert } from '@/lib/alerts';
@@ -57,7 +59,8 @@ export default async function RootLayout({
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'AW-18360544898');`}
+gtag('config', 'AW-18360544898');
+gtag('config', '${GA4_ID}');`}
         </Script>
         <Script id="meta-pixel" strategy="afterInteractive">
           {`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -81,6 +84,7 @@ fbq('track', 'PageView');`}
         <Suspense fallback={null}>
           <MetaPixelRouteTracker />
         </Suspense>
+        <CallClickTracker />
         <MainShell alert={alert}>
           {children}
         </MainShell>

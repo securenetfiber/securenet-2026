@@ -26,6 +26,7 @@ import {
 } from '@/lib/switch-attribution';
 
 import { trackMeta } from '@/lib/meta-pixel';
+import { trackGa } from '@/lib/analytics';
 
 interface SignupState {
   verified: boolean;
@@ -81,6 +82,8 @@ function handleAfterSubmit(event: CognitoEvent) {
   } catch {
     // Never block the redirect
   }
+
+  trackGa('generate_lead', { form: 'switch', transaction_id: transactionId });
 
   try {
     if (typeof window.gtag === 'function') {
