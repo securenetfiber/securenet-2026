@@ -215,6 +215,36 @@ export default function SwitchLanding({ campaign }: { campaign?: string }) {
                 {SWITCH_COPY.hero.callButton(SWITCH_OFFER.phone.display)}
               </a>
             </div>
+
+            {/* Desktop: fills the column beside the form. Phones get the Why switch section instead. */}
+            <div className="switch-hero-extra">
+              <ul className="switch-proof" role="list">
+                {SWITCH_COPY.hero.proofPoints.map((point) => (
+                  <li key={point}>
+                    {CHECK_ICON}
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <ol className="switch-hero-steps">
+                {SWITCH_COPY.how.steps.map((step, i) => (
+                  <li key={step.title}>
+                    <span className="switch-hero-step-num">{i + 1}</span>
+                    <span>
+                      <strong>{step.title}</strong>
+                      {step.body && <> {step.body}</>}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+              <p className="switch-current-customer">
+                <strong>{SWITCH_COPY.currentCustomer.heading}</strong>{' '}
+                {SWITCH_COPY.currentCustomer.body}{' '}
+                <a href={`tel:${SWITCH_OFFER.phone.tel}`}>
+                  {SWITCH_COPY.currentCustomer.callLabel(SWITCH_OFFER.phone.display)}
+                </a>
+              </p>
+            </div>
           </div>
 
           <div className="switch-form-card" id="switch-signup">
@@ -267,7 +297,7 @@ export default function SwitchLanding({ campaign }: { campaign?: string }) {
         </div>
       </section>
 
-      {/* WHY SWITCH */}
+      {/* WHY SWITCH (phones only; desktop shows this in the hero) */}
       <section className="switch-why">
         <div className="section-container">
           <h2 className="section-heading">{SWITCH_COPY.why.heading}</h2>
@@ -289,7 +319,7 @@ export default function SwitchLanding({ campaign }: { campaign?: string }) {
         </div>
       </section>
 
-      {/* HOW SWITCHING WORKS */}
+      {/* HOW SWITCHING WORKS (phones only; desktop shows this in the hero) */}
       <section className="ts-section ts-section--alt switch-how">
         <div className="section-container ts-container">
           <h2 className="section-heading">{SWITCH_COPY.how.heading}</h2>
