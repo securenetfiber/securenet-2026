@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 
 const COGNITO_KEY = 'FrTHh_lhS0Wf_HJ86stkIg';
 const SEAMLESS_SRC = 'https://www.cognitoforms.com/f/seamless.js';
@@ -49,6 +49,10 @@ interface CognitoEmbedProps {
   prefill?: Record<string, unknown>;
   /** Optional handler for Cognito's afterSubmit event (entry saved). */
   onAfterSubmit?: (event: CognitoEvent) => void;
+  /** Called once the form's fields have rendered. Mount API only. */
+  onReady?: () => void;
+  /** Shown until the form's fields have rendered. Mount API only. */
+  skeleton?: ReactNode;
 }
 
 let seamlessLoader: Promise<void> | null = null;
@@ -78,15 +82,25 @@ function loadSeamless(): Promise<void> {
  * To roll back to custom forms, just swap this component out for the
  * original (ContactForm, QuoteForm, etc.) in the parent page.
  */
-export default function CognitoEmbed({ formNumber, className, prefill, onAfterSubmit }: CognitoEmbedProps) {
+export default function CognitoEmbed({
+  formNumber,
+  className,
+  prefill,
+  onAfterSubmit,
+  onReady,
+  skeleton,
+}: CognitoEmbedProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const prefillRef = useRef(prefill);
   const afterSubmitRef = useRef(onAfterSubmit);
   afterSubmitRef.current = onAfterSubmit;
+  const readyRef = useRef(onReady);
+  readyRef.current = onReady;
+  const [ready, setReady] = useState(false);
 
   // Callers that need prefill or events use Cognito's JS mount API so they
   // get a handle on this exact form. Everyone else keeps the plain script tag.
-  const useMountApi = Boolean(prefill || onAfterSubmit);
+  const useMountApi = Boolean(prefill || onAfterSubmit || onReady);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -111,6 +125,15 @@ export default function CognitoEmbed({ formNumber, className, prefill, onAfterSu
     let cancelled = false;
     let form: CognitoFormHandle | null = null;
 
+    // Cognito has no ready event, so watch for the first rendered field
+    const observer = new MutationObserver(() => {
+      if (!container.querySelector('.cog-field')) return;
+      observer.disconnect();
+      setReady(true);
+      readyRef.current?.();
+    });
+    observer.observe(container, { childList: true, subtree: true });
+
     loadSeamless()
       .then(() => {
         if (cancelled || !window.Cognito) return;
@@ -118,13 +141,21 @@ export default function CognitoEmbed({ formNumber, className, prefill, onAfterSu
         const target = document.createElement('div');
         container.appendChild(target);
         form = window.Cognito(COGNITO_KEY).mount(formNumber, target);
-        if (prefillRef.current) form.prefill(prefillRef.current);
+        if (prefillRef.current) {
+          try {
+            form.prefill(prefillRef.current);
+          } catch (err) {
+            // A bad prefill must never cost us the form
+            console.error(err);
+          }
+        }
         form.on('afterSubmit', (event) => afterSubmitRef.current?.(event));
       })
       .catch((err) => console.error(err));
 
     return () => {
       cancelled = true;
+      observer.disconnect();
       try {
         form?.destroy?.();
       } catch {
@@ -135,9 +166,12 @@ export default function CognitoEmbed({ formNumber, className, prefill, onAfterSu
   }, [formNumber, useMountApi]);
 
   return (
-    <div
-      ref={containerRef}
-      className={`cognito-embed ${className || ''}`}
-    />
+    <>
+      {skeleton && !ready && skeleton}
+      <div
+        ref={containerRef}
+        className={`cognito-embed ${className || ''}`}
+      />
+    </>
   );
 }

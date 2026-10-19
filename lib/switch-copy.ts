@@ -55,15 +55,39 @@ export const SWITCH_COPY = {
   },
 
   hero: {
-    /** `lowestPromo` is the lowest switcher price across eligible plans. */
-    headline: (lowestPromo: number) => `Switch to local fiber for $${lowestPromo} a month.`,
+    /**
+     * Rendered as `${before}<local>${after}`, with "local" in pink.
+     * `lowestPromo` is the lowest switcher price across eligible plans.
+     */
+    headline: (lowestPromo: number, months: number) => ({
+      before: 'Switch to ',
+      highlight: 'local',
+      after: ` fiber. $${lowestPromo}/mo for ${months} months.`,
+    }),
     subhead: (v: SwitchPriceVars) =>
-      `For your first ${v.months} months when you switch from another provider. Then $${v.regular}, locked for ${v.years} years. Free install. ${contractShortWording(FOR_SWITCHERS)}.`,
+      `Then $${v.regular}, locked for ${v.years} years. For new customers switching providers.`,
+    /** Keyed by the market parsed from utm_campaign. Unknown markets show nothing. */
+    marketLine: {
+      dunbar: 'Now serving Dunbar',
+      nitro: 'Now serving Nitro',
+      stalbans: 'Now serving Ordnance Park in St. Albans',
+    } as Record<string, string>,
+    signUpButton: 'Sign up in 2 minutes',
+    callButton: (phone: string) => `Call ${phone}`,
     proofPoints: [
       '100% fiber, same speed up and down',
       'No data caps',
       'Local people answer the phone',
     ],
+  },
+
+  form: {
+    intro: 'A local SecureNet rep will call to confirm your address and set up install.',
+    loading: 'Loading the sign up form...',
+  },
+
+  stickyCall: {
+    label: (phone: string) => `Questions? Call ${phone}`,
   },
 
   // For current customers who see the ad or mailer. Shown in the hero.
@@ -218,7 +242,7 @@ export const SWITCH_COPY = {
 
   bottomCta: {
     heading: 'Ready to switch?',
-    button: 'Check Your Address',
+    button: 'Sign up in 2 minutes',
   },
 
   /** Full disclosure, deck section 4. */
@@ -233,7 +257,7 @@ export const SWITCH_COPY = {
 
   thankYou: {
     heading: 'Got it. You\'re on your way to fiber.',
-    // Body is SWITCH_OFFER.callbackPromise.
+    body: (phone: string) => `A local SecureNet rep will call you soon from ${phone}.`,
     note: 'Have your current internet bill handy when we call.',
     scheduleButton: 'Schedule Installation',
     callHeading: 'Questions?',
