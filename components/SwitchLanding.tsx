@@ -150,9 +150,8 @@ export default function SwitchLanding({ campaign }: { campaign?: string }) {
   const heroPlan = plans.reduce((low, p) => (p.promoPrice < low.promoPrice ? p : low), plans[0]);
   const heroVars = priceVars(heroPlan);
   const headline = SWITCH_COPY.hero.headline(heroPlan.promoPrice, SWITCH_OFFER.promoMonths);
-  // The URL wins so the market line renders on the server with no layout shift
+  // Market for funnel event params. The URL wins over stored attribution.
   const market = marketFromCampaign(campaign ?? attribution?.utm_campaign);
-  const marketLine = SWITCH_COPY.hero.marketLine[market];
 
   useEffect(() => {
     setAttribution(captureSwitchAttribution(window.location.search));
@@ -199,7 +198,6 @@ export default function SwitchLanding({ campaign }: { campaign?: string }) {
       <section className="page-hero switch-hero">
         <div className="section-container switch-hero-grid">
           <div className="switch-hero-copy">
-            {marketLine && <p className="switch-market">{marketLine}</p>}
             <h1 className="section-heading">
               {headline.before}
               <span className="switch-local">{headline.highlight}</span>

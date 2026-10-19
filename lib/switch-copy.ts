@@ -66,12 +66,6 @@ export const SWITCH_COPY = {
     }),
     subhead: (v: SwitchPriceVars) =>
       `Then $${v.regular}, locked for ${v.years} years. For new customers switching providers.`,
-    /** Keyed by the market parsed from utm_campaign. Unknown markets show nothing. */
-    marketLine: {
-      dunbar: 'Now serving Dunbar',
-      nitro: 'Now serving Nitro',
-      stalbans: 'Now serving Ordnance Park in St. Albans',
-    } as Record<string, string>,
     signUpButton: 'Sign up in 2 minutes',
     callButton: (phone: string) => `Call ${phone}`,
     proofPoints: [

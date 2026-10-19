@@ -6391,19 +6391,6 @@ body.has-alert-bar .page-hero {
   align-items: start;
 }
 
-.switch-market {
-  display: inline-block;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
-  padding: 0.35rem 0.85rem;
-  margin-bottom: var(--space-sm);
-}
-
 .switch-local {
   color: #EC4899;
 }
