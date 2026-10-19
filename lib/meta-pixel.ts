@@ -7,7 +7,7 @@
  */
 export const META_PIXEL_ID = '228005700264159';
 
-type MetaEvent = 'PageView' | 'Lead';
+type MetaEvent = 'PageView' | 'Lead' | 'Contact';
 
 declare global {
   interface Window {
